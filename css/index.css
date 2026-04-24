@@ -47,7 +47,8 @@ figure {
 }
 
 .wrap {
-  width: 80%;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0;
   font-family: "Noto Sans TC", sans-serif;
@@ -130,6 +131,7 @@ figure {
 }
 
 header .wrap {
+  max-width: 100%;
   padding: 0 60px;
   display: flex;
   justify-content: space-between;
@@ -198,6 +200,9 @@ header .socialList {
   gap: 28px;
 }
 
+.bannerArea .wrap {
+  max-width: 1536px;
+}
 .bannerArea .bannerBox {
   display: flex;
   position: relative;

@@ -26,7 +26,8 @@ $font-size-text: 16px;
 // ─── Mixin ───
 
 @mixin wrap {
-    width: 80%;
+    width: 100%;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0;
 
@@ -170,6 +171,7 @@ $font-size-text: 16px;
 // ─── Header ───
 header {
     .wrap {
+        max-width: 100%;
         padding: 0 60px;
 
         display: flex;
@@ -249,6 +251,11 @@ header {
 // ─── Banner ───
 
 .bannerArea {
+
+    .wrap {
+        max-width: 1536px;
+    }
+
     .bannerBox {
         // 讓Txt和bg圖片在同一行
         display: flex;
