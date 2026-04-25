@@ -225,6 +225,23 @@ header .socialList {
   gap: 28px;
 }
 
+.bannerArea {
+  position: relative;
+  padding: 80px 0 250px 0;
+  margin-bottom: 150px;
+}
+.bannerArea .bgBox {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  padding: 10px 10px 0 0;
+}
+.bannerArea .bgBox img {
+  border-radius: 10px 10px 10px 160px;
+  aspect-ratio: 940/865;
+}
 .bannerArea .wrap {
   max-width: 1536px;
 }
@@ -235,7 +252,6 @@ header .socialList {
 }
 .bannerArea .leftBox {
   width: 50%;
-  padding: 85px 0px 225px 175px;
   position: relative;
 }
 .bannerArea .leftBox .pageBox {
@@ -327,27 +343,8 @@ header .socialList {
      object-fit: cover;
   transform: scale(1.3);
 }
-.bannerArea .rightBox {
-  width: 50%;
-}
-.bannerArea .rightBox .bgImg {
-  width: auto;
-  border-radius: 10px 10px 10px 160px;
-  overflow: hidden;
-  margin: 10px 10px 0px 10px;
-  aspect-ratio: 940/865;
-}
-.bannerArea .rightBox img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transform: scale(1.3);
-  transform-origin: right bottom;
-}
-
-.marqueeBox {
-  color: #fff;
+.bannerArea .marqueeBox {
+  color: #f5cece;
   font-family: "Cormorant Garamond";
   font-size: 140px;
   font-weight: 700;
@@ -356,10 +353,12 @@ header .socialList {
   letter-spacing: 4.2px;
   text-transform: uppercase;
   position: absolute;
-  top: 100%;
+  left: 0;
+  bottom: 0;
   padding-left: 60px;
   transform: translateY(-100%);
   text-transform: uppercase;
+  pointer-events: none;
 }
 
 .newsArea {
