@@ -234,13 +234,14 @@ header .socialList {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
+  left: 51%;
   right: 0;
   padding: 10px 10px 0 0;
 }
 .bannerArea .bgBox img {
   border-radius: 10px 10px 10px 160px;
   aspect-ratio: 940/865;
+  width: 100%;
 }
 .bannerArea .wrap {
   max-width: 1536px;
