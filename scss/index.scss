@@ -81,7 +81,7 @@ $font-size-text: 16px;
 }
 
 // --- 按鈕 ---
-@mixin buttonBox {
+@mixin btnBox {
     color: $text-muted;
     font-family: $font-en;
     font-size: $font-size-text;
@@ -90,7 +90,7 @@ $font-size-text: 16px;
     letter-spacing: 0.32px;
 }
 
-@mixin rdmTxt {
+@mixin btnTxt {
     margin-left: 15px;
     margin-right: 25px;
 }
@@ -148,12 +148,12 @@ $font-size-text: 16px;
     @include text;
 }
 
-.buttonBox {
-    @include buttonBox;
+.btnBox {
+    @include btnBox;
 }
 
-.rdmTxt {
-    @include rdmTxt;
+.btnTxt {
+    @include btnTxt;
 }
 
 .svgBg {
@@ -168,7 +168,7 @@ $font-size-text: 16px;
     @include slickPrev;
 }
 
-.rdmLink {
+.btn {
     display: inline-flex;
     align-items: center;
 
@@ -188,16 +188,16 @@ $font-size-text: 16px;
         background 0.3s ease,
         border-color 0.3s ease;
 
-    svg path {
-        transition: fill 0.3s ease;
+    img {
+        transition: filter 0.3s ease;
     }
 
     &:hover {
         background: $gradient;
         border-color: transparent;
 
-        svg path {
-            fill: #fff !important; // 蓋掉原本的 url(#gradient)
+        img {
+            filter: brightness(0) invert(1); // 箭頭變白
         }
     }
 }
@@ -358,7 +358,7 @@ header {
         }
 
         // --- read more 按鈕 & slick 箭頭---
-        .buttonBox {
+        .btnBox {
             &::after {
                 content: "";
                 display: block;
@@ -449,7 +449,8 @@ header {
     font-family: $font-en;
     font-size: 140px;
     font-weight: 700;
-    line-height: 87px; /* 62.143% */
+    line-height: 87px;
+    /* 62.143% */
     letter-spacing: 4.2px;
     text-transform: uppercase;
 
@@ -490,6 +491,7 @@ header {
             .newsBox {
                 flex-direction: column;
             }
+
             .leftBox {
                 width: 100%;
             }
@@ -509,6 +511,7 @@ header {
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -520,7 +523,7 @@ header {
             }
         }
 
-        .buttonBox::after {
+        .btnBox::after {
             content: "";
             display: block;
             width: 150px;
@@ -533,9 +536,9 @@ header {
     .rightBox {
         min-width: 0; // 防止 flex 子項目撐破父層
 
-        margin-right: -15vw;
+        margin-right: -20vw;
 
-        .dataList {
+        .newsList {
             margin: 0 -25px; // 把slick slide的padding抵消掉，讓第一個和最後一個slide對齊邊界
 
             .slick-slide .rightText .title {
@@ -552,9 +555,35 @@ header {
 
         .item {
             width: 100%;
-            padding: 0 25px;
+            padding: 20px 25px 0px;
             margin: 0 auto;
             position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 15px;
+                left: 25px;
+                right: 25px;
+                aspect-ratio: 420 / 260;
+                background: $gradient;
+                border-radius: 10px;
+                opacity: 0;
+                transform: rotate(0deg);
+                transition: all 0.5s ease-in-out;
+                pointer-events: none;
+                z-index: -1;
+            }
+
+            .bottomBox .btn {
+                position: relative;
+                z-index: 2; // 蓋過 linkWrap 的 z-index: 1
+            }
+
+            &:hover::before {
+                opacity: 1;
+                transform: rotate(4.6deg) translateX(15px);
+            }
 
             .linkWrap {
                 position: absolute;
@@ -566,7 +595,6 @@ header {
             }
 
             .Img {
-                width: 100%;
                 border-radius: 10px;
                 overflow: hidden;
 
@@ -609,6 +637,7 @@ header {
                     letter-spacing: 1.8px;
                     @include gradient-text;
                 }
+
                 .yearMonth {
                     color: $text-muted;
                     font-family: $font-zh-serif;
@@ -617,6 +646,7 @@ header {
                     white-space: nowrap;
                 }
             }
+
             .rightText {
                 .text {
                     // 讓這段文字顯示最多兩行，其他變成...
@@ -630,7 +660,8 @@ header {
                     font-family: $font-zh;
                     font-size: 20px;
                     font-weight: 500;
-                    line-height: 24px; /* 120% */
+                    line-height: 24px;
+                    /* 120% */
                     letter-spacing: 1px;
 
                     white-space: nowrap;
@@ -661,13 +692,14 @@ header {
                 }
             }
 
-            .rdmTxt {
+            .btnTxt {
                 color: #606060;
                 font-family: $font-en;
                 font-size: 16px;
                 font-style: normal;
                 font-weight: 600;
-                line-height: 30px; /* 187.5% */
+                line-height: 30px;
+                /* 187.5% */
                 letter-spacing: 0.32px;
             }
         }
@@ -691,19 +723,24 @@ header {
 }
 
 .clinicArea {
-    .clinicBox {
-        display: grid;
-    }
+    position: relative;
+    padding: 120px 0;
 
-    .bgBox {
-        grid-area: 1 / 1;
-        z-index: 0;
-        display: flex;
-        align-items: center;
+    .bgRight {
+        position: absolute;
+        top: 0;
+        bottom: 10px;
+        left: 30%;
+        right: 10px;
+        border-radius: 180px 10px 10px 10px;
+        background: #f6f6f6;
     }
 
     .bgLeft {
-        flex: 1;
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -722,28 +759,28 @@ header {
         }
     }
 
-    .bgRight {
-        border-radius: 180px 10px 10px 10px;
-        background: #f6f6f6;
-        flex: 3;
-        aspect-ratio: 686 / 409;
+    .clinicBox {
+        display: grid;
     }
 
     .centerBox {
         grid-area: 1 / 1;
         z-index: 1;
         width: 100%;
-        min-width: 0; /* 防止 flex/grid 子項目撐破父層 */
+        min-width: 0;
+        /* 防止 flex/grid 子項目撐破父層 */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
 
-        padding-bottom: 100px;
-
         .titleBox {
             text-align: center;
             margin-bottom: 50px;
+        }
+
+        .subtitle {
+            margin: 0;
         }
     }
 
@@ -773,21 +810,27 @@ header {
 
         .imgLink {
             position: relative;
-        }
 
-        .imgLink:hover::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            aspect-ratio: 420 / 330;
-            transform: rotate(4.632deg) translateX(15px);
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                aspect-ratio: 420 / 330;
+                background: $gradient;
+                border-radius: 10px;
+                opacity: 0;
+                transform: rotate(0deg);
+                transition: all 0.5s ease-in-out;
+                pointer-events: none;
+                z-index: -1;
+            }
 
-            background: $gradient;
-            opacity: 1;
-            border-radius: 10px;
-            z-index: -1;
+            &:hover::before {
+                opacity: 1;
+                transform: rotate(4.6deg) translateX(15px);
+            }
         }
 
         .item {
@@ -820,7 +863,8 @@ header {
                 font-family: $font-zh-serif;
                 font-size: 20px;
                 font-weight: 700;
-                line-height: 32px; /* 160% */
+                line-height: 32px;
+                /* 160% */
                 letter-spacing: 1.2px;
 
                 text-transform: none;
@@ -837,7 +881,8 @@ header {
                 font-family: $font-zh-serif;
                 font-size: 16px;
                 font-weight: 600;
-                line-height: 32px; /* 200% */
+                line-height: 32px;
+                /* 200% */
                 letter-spacing: 0.48px;
                 @include gradient-text;
             }
@@ -849,6 +894,7 @@ header {
         left: -5%;
         top: 50%;
     }
+
     .clinicImgNext {
         position: absolute;
         right: -5%;
@@ -859,17 +905,20 @@ header {
         .clinicImgPrev {
             left: 0;
         }
+
         .clinicImgNext {
             right: 0;
         }
     }
 
     @media (max-width: 768px) {
+
         // 手機改放在 titleBox 旁邊、或下方置中
         .clinicImgPrev {
             left: 35%;
             top: 100%;
         }
+
         .clinicImgNext {
             right: 30%;
             top: 100%;
@@ -898,6 +947,7 @@ header {
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -936,7 +986,7 @@ header {
     }
 
     // --- read more 按鈕 & slick 箭頭---
-    .buttonBox {
+    .btnBox {
         color: $white;
 
         &::after {
@@ -949,7 +999,7 @@ header {
             margin-left: 250px;
         }
 
-        .rdmLink {
+        .btn {
             margin-left: 45px;
         }
     }
@@ -970,6 +1020,24 @@ header {
         background: #fff;
         border-radius: 10px;
         padding-top: 80px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: $gradient;
+            border-radius: 10px;
+            opacity: 0;
+            transform: rotate(0deg);
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        &:hover::before {
+            opacity: 1;
+            transform: rotate(4.6deg) translateX(10px);
+        }
 
         .Img {
             position: absolute;
@@ -1002,7 +1070,8 @@ header {
             .title {
                 color: $text-muted;
                 font-size: 14px;
-                line-height: 24px; /* 171.429% */
+                line-height: 24px;
+                /* 171.429% */
                 margin: 0; // 清掉 p 的預設 margin
 
                 // 取消漸層
@@ -1068,7 +1137,7 @@ header {
         gap: 90px;
     }
 
-    .buttonBox {
+    .btnBox {
         display: flex;
         gap: 16px;
         flex-direction: column;

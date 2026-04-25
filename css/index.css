@@ -86,7 +86,7 @@ figure {
   letter-spacing: 0.32px;
 }
 
-.buttonBox {
+.btnBox {
   color: #606060;
   font-family: "Cormorant Garamond";
   font-size: 16px;
@@ -95,7 +95,7 @@ figure {
   letter-spacing: 0.32px;
 }
 
-.rdmTxt {
+.btnTxt {
   margin-left: 15px;
   margin-right: 25px;
 }
@@ -130,29 +130,29 @@ figure {
   margin-right: 5px;
 }
 
-.rdmLink {
+.btn {
   display: inline-flex;
   align-items: center;
 }
-.rdmLink .svgBg {
+.btn .svgBg {
   transition: transform 0.3s ease;
 }
-.rdmLink:hover .svgBg {
+.btn:hover .svgBg {
   transform: translateX(5px);
 }
 
 .slickArrow {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
-.slickArrow svg path {
-  transition: fill 0.3s ease;
+.slickArrow img {
+  transition: filter 0.3s ease;
 }
 .slickArrow:hover {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   border-color: transparent;
 }
-.slickArrow:hover svg path {
-  fill: #fff !important;
+.slickArrow:hover img {
+  filter: brightness(0) invert(1);
 }
 
 header .wrap {
@@ -280,7 +280,7 @@ header .socialList {
   border-top: 1px dashed rgba(0, 0, 0, 0.27);
   margin-bottom: 10px;
 }
-.bannerArea .leftBox .buttonBox::after {
+.bannerArea .leftBox .btnBox::after {
   content: "";
   display: block;
   width: 150px;
@@ -351,7 +351,8 @@ header .socialList {
   font-family: "Cormorant Garamond";
   font-size: 140px;
   font-weight: 700;
-  line-height: 87px; /* 62.143% */
+  line-height: 87px;
+  /* 62.143% */
   letter-spacing: 4.2px;
   text-transform: uppercase;
   position: absolute;
@@ -410,7 +411,7 @@ header .socialList {
   border-top: 1px dashed rgba(0, 0, 0, 0.27);
   margin-bottom: 10px;
 }
-.newsArea .leftBox .buttonBox::after {
+.newsArea .leftBox .btnBox::after {
   content: "";
   display: block;
   width: 150px;
@@ -420,17 +421,17 @@ header .socialList {
 }
 .newsArea .rightBox {
   min-width: 0;
-  margin-right: -15vw;
+  margin-right: -20vw;
 }
-.newsArea .rightBox .dataList {
+.newsArea .rightBox .newsList {
   margin: 0 -25px;
 }
-.newsArea .rightBox .dataList .slick-slide .rightText .title {
+.newsArea .rightBox .newsList .slick-slide .rightText .title {
   background: none;
   -webkit-text-fill-color: #606060;
   color: #606060;
 }
-.newsArea .rightBox .dataList .slick-slide.slick-current .rightText .title {
+.newsArea .rightBox .newsList .slick-slide.slick-current .rightText .title {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -438,9 +439,32 @@ header .socialList {
 }
 .newsArea .rightBox .item {
   width: 100%;
-  padding: 0 25px;
+  padding: 20px 25px 0px;
   margin: 0 auto;
   position: relative;
+}
+.newsArea .rightBox .item::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  right: 25px;
+  aspect-ratio: 420/260;
+  background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
+  border-radius: 10px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+.newsArea .rightBox .item .bottomBox .btn {
+  position: relative;
+  z-index: 2;
+}
+.newsArea .rightBox .item:hover::before {
+  opacity: 1;
+  transform: rotate(4.6deg) translateX(15px);
 }
 .newsArea .rightBox .item .linkWrap {
   position: absolute;
@@ -451,7 +475,6 @@ header .socialList {
   z-index: 1;
 }
 .newsArea .rightBox .item .Img {
-  width: 100%;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -511,7 +534,8 @@ header .socialList {
   font-family: "Noto Sans TC", sans-serif;
   font-size: 20px;
   font-weight: 500;
-  line-height: 24px; /* 120% */
+  line-height: 24px;
+  /* 120% */
   letter-spacing: 1px;
   white-space: nowrap;
 }
@@ -535,13 +559,14 @@ header .socialList {
   height: 10px;
   background-color: #666;
 }
-.newsArea .rightBox .bottomBox .rdmTxt {
+.newsArea .rightBox .bottomBox .btnTxt {
   color: #606060;
   font-family: "Cormorant Garamond";
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 30px; /* 187.5% */
+  line-height: 30px;
+  /* 187.5% */
   letter-spacing: 0.32px;
 }
 
@@ -557,17 +582,24 @@ header .socialList {
   margin-bottom: 10px;
 }
 
-.clinicArea .clinicBox {
-  display: grid;
+.clinicArea {
+  position: relative;
+  padding: 120px 0;
 }
-.clinicArea .bgBox {
-  grid-area: 1/1;
-  z-index: 0;
-  display: flex;
-  align-items: center;
+.clinicArea .bgRight {
+  position: absolute;
+  top: 0;
+  bottom: 10px;
+  left: 30%;
+  right: 10px;
+  border-radius: 180px 10px 10px 10px;
+  background: #f6f6f6;
 }
 .clinicArea .bgLeft {
-  flex: 1;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -584,26 +616,26 @@ header .socialList {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.clinicArea .bgRight {
-  border-radius: 180px 10px 10px 10px;
-  background: #f6f6f6;
-  flex: 3;
-  aspect-ratio: 686/409;
+.clinicArea .clinicBox {
+  display: grid;
 }
 .clinicArea .centerBox {
   grid-area: 1/1;
   z-index: 1;
   width: 100%;
-  min-width: 0; /* 防止 flex/grid 子項目撐破父層 */
+  min-width: 0;
+  /* 防止 flex/grid 子項目撐破父層 */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 100px;
 }
 .clinicArea .centerBox .titleBox {
   text-align: center;
   margin-bottom: 50px;
+}
+.clinicArea .centerBox .subtitle {
+  margin: 0;
 }
 .clinicArea .imgBox {
   width: 1435px;
@@ -626,18 +658,24 @@ header .socialList {
 .clinicArea .clinicImgList .imgLink {
   position: relative;
 }
-.clinicArea .clinicImgList .imgLink:hover::before {
+.clinicArea .clinicImgList .imgLink::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   aspect-ratio: 420/330;
-  transform: rotate(4.632deg) translateX(15px);
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
-  opacity: 1;
   border-radius: 10px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
   z-index: -1;
+}
+.clinicArea .clinicImgList .imgLink:hover::before {
+  opacity: 1;
+  transform: rotate(4.6deg) translateX(15px);
 }
 .clinicArea .clinicImgList .item {
   width: 100%;
@@ -666,7 +704,8 @@ header .socialList {
   font-family: "Noto Serif TC", serif;
   font-size: 20px;
   font-weight: 700;
-  line-height: 32px; /* 160% */
+  line-height: 32px;
+  /* 160% */
   letter-spacing: 1.2px;
   text-transform: none;
   background: none;
@@ -679,7 +718,8 @@ header .socialList {
   font-family: "Noto Serif TC", serif;
   font-size: 16px;
   font-weight: 600;
-  line-height: 32px; /* 200% */
+  line-height: 32px;
+  /* 200% */
   letter-spacing: 0.48px;
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   background-clip: text;
@@ -759,10 +799,10 @@ header .socialList {
 .reviewArea .topBox .text {
   color: #fff;
 }
-.reviewArea .buttonBox {
+.reviewArea .btnBox {
   color: #fff;
 }
-.reviewArea .buttonBox::after {
+.reviewArea .btnBox::after {
   content: "";
   display: block;
   width: 160px;
@@ -771,7 +811,7 @@ header .socialList {
   margin-top: 5px;
   margin-left: 250px;
 }
-.reviewArea .buttonBox .rdmLink {
+.reviewArea .btnBox .btn {
   margin-left: 45px;
 }
 .reviewArea .dataItem {
@@ -787,6 +827,22 @@ header .socialList {
   background: #fff;
   border-radius: 10px;
   padding-top: 80px;
+}
+.reviewArea .item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
+  border-radius: 10px;
+  opacity: 0;
+  transform: rotate(0deg);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+.reviewArea .item:hover::before {
+  opacity: 1;
+  transform: rotate(4.6deg) translateX(10px);
 }
 .reviewArea .item .Img {
   position: absolute;
@@ -814,7 +870,8 @@ header .socialList {
 .reviewArea .item .Txt .title {
   color: #606060;
   font-size: 14px;
-  line-height: 24px; /* 171.429% */
+  line-height: 24px;
+  /* 171.429% */
   margin: 0;
   background: none;
   -webkit-text-fill-color: #606060;
@@ -865,7 +922,7 @@ header .socialList {
   display: flex;
   gap: 90px;
 }
-.footer .buttonBox {
+.footer .btnBox {
   display: flex;
   gap: 16px;
   flex-direction: column;
@@ -896,4 +953,4 @@ header .socialList {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-}
+}/*# sourceMappingURL=index.css.map */

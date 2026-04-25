@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一個案件-牙醫</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+</head>
+
+<body class="WebSiteHome">
+    <div class="outerWrap">
+        <!-- outerWrap -->
+        <header>
+            <div class="wrap">
+                <!-- wrap -->
+                <div class="logo">
+                    <a href="#" class="logoLink">
+                        IBEST DEMO
+                    </a>
+                </div>
+                <nav class="menuBox">
+                    <!-- menuBox -->
+                    <ul class="menu">
+                        <!-- menu -->
+                        <li class="menuItem">
+                            <span><a href="#">關於我們</a></span>
+                        </li>
+                        <li class="menuItem">
+                            <span><a href="#">服務項目</a></span>
+                        </li>
+                        <li class="menuItem">
+                            <span><a href="#">醫師團隊</a></span>
+                        </li>
+                        <li class="menuItem">
+                            <span><a href="#">最新消息</a></span>
+                        </li>
+                    </ul>
+                    <!-- menu end-->
+                </nav>
+                <!-- menuBox end-->
+                <div class="funcBox">
+                    <span><a href="#" class="contactBtn btnReservation">線上預約</a></span>
+                    <span><a href="#" class="contactBtn btnContact">聯絡我們</a></span>
+                    <div class="socialBox">
+                        <ul class="socialList">
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="25" viewBox="0 0 14 25"
+                                        fill="none">
+                                        <path
+                                            d="M12.5122 14.0625L13.2065 9.53809H8.86523V6.60205C8.86523 5.36426 9.47168 4.15771 11.416 4.15771H13.3896V0.305664C13.3896 0.305664 11.5986 0 9.88623 0C6.31104 0 3.97412 2.16699 3.97412 6.08984V9.53809H0V14.0625H3.97412V25H8.86523V14.0625H12.5122Z"
+                                            fill="url(#paint0_linear_0_1729)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1729" x1="4.00899" y1="-2.76693"
+                                                x2="12.0155" y2="-1.4252" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                        fill="none">
+                                        <path
+                                            d="M13.9694 8.84063V12.4908C13.9694 12.5833 13.8975 12.6551 13.8051 12.6551H13.2199C13.1634 12.6551 13.1121 12.6243 13.0864 12.5884L11.4127 10.3295V12.496C11.4127 12.5884 11.3408 12.6603 11.2484 12.6603H10.6632C10.5708 12.6603 10.4989 12.5884 10.4989 12.496V8.84576C10.4989 8.75335 10.5708 8.68148 10.6632 8.68148H11.2433C11.2946 8.68148 11.3511 8.70715 11.3768 8.75335L13.0504 11.0123V8.84576C13.0504 8.75335 13.1223 8.68148 13.2147 8.68148H13.8C13.8924 8.67634 13.9694 8.75335 13.9694 8.84063ZM9.7596 8.67634H9.17433C9.08192 8.67634 9.01005 8.74822 9.01005 8.84063V12.4908C9.01005 12.5833 9.08192 12.6551 9.17433 12.6551H9.7596C9.85201 12.6551 9.92389 12.5833 9.92389 12.4908V8.84063C9.92389 8.75335 9.85201 8.67634 9.7596 8.67634ZM8.34777 11.7362H6.75112V8.84063C6.75112 8.74822 6.67925 8.67634 6.58684 8.67634H6.00157C5.90916 8.67634 5.83728 8.74822 5.83728 8.84063V12.4908C5.83728 12.5371 5.85268 12.573 5.88349 12.6038C5.91429 12.6295 5.95023 12.65 5.99643 12.65H8.34264C8.43505 12.65 8.50692 12.5781 8.50692 12.4857V11.9004C8.50692 11.8132 8.43505 11.7362 8.34777 11.7362ZM17.0498 8.67634H14.7036C14.6163 8.67634 14.5393 8.74822 14.5393 8.84063V12.4908C14.5393 12.5781 14.6112 12.6551 14.7036 12.6551H17.0498C17.1422 12.6551 17.2141 12.5833 17.2141 12.4908V11.9056C17.2141 11.8132 17.1422 11.7413 17.0498 11.7413H15.4531V11.1252H17.0498C17.1422 11.1252 17.2141 11.0533 17.2141 10.9609V10.3705C17.2141 10.2781 17.1422 10.2063 17.0498 10.2063H15.4531V9.59018H17.0498C17.1422 9.59018 17.2141 9.51831 17.2141 9.42589V8.84063C17.2089 8.75335 17.1371 8.67634 17.0498 8.67634ZM23 4.19443V18.8415C22.9949 21.1415 21.1107 23.0051 18.8056 23H4.15849C1.85849 22.9949 -0.00512334 21.1056 1.05819e-05 18.8056V4.15849C0.00514451 1.85849 1.89443 -0.00512334 4.19443 1.05819e-05H18.8415C21.1415 0.00514451 23.0051 1.88929 23 4.19443ZM19.8375 10.4886C19.8375 6.74085 16.0795 3.6913 11.4641 3.6913C6.84867 3.6913 3.09063 6.74085 3.09063 10.4886C3.09063 13.8462 6.06831 16.6596 10.0933 17.1935C11.0739 17.404 10.9609 17.7634 10.7402 19.0828C10.7042 19.2933 10.5708 19.9094 11.4641 19.5346C12.3574 19.1598 16.2848 16.6955 18.0458 14.6728C19.2574 13.3379 19.8375 11.9877 19.8375 10.4886Z"
+                                            fill="url(#paint0_linear_0_1730)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1730" x1="6.88643" y1="-2.54557"
+                                                x2="19.7649" y2="1.484" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- bannerArea -->
+        <div class="bannerArea">
+            <div class="wrap">
+                <div class="bannerBox">
+                    <div class="leftBox">
+                        <div class="dataList">
+                            <div class="dataItem"> <!-- 第一筆資料 -->
+                                <div class="item">
+                                    <div class="Txt">
+                                        <div class="textBox">
+                                            <div class="pageBox">
+                                                <span class="currentPage">01</span>
+                                                <span class="pageLine"></span>
+                                                <span class="totalPage">03</span>
+                                            </div>
+                                            <h2 class="title">A NEW <br> Beginning</h2>
+                                            <h3 class="subtitle">專業牙醫，守護您的笑容</h3>
+                                            <p class="text">我們致力於提供安全、舒適且值得信賴的牙科醫療服務，從預防保健到專業治療，為您打造健康又自信的微笑</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dataItem"> <!-- 第二筆資料 -->
+                                <div class="item">
+                                    <div class="Txt">
+                                        <div class="textBox">
+                                            <div class="pageBox">
+                                                <span class="currentPage">02</span>
+                                                <span class="pageLine"></span>
+                                                <span class="totalPage">03</span>
+                                            </div>
+                                            <h2 class="title">DENTAL <br> WELLNESS</h2>
+                                            <h3 class="subtitle">全面口腔照護，生活更自在</h3>
+                                            <p class="text">從預防保健到複雜治療，我們提供完整的口腔健康管理服務。每次就診都是一次溫和、專業的體驗，讓您重拾牙齒健康。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dataItem"> <!-- 第二筆資料 -->
+                                <div class="item">
+                                    <div class="Txt">
+                                        <div class="textBox">
+                                            <div class="pageBox">
+                                                <span class="currentPage">03</span>
+                                                <span class="pageLine"></span>
+                                                <span class="totalPage">03</span>
+                                            </div>
+                                            <h2 class="title">PRECISION & <br> PERFECTION</h2>
+                                            <h3 class="subtitle">精準治療，完美笑容</h3>
+                                            <p class="text">3D 口掃、AI 診斷、微創治療。我們運用頂尖科技，讓治療過程更精確、更舒適，帶給您卓越的牙科體驗。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="buttonBox">
+                            <a href="#" class="rdmLink">
+                                <span class="rdmTxt">Read More</span>
+                                <span class="svgBg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"
+                                        fill="white">
+                                        <path
+                                            d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                            fill="white" />
+                                    </svg>
+                                </span>
+                            </a>
+                            <button class="slickPrev slickArrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                    fill="black">
+                                    <path
+                                        d="M6.32307 10.2632L5.77804 10.8224C5.54726 11.0592 5.17409 11.0592 4.94576 10.8224L0.173083 5.92821C-0.0576949 5.69143 -0.0576949 5.30856 0.173083 5.07431L4.94577 0.177581C5.17654 -0.0591941 5.54972 -0.0591941 5.77804 0.177581L6.32307 0.736775C6.5563 0.97607 6.55139 1.3665 6.31325 1.60076L3.35487 4.49244L10.4108 4.49244C10.7373 4.49244 11 4.76196 11 5.09698L11 5.90302C11 6.23804 10.7373 6.50756 10.4108 6.50756L3.35487 6.50756L6.31325 9.39924C6.55384 9.6335 6.55875 10.0239 6.32307 10.2632Z"
+                                        fill="url(#paint0_linear_0_1546)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_0_1546" x1="7.70649" y1="12.2174" x2="1.5472"
+                                            y2="10.2903" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#88BCFF" />
+                                            <stop offset="1" stop-color="#7691FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </button>
+                            <button class="slickNext slickArrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                    fill="none">
+                                    <path
+                                        d="M4.67693 0.736776L5.22196 0.177582C5.45274 -0.059194 5.82591 -0.059194 6.05424 0.177582L10.8269 5.07179C11.0577 5.30856 11.0577 5.69144 10.8269 5.92569L6.05424 10.8224C5.82346 11.0592 5.45028 11.0592 5.22196 10.8224L4.67693 10.2632C4.4437 10.0239 4.44861 9.6335 4.68675 9.39924L7.64513 6.50756H0.58922C0.262694 6.50756 0 6.23804 0 5.90302V5.09698C0 4.76196 0.262694 4.49244 0.58922 4.49244H7.64513L4.68675 1.60076C4.44616 1.3665 4.44125 0.976071 4.67693 0.736776Z"
+                                        fill="url(#paint0_linear_0_1548)" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear_0_1548" x1="3.29351" y1="-1.21745" x2="9.4528"
+                                            y2="0.709739" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#88BCFF" />
+                                            <stop offset="1" stop-color="#7691FF" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </div>
+
+                    </div><!-- leftBox end -->
+
+                    <div class="centerBox">
+                        <div class="imgList">
+
+                            <div class="imgItem"> <!-- 第一張圖片 -->
+                                <a href="#" class="imgLink">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="./img/bannerGirl.jpg" alt="bannerGirl">
+                                        </figure>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="imgItem"> <!-- 第二張圖片 -->
+                                <a href="#" class="imgLink">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="./img/bannerDoctor.jpg" alt="bannerDoctor">
+                                        </figure>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="imgItem"> <!-- 第三張圖片 -->
+                                <a href="#" class="imgLink">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="./img/bannerCenter.jpg" alt="bannerDoctor">
+                                        </figure>
+                                    </div>
+                                </a>
+                            </div>
+                        </div><!-- centerBox end -->
+                    </div>
+
+                    <div class="rightBox">
+                        <div class="bgList">
+                            <div class="bgItem">
+                                <div class="item">
+                                    <a href="#" class="bgLink">
+                                        <figure class="bgImg">
+                                            <img src="./img/bannerRight1.jpg" alt="bannerMan2">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bgItem">
+                                <div class="item">
+                                    <a href="#" class="bgLink">
+                                        <figure class="bgImg">
+                                            <img src="./img/bannerRight2.jpg" alt="bannerMan2">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="bgItem">
+                                <div class="item">
+                                    <a href="#" class="bgLink">
+                                        <figure class="bgImg">
+                                            <img src="./img/bannerRight3.jpg" alt="bannerMan2">
+                                        </figure>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div><!-- rightBox end -->
+
+                    <div class="marqueeBox">
+                        <strong>
+                            PROFESSIONAL DENTIST
+                        </strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bannerArea end-->
+
+        <!-- mainArea -->
+        <main class="mainArea">
+            <!-- newsArea -->
+            <section class="newsArea">
+
+                <div class="bg"></div><!-- .bg -->
+
+                <div class="wrap">
+                    <div class="newsBox">
+                        <div class="leftBox">
+                            <div class="Txt">
+                                <div class="textBox">
+                                    <p class="title">LATEST NEWS</p>
+                                    <h3 class="subtitle">最新消息</h3>
+                                    <p class="text">掌握診所公告、看診時間變動與最新優惠資訊，我們會定期更新口腔保健知識，提供您更多實用內容。</p>
+                                </div>
+                            </div>
+                            <div class="buttonBox">
+                                <a href="#" class="rdmLink">
+                                    <span class="rdmTxt">Read More</span>
+                                    <span class="svgBg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"
+                                            fill="white">
+                                            <path
+                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <button class="slickPrev slickArrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="black">
+                                        <path
+                                            d="M6.32307 10.2632L5.77804 10.8224C5.54726 11.0592 5.17409 11.0592 4.94576 10.8224L0.173083 5.92821C-0.0576949 5.69143 -0.0576949 5.30856 0.173083 5.07431L4.94577 0.177581C5.17654 -0.0591941 5.54972 -0.0591941 5.77804 0.177581L6.32307 0.736775C6.5563 0.97607 6.55139 1.3665 6.31325 1.60076L3.35487 4.49244L10.4108 4.49244C10.7373 4.49244 11 4.76196 11 5.09698L11 5.90302C11 6.23804 10.7373 6.50756 10.4108 6.50756L3.35487 6.50756L6.31325 9.39924C6.55384 9.6335 6.55875 10.0239 6.32307 10.2632Z"
+                                            fill="url(#paint0_linear_0_1546)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1546" x1="7.70649" y1="12.2174"
+                                                x2="1.5472" y2="10.2903" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button class="slickNext slickArrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="none">
+                                        <path
+                                            d="M4.67693 0.736776L5.22196 0.177582C5.45274 -0.059194 5.82591 -0.059194 6.05424 0.177582L10.8269 5.07179C11.0577 5.30856 11.0577 5.69144 10.8269 5.92569L6.05424 10.8224C5.82346 11.0592 5.45028 11.0592 5.22196 10.8224L4.67693 10.2632C4.4437 10.0239 4.44861 9.6335 4.68675 9.39924L7.64513 6.50756H0.58922C0.262694 6.50756 0 6.23804 0 5.90302V5.09698C0 4.76196 0.262694 4.49244 0.58922 4.49244H7.64513L4.68675 1.60076C4.44616 1.3665 4.44125 0.976071 4.67693 0.736776Z"
+                                            fill="url(#paint0_linear_0_1548)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1548" x1="3.29351" y1="-1.21745"
+                                                x2="9.4528" y2="0.709739" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div><!-- .leftBox -->
+
+                        <div class="rightBox">
+                            <div class="dataList">
+
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <a href="#" class="linkWrap"></a>
+                                        <figure class="Img">
+                                            <img src="./img/news1.jpg" alt="">
+                                        </figure>
+                                        <div class="Txt">
+                                            <div class="topBox">
+                                                <div class="leftText">
+                                                    <p class="date">15</p>
+                                                    <span class="yearMonth">MAR 2025</span>
+                                                </div>
+                                                <div class="rightText">
+                                                    <h3 class="title">本院新增數位口掃與無痛治療設備</h3>
+                                                    <p class="text">為提供更舒適的診療體驗，本院導入新一代數位口掃儀與減痛治療設備，可縮短看診時間...</p>
+                                                </div>
+                                            </div>
+                                            <!-- 這裡中間有條線 -->
+                                            <div class="bottomBox">
+                                                <p class="text">活動訊息 | </p>
+                                                <a href="#" class="rdmLink">
+                                                    <span class="rdmTxt">Read More</span>
+                                                    <span class="svgBg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                            viewBox="0 0 9 9" fill="white">
+                                                            <path
+                                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <a href="#" class="linkWrap"></a>
+                                        <figure class="Img">
+                                            <img src="./img/news1.jpg" alt="">
+                                        </figure>
+                                        <div class="Txt">
+                                            <div class="topBox">
+                                                <div class="leftText">
+                                                    <p class="date">15</p>
+                                                    <span class="yearMonth">MAR 2025</span>
+                                                </div>
+                                                <div class="rightText">
+                                                    <h3 class="title">本院新增數位口掃與無痛治療設備</h3>
+                                                    <p class="text">為提供更舒適的診療體驗，本院導入新一代數位口掃儀與減痛治療設備，可縮短看診時間...</p>
+                                                </div>
+                                            </div>
+                                            <!-- 這裡中間有條線 -->
+                                            <div class="bottomBox">
+                                                <p class="text">活動訊息 | </p>
+                                                <a href="#" class="rdmLink">
+                                                    <span class="rdmTxt">Read More</span>
+                                                    <span class="svgBg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                            viewBox="0 0 9 9" fill="white">
+                                                            <path
+                                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <a href="#" class="linkWrap"></a>
+                                        <figure class="Img">
+                                            <img src="./img/news1.jpg" alt="">
+                                        </figure>
+                                        <div class="Txt">
+                                            <div class="topBox">
+                                                <div class="leftText">
+                                                    <p class="date">15</p>
+                                                    <span class="yearMonth">MAR 2025</span>
+                                                </div>
+                                                <div class="rightText">
+                                                    <h3 class="title">本院新增數位口掃與無痛治療設備</h3>
+                                                    <p class="text">為提供更舒適的診療體驗，本院導入新一代數位口掃儀與減痛治療設備，可縮短看診時間...</p>
+                                                </div>
+                                            </div>
+                                            <!-- 這裡中間有條線 -->
+                                            <div class="bottomBox">
+                                                <p class="text">活動訊息 | </p>
+                                                <a href="#" class="rdmLink">
+                                                    <span class="rdmTxt">Read More</span>
+                                                    <span class="svgBg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                            viewBox="0 0 9 9" fill="white">
+                                                            <path
+                                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <a href="#" class="linkWrap"></a>
+                                        <figure class="Img">
+                                            <img src="./img/news1.jpg" alt="">
+                                        </figure>
+                                        <div class="Txt">
+                                            <div class="topBox">
+                                                <div class="leftText">
+                                                    <p class="date">15</p>
+                                                    <span class="yearMonth">MAR 2025</span>
+                                                </div>
+                                                <div class="rightText">
+                                                    <h3 class="title">本院新增數位口掃與無痛治療設備</h3>
+                                                    <p class="text">為提供更舒適的診療體驗，本院導入新一代數位口掃儀與減痛治療設備，可縮短看診時間...</p>
+                                                </div>
+                                            </div>
+                                            <!-- 這裡中間有條線 -->
+                                            <div class="bottomBox">
+                                                <p class="text">活動訊息 | </p>
+                                                <a href="#" class="rdmLink">
+                                                    <span class="rdmTxt">Read More</span>
+                                                    <span class="svgBg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                            viewBox="0 0 9 9" fill="white">
+                                                            <path
+                                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                                fill="white" />
+                                                        </svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .rightBox -->
+                    </div>
+
+                </div>
+            </section>
+            <!-- newsArea end -->
+            <!-- teamArea -->
+            <section class="teamArea">
+                <div class="bg"></div>
+                <div class="wrap">
+                    <div class="teamBox">
+                        <div class="leftBox">
+                            <div class="Txt">
+                                <div class="textBox">
+                                    <h2 class="title">MEDICAL TEAM</h2>
+                                    <h3 class="subtitle">醫療團隊 | 專科醫師群</h3>
+                                    <p class="text">掌握診所公告、看診時間變動與最新優惠資訊，我們會定期更新口腔保健知識，提供您更多實用內容。</p>
+                                </div>
+                                <div class="iconBox">
+                                    <div class="item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="58"
+                                            viewBox="0 0 50 58" fill="none">
+                                            <g clip-path="url(#clip0_0_1608)">
+                                                <path
+                                                    d="M25 44.4666C24.7885 44.4666 24.5745 44.3965 24.399 44.2539L19.5914 40.3873C19.363 40.2036 19.2308 39.9257 19.2308 39.6333V33.8333H21.1539V39.1693L25 42.2626L28.8462 39.1693V33.8333H30.7692V39.6333C30.7692 39.9257 30.637 40.206 30.4087 40.3873L25.601 44.2539C25.4255 44.3941 25.2139 44.4666 25 44.4666Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M0.961538 58.0001C0.430288 58.0001 0 57.5675 0 57.0334V47.3667C0 41.5039 4.74519 36.7334 10.5769 36.7334H20.1923C20.7236 36.7334 21.1538 37.166 21.1538 37.7001C21.1538 38.2341 20.7236 38.6667 20.1923 38.6667H10.5769C5.80529 38.6667 1.92308 42.5696 1.92308 47.3667V57.0334C1.92308 57.5675 1.49279 58.0001 0.961538 58.0001Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M49.0385 58.0001C48.5072 58.0001 48.0769 57.5675 48.0769 57.0334V47.3667C48.0769 42.5696 44.1947 38.6667 39.4231 38.6667H29.8077C29.2764 38.6667 28.8462 38.2341 28.8462 37.7001C28.8462 37.166 29.2764 36.7334 29.8077 36.7334H39.4231C45.2548 36.7334 50 41.5039 50 47.3667V57.0334C50 57.5675 49.5697 58.0001 49.0385 58.0001Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M38.4616 42.5333C37.9303 42.5333 37.5 42.1008 37.5 41.5667C37.5 38.7488 35.9063 36.0736 33.125 34.2273C32.5673 33.8575 31.964 33.524 31.3341 33.2364C30.851 33.0165 30.637 32.4413 30.8558 31.9556C31.0745 31.4698 31.6442 31.2548 32.1298 31.4747C32.8534 31.8058 33.5433 32.1876 34.1851 32.6129C37.5144 34.8218 39.4231 38.0843 39.4231 41.5643C39.4231 42.0983 38.9928 42.5309 38.4616 42.5309V42.5333Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M11.5385 47.3666C11.0072 47.3666 10.5769 46.934 10.5769 46.3999V41.5666C10.5769 38.0866 12.488 34.8241 15.8173 32.6153C16.4591 32.1899 17.1491 31.8057 17.8726 31.477C18.3558 31.2571 18.9255 31.4698 19.1466 31.9579C19.3654 32.4437 19.1515 33.0164 18.6683 33.2388C18.0385 33.5263 17.4351 33.8598 16.8774 34.2296C14.0962 36.0759 12.5 38.7512 12.5 41.569V46.4023C12.5 46.9364 12.0697 47.369 11.5385 47.369V47.3666Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M43.2692 48.3334C42.738 48.3334 42.3077 47.9008 42.3077 47.3668C42.3077 44.7012 40.5817 42.5334 38.4615 42.5334C36.3413 42.5334 34.6154 44.7012 34.6154 47.3668C34.6154 47.9008 34.1851 48.3334 33.6538 48.3334C33.1226 48.3334 32.6923 47.9008 32.6923 47.3668C32.6923 43.6354 35.2812 40.6001 38.4615 40.6001C41.6418 40.6001 44.2308 43.6354 44.2308 47.3668C44.2308 47.9008 43.8005 48.3334 43.2692 48.3334Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M33.6538 53.1667C32.0625 53.1667 30.7692 51.8665 30.7692 50.2667C30.7692 48.6669 32.0625 47.3667 33.6538 47.3667C35.2452 47.3667 36.5385 48.6669 36.5385 50.2667C36.5385 51.8665 35.2452 53.1667 33.6538 53.1667ZM33.6538 49.3C33.1226 49.3 32.6923 49.7326 32.6923 50.2667C32.6923 50.8008 33.1226 51.2334 33.6538 51.2334C34.1851 51.2334 34.6154 50.8008 34.6154 50.2667C34.6154 49.7326 34.1851 49.3 33.6538 49.3Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M43.2692 53.1667C41.6779 53.1667 40.3846 51.8665 40.3846 50.2667C40.3846 48.6669 41.6779 47.3667 43.2692 47.3667C44.8606 47.3667 46.1538 48.6669 46.1538 50.2667C46.1538 51.8665 44.8606 53.1667 43.2692 53.1667ZM43.2692 49.3C42.738 49.3 42.3077 49.7326 42.3077 50.2667C42.3077 50.8008 42.738 51.2334 43.2692 51.2334C43.8005 51.2334 44.2308 50.8008 44.2308 50.2667C44.2308 49.7326 43.8005 49.3 43.2692 49.3Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M11.5385 54.1332C9.41828 54.1332 7.69232 52.3981 7.69232 50.2666C7.69232 48.1351 9.41828 46.3999 11.5385 46.3999C13.6587 46.3999 15.3846 48.1351 15.3846 50.2666C15.3846 52.3981 13.6587 54.1332 11.5385 54.1332ZM11.5385 48.3332C10.4784 48.3332 9.6154 49.2008 9.6154 50.2666C9.6154 51.3323 10.4784 52.1999 11.5385 52.1999C12.5986 52.1999 13.4616 51.3323 13.4616 50.2666C13.4616 49.2008 12.5986 48.3332 11.5385 48.3332Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M42.3077 38.6667C41.7764 38.6667 41.3462 38.2341 41.3462 37.7V18.3667C41.3462 9.30417 34.0144 1.93333 25 1.93333C15.9856 1.93333 8.65385 9.30417 8.65385 18.3667V37.7C8.65385 38.2341 8.22356 38.6667 7.69231 38.6667C7.16106 38.6667 6.73077 38.2341 6.73077 37.7V18.3667C6.73077 8.23842 14.9255 0 25 0C35.0745 0 43.2692 8.23842 43.2692 18.3667V37.7C43.2692 38.2341 42.8389 38.6667 42.3077 38.6667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M25 35.7666C18.8966 35.7666 14.012 30.3991 12.6466 22.3106C11.2933 22.1994 9.9904 21.2037 9.35818 19.6836C8.6803 18.0476 9.1154 16.0973 10.3942 15.0461C10.9255 14.6086 11.6563 14.4443 12.351 14.6135C12.875 14.7391 13.2668 15.1814 13.8654 15.9451C14.6971 13.5646 17.0024 8.42922 21.8101 6.81972C22.2644 6.66989 22.7596 6.8753 22.9736 7.30305C23.0192 7.39489 27.6298 16.4356 35.5745 16.4356C35.8678 16.4356 36.0409 16.2496 36.4111 15.6937C36.7019 15.2563 37.0313 14.7609 37.6466 14.6135C38.3414 14.4467 39.0721 14.6086 39.6034 15.0461C40.8798 16.0973 41.3149 18.0476 40.637 19.6836C40.0072 21.2061 38.7043 22.2018 37.351 22.3106C35.9856 30.3991 31.101 35.7666 24.9976 35.7666H25ZM13.464 20.3023C13.9423 20.3023 14.351 20.6551 14.4159 21.1385C15.4255 28.7316 19.6779 33.8332 25.0024 33.8332C30.3269 33.8332 34.5793 28.7316 35.589 21.1385C35.6563 20.6334 36.1106 20.2685 36.6058 20.3023C36.7043 20.3096 36.7981 20.3289 36.8846 20.3627C37.6058 20.5126 38.4736 19.8891 38.8678 18.9369C39.2692 17.9654 38.9207 16.977 38.3894 16.5371C38.3462 16.5009 38.2813 16.4816 38.2116 16.4767C38.1539 16.5541 38.0769 16.6701 38.0144 16.7619C37.6154 17.3612 36.9495 18.3617 35.5793 18.3617C27.8317 18.3617 23.0793 11.3365 21.6827 8.93914C17.351 10.9329 15.6034 16.745 15.3822 17.5401C15.3317 18.3037 14.8918 18.5744 14.625 18.6662C13.7813 18.9611 13.2115 18.2288 12.4904 17.3008C12.2933 17.0471 11.9784 16.6435 11.8029 16.4743C11.7308 16.4743 11.6611 16.4961 11.6154 16.5347C11.0841 16.9721 10.7356 17.963 11.137 18.9345C11.5361 19.8963 12.4255 20.5222 13.1442 20.3555C13.226 20.3265 13.3101 20.3071 13.399 20.3023C13.4207 20.3023 13.4423 20.3023 13.464 20.3023Z"
+                                                    fill="#606060" />
+                                            </g>
+                                            <defs>
+                                                <clipPath id="clip0_0_1608">
+                                                    <rect width="50" height="58" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="text">專科制</span>
+                                    </div>
+                                    <div class="item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58"
+                                            viewBox="0 0 58 58" fill="none">
+                                            <g clip-path="url(#clip0_0_1622)">
+                                                <path
+                                                    d="M6.76665 21.2666C6.23257 21.2666 5.79999 20.834 5.79999 20.3V11.6C5.79999 10.0001 7.10015 8.69995 8.69999 8.69995H33.8333C34.3432 8.69995 34.8435 8.83287 35.2833 9.08903C35.7449 9.35728 35.9044 9.94695 35.6362 10.4085C35.3703 10.8701 34.7782 11.0296 34.3167 10.7614C34.1692 10.6768 34.0025 10.6309 33.8333 10.6309H8.69999C8.1659 10.6309 7.73332 11.0635 7.73332 11.5975V20.2975C7.73332 20.8316 7.30074 21.2642 6.76665 21.2642V21.2666Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M33.8333 58H8.69999C7.10015 58 5.79999 56.6998 5.79999 55.1V49.3C5.79999 48.7659 6.23257 48.3333 6.76665 48.3333C7.30074 48.3333 7.73332 48.7659 7.73332 49.3V55.1C7.73332 55.6341 8.1659 56.0667 8.69999 56.0667H33.8333C34.3674 56.0667 34.8 55.6341 34.8 55.1V31.9C34.8 31.3659 35.2326 30.9333 35.7667 30.9333C36.3007 30.9333 36.7333 31.3659 36.7333 31.9V55.1C36.7333 56.6998 35.4332 58 33.8333 58Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M35.7667 53.1667H6.76665C6.23257 53.1667 5.79999 52.7341 5.79999 52.2001C5.79999 51.666 6.23257 51.2334 6.76665 51.2334H35.7667C36.3007 51.2334 36.7333 51.666 36.7333 52.2001C36.7333 52.7341 36.3007 53.1667 35.7667 53.1667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M9.66667 29.9667H3.86667C1.73517 29.9667 0 28.2316 0 26.1001C0 23.9686 1.73517 22.2334 3.86667 22.2334H9.66667C11.7982 22.2334 13.5333 23.9686 13.5333 26.1001C13.5333 28.2316 11.7982 29.9667 9.66667 29.9667ZM3.86667 24.1667C2.80092 24.1667 1.93333 25.0343 1.93333 26.1001C1.93333 27.1658 2.80092 28.0334 3.86667 28.0334H9.66667C10.7324 28.0334 11.6 27.1658 11.6 26.1001C11.6 25.0343 10.7324 24.1667 9.66667 24.1667H3.86667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M9.66667 35.7668H3.86667C1.73517 35.7668 0 34.0316 0 31.9001C0 29.7686 1.73517 28.0334 3.86667 28.0334H9.66667C11.7982 28.0334 13.5333 29.7686 13.5333 31.9001C13.5333 34.0316 11.7982 35.7668 9.66667 35.7668ZM3.86667 29.9668C2.80092 29.9668 1.93333 30.8344 1.93333 31.9001C1.93333 32.9659 2.80092 33.8334 3.86667 33.8334H9.66667C10.7324 33.8334 11.6 32.9659 11.6 31.9001C11.6 30.8344 10.7324 29.9668 9.66667 29.9668H3.86667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M9.66667 41.5666H3.86667C1.73517 41.5666 0 39.8314 0 37.6999C0 35.5684 1.73517 33.8333 3.86667 33.8333H9.66667C11.7982 33.8333 13.5333 35.5684 13.5333 37.6999C13.5333 39.8314 11.7982 41.5666 9.66667 41.5666ZM3.86667 35.7666C2.80092 35.7666 1.93333 36.6342 1.93333 37.6999C1.93333 38.7657 2.80092 39.6333 3.86667 39.6333H9.66667C10.7324 39.6333 11.6 38.7657 11.6 37.6999C11.6 36.6342 10.7324 35.7666 9.66667 35.7666H3.86667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M9.66667 47.3666H3.86667C1.73517 47.3666 0 45.6315 0 43.5C0 41.3685 1.73517 39.6333 3.86667 39.6333H9.66667C11.7982 39.6333 13.5333 41.3685 13.5333 43.5C13.5333 45.6315 11.7982 47.3666 9.66667 47.3666ZM3.86667 41.5666C2.80092 41.5666 1.93333 42.4342 1.93333 43.5C1.93333 44.5657 2.80092 45.4333 3.86667 45.4333H9.66667C10.7324 45.4333 11.6 44.5657 11.6 43.5C11.6 42.4342 10.7324 41.5666 9.66667 41.5666H3.86667Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M49.3 37.6999C48.9351 37.6999 48.5871 37.4921 48.4228 37.1417L43.7393 27.1053C42.6324 24.7321 40.2254 23.1999 37.6082 23.1999H28.5167C27.1851 23.1999 26.1 24.285 26.1 25.6166C26.1 26.9482 27.1851 28.0333 28.5167 28.0333H38.6667C39.2008 28.0333 39.6334 28.4659 39.6334 28.9999C39.6334 29.534 39.2008 29.9666 38.6667 29.9666H28.5167C26.1169 29.9666 24.1667 28.0164 24.1667 25.6166C24.1667 23.2169 26.1169 21.2666 28.5167 21.2666H37.6082C40.9746 21.2666 44.0679 23.2362 45.4914 26.2884L50.1749 36.3249C50.3996 36.8082 50.1918 37.3834 49.7084 37.6105C49.5755 37.6709 49.4378 37.7024 49.3 37.7024V37.6999Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M41.3999 56.8666C41.1534 56.8666 40.9045 56.7723 40.716 56.5838L35.2471 51.1173C35.0659 50.9361 34.9644 50.6896 34.9644 50.4334C34.9644 50.1772 35.0659 49.9307 35.2471 49.7495L49.1333 35.8633C49.3145 35.6821 49.561 35.5806 49.8172 35.5806C50.0734 35.5806 50.3199 35.6821 50.5011 35.8633L55.97 41.3322C56.347 41.7092 56.347 42.3207 55.97 42.7001L42.0839 56.5838C41.8954 56.7723 41.6489 56.8666 41.3999 56.8666ZM37.2989 50.4334L41.3999 54.5345L53.9183 42.0162L49.8172 37.9151L37.2989 50.4334Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M24.1667 15.4668H18.3667C17.8326 15.4668 17.4 15.0342 17.4 14.5001C17.4 13.966 17.8326 13.5334 18.3667 13.5334H24.1667C24.7008 13.5334 25.1334 13.966 25.1334 14.5001C25.1334 15.0342 24.7008 15.4668 24.1667 15.4668Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M19.3333 39.6332C19.0675 39.6332 18.8041 39.5245 18.6156 39.3142C18.3038 38.9687 18.2821 38.4515 18.5624 38.0817C18.589 38.0455 21.3247 34.4398 24.3431 30.1672C24.65 29.7322 25.2542 29.6282 25.6916 29.9352C26.1266 30.2445 26.2305 30.8462 25.9236 31.2837C24.9231 32.6998 23.954 34.0411 23.1033 35.2083C25.1043 33.971 27.6563 32.3857 30.421 30.6553C30.8729 30.3726 31.4698 30.5079 31.7526 30.9622C32.0353 31.4142 31.9 32.0111 31.4457 32.2938C25.1068 36.2644 19.8892 39.4592 19.8384 39.4907C19.6813 39.5873 19.5073 39.6332 19.3333 39.6332Z"
+                                                    fill="url(#paint0_linear_0_1622)" />
+                                                <path
+                                                    d="M45.4236 23.1999C45.1095 23.1999 44.8001 23.0477 44.6141 22.7625C44.3216 22.3154 44.4449 21.7161 44.892 21.4237C51.1777 17.3033 53.2077 15.7276 53.8022 15.1331C55.2619 13.671 56.0666 11.7305 56.0666 9.6642C56.0666 7.59795 55.2619 5.65737 53.8022 4.19528C52.3401 2.73562 50.3996 1.93087 48.3333 1.93087C46.2671 1.93087 44.3265 2.73562 42.8644 4.19528C41.9436 5.11603 39.5366 8.56945 33.3016 19.7997C33.0431 20.2661 32.4558 20.4353 31.987 20.1743C31.5206 19.9157 31.3514 19.326 31.6124 18.8596C36.7067 9.68595 40.0321 4.29195 41.499 2.82745C43.3236 1.00045 45.7523 -0.00488281 48.3333 -0.00488281C50.9143 -0.00488281 53.3431 1.00045 55.1676 2.82745C56.9946 4.65203 58 7.08078 58 9.66178C58 12.2428 56.9946 14.6715 55.1676 16.4961C54.1961 17.4676 51.1801 19.6064 45.9505 23.0356C45.7861 23.1419 45.6025 23.1927 45.4212 23.1927L45.4236 23.1999Z"
+                                                    fill="url(#paint1_linear_0_1622)" />
+                                                <path
+                                                    d="M50.2667 15.4667H46.4C45.8659 15.4667 45.4333 15.0341 45.4333 14.5V12.5667H43.5C42.9659 12.5667 42.5333 12.1341 42.5333 11.6V7.73337C42.5333 7.19928 42.9659 6.7667 43.5 6.7667H45.4333V4.83337C45.4333 4.29928 45.8659 3.8667 46.4 3.8667H50.2667C50.8007 3.8667 51.2333 4.29928 51.2333 4.83337V6.7667H53.1667C53.7007 6.7667 54.1333 7.19928 54.1333 7.73337V11.6C54.1333 12.1341 53.7007 12.5667 53.1667 12.5667H51.2333V14.5C51.2333 15.0341 50.8007 15.4667 50.2667 15.4667ZM47.3667 13.5334H49.3V11.6C49.3 11.0659 49.7326 10.6334 50.2667 10.6334H52.2V8.70003H50.2667C49.7326 8.70003 49.3 8.26745 49.3 7.73337V5.80003H47.3667V7.73337C47.3667 8.26745 46.9341 8.70003 46.4 8.70003H44.4667V10.6334H46.4C46.9341 10.6334 47.3667 11.0659 47.3667 11.6V13.5334Z"
+                                                    fill="url(#paint2_linear_0_1622)" />
+                                            </g>
+                                            <defs>
+                                                <linearGradient id="paint0_linear_0_1622" x1="22.4183" y1="28.6659"
+                                                    x2="29.4459" y2="31.6797" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_0_1622" x1="39.4271" y1="-2.57313"
+                                                    x2="53.8779" y2="2.5925" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                                <linearGradient id="paint2_linear_0_1622" x1="46.0065" y1="2.58285"
+                                                    x2="52.5017" y2="4.61515" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                                <clipPath id="clip0_0_1622">
+                                                    <rect width="58" height="58" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="text">數位化</span>
+                                    </div>
+                                    <div class="item">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="58"
+                                            viewBox="0 0 64 58" fill="none">
+                                            <g clip-path="url(#clip0_0_1638)">
+                                                <path
+                                                    d="M34.0645 58C33.4942 58 33.0323 57.5446 33.0323 56.9824V49.8291C33.0323 46.2957 34.4284 42.9734 36.9626 40.4753L51.9149 25.7362C53.4555 24.2175 55.9639 24.2175 57.5045 25.7362C59.0452 27.2549 59.0452 29.7275 57.5045 31.2462L48.2142 40.4041C47.8116 40.8009 47.1587 40.8009 46.7536 40.4041C46.3484 40.0072 46.351 39.3636 46.7536 38.9643L56.0439 29.8064C56.7794 29.0814 56.7794 27.901 56.0439 27.176C55.3084 26.451 54.111 26.451 53.3755 27.176L38.4233 41.9151C36.2787 44.0291 35.0968 46.84 35.0968 49.8291V56.9824C35.0968 57.5446 34.6349 58 34.0645 58Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M48.5161 57.9999C47.9458 57.9999 47.4839 57.5446 47.4839 56.9824V53.6474C47.4839 53.3803 47.5897 53.1259 47.7781 52.9351L59.2361 41.4318C60.9755 39.6842 61.9329 37.3616 61.9329 34.8915V13.1644C61.9329 12.0426 61.0065 11.1293 59.8684 11.1293C58.7303 11.1293 57.8039 12.0426 57.8039 13.1644V26.4561C57.8039 27.0183 57.342 27.4736 56.7716 27.4736C56.2013 27.4736 55.7394 27.0183 55.7394 26.4561V13.1644C55.7394 10.9207 57.5923 9.09424 59.8684 9.09424C62.1445 9.09424 63.9974 10.9207 63.9974 13.1644V34.889C63.9974 37.8984 62.8284 40.7271 60.7097 42.8563L49.5458 54.0646V56.9824C49.5458 57.5446 49.0839 57.9999 48.5136 57.9999H48.5161Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M29.9355 58C29.3652 58 28.9033 57.5446 28.9033 56.9824V49.8291C28.9033 46.84 27.7213 44.0291 25.5768 41.9151L10.6245 27.176C9.88906 26.451 8.69164 26.451 7.95616 27.176C7.22067 27.901 7.22067 29.0814 7.95616 29.8064L17.2465 38.9643C17.6491 39.3611 17.6491 40.0047 17.2465 40.4041C16.8439 40.8035 16.191 40.8009 15.7858 40.4041L6.49551 31.2462C4.95487 29.7275 4.95487 27.2549 6.49551 25.7362C8.03616 24.2175 10.5445 24.2175 12.0852 25.7362L27.0374 40.4753C29.5716 42.9734 30.9678 46.2957 30.9678 49.8291V56.9824C30.9678 57.5446 30.5058 58 29.9355 58Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M15.4839 57.9999C14.9135 57.9999 14.4516 57.5446 14.4516 56.9824V54.0646L3.28774 42.8563C1.16903 40.7271 0 37.8984 0 34.889V13.1644C0 10.9207 1.8529 9.09424 4.12903 9.09424C6.40516 9.09424 8.25806 10.9207 8.25806 13.1644V26.4561C8.25806 27.0183 7.79613 27.4736 7.22581 27.4736C6.65548 27.4736 6.19355 27.0183 6.19355 26.4561V13.1644C6.19355 12.0426 5.2671 11.1293 4.12903 11.1293C2.99097 11.1293 2.06452 12.0426 2.06452 13.1644V34.889C2.06452 37.3616 3.02194 39.6842 4.76129 41.4292L16.2194 52.9326C16.4077 53.1234 16.5135 53.3778 16.5135 53.6449V56.9799C16.5135 57.542 16.0516 57.9974 15.4813 57.9974L15.4839 57.9999Z"
+                                                    fill="#606060" />
+                                                <path
+                                                    d="M32 36.6316C31.7368 36.6316 31.471 36.5324 31.2697 36.3339L13.7523 19.0866C11.6052 16.9777 10.4232 14.1718 10.4232 11.1828C10.4232 8.19377 11.6052 5.38535 13.7548 3.27649C15.8993 1.16509 18.751 0.00254386 21.7806 0.00254386C24.8103 0.00254386 27.6619 1.16509 29.809 3.27649L32 5.43368L34.191 3.27649C36.3329 1.16509 39.1845 0 42.2193 0C45.2542 0 48.1032 1.16509 50.2477 3.27903C52.3923 5.39044 53.5742 8.19886 53.5742 11.1828C53.5742 14.1668 52.3923 16.9752 50.2477 19.0866L32.7303 36.3339C32.529 36.5324 32.2658 36.6316 32 36.6316ZM21.7806 2.03763C19.3006 2.03763 16.9677 2.98903 15.2129 4.71886C13.4555 6.4436 12.4877 8.7407 12.4877 11.1828C12.4877 13.6249 13.4555 15.922 15.2103 17.6468L31.9974 34.1768L48.7845 17.6493C50.5393 15.922 51.5071 13.6249 51.5071 11.1854C51.5071 8.74579 50.5393 6.44868 48.7845 4.7214C47.0322 2.99158 44.6993 2.03763 42.2168 2.03763C39.7342 2.03763 37.4013 2.98903 35.649 4.71886L32.7277 7.59596C32.3252 7.99026 31.6723 7.99026 31.2671 7.59596L28.3458 4.7214C26.591 2.99412 24.2581 2.04018 21.7781 2.04018L21.7806 2.03763Z"
+                                                    fill="url(#paint0_linear_0_1638)" />
+                                                <path
+                                                    d="M34.0645 24.4212H29.9355C29.3651 24.4212 28.9032 23.9658 28.9032 23.4036V20.351H25.8064C25.2361 20.351 24.7742 19.8956 24.7742 19.3334V15.2633C24.7742 14.7011 25.2361 14.2457 25.8064 14.2457H28.9032V11.1931C28.9032 10.6309 29.3651 10.1755 29.9355 10.1755H34.0645C34.6348 10.1755 35.0968 10.6309 35.0968 11.1931V14.2457H38.1935C38.7638 14.2457 39.2258 14.7011 39.2258 15.2633V19.3334C39.2258 19.8956 38.7638 20.351 38.1935 20.351H35.0968V23.4036C35.0968 23.9658 34.6348 24.4212 34.0645 24.4212ZM30.9677 22.3861H33.0322V19.3334C33.0322 18.7712 33.4942 18.3159 34.0645 18.3159H37.1613V16.2808H34.0645C33.4942 16.2808 33.0322 15.8254 33.0322 15.2633V12.2106H30.9677V15.2633C30.9677 15.8254 30.5058 16.2808 29.9355 16.2808H26.8387V18.3159H29.9355C30.5058 18.3159 30.9677 18.7712 30.9677 19.3334V22.3861Z"
+                                                    fill="url(#paint1_linear_0_1638)" />
+                                            </g>
+                                            <defs>
+                                                <linearGradient id="paint0_linear_0_1638" x1="23.3431" y1="-4.05428"
+                                                    x2="46.6976" y2="4.55366" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                                <linearGradient id="paint1_linear_0_1638" x1="29.1011" y1="8.59887"
+                                                    x2="37.1721" y2="11.1607" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                                <clipPath id="clip0_0_1638">
+                                                    <rect width="64" height="58" fill="white" />
+                                                </clipPath>
+                                            </defs>
+                                        </svg>
+                                        <span class="text">更安心</span>
+                                    </div>
+                                </div>
+                                <div class="buttonBox">
+                                    <a href="#" class="rdmLink">
+                                        <span class="rdmTxt">Read More</span>
+                                        <span class="svgBg">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                viewBox="0 0 9 9" fill="white">
+                                                <path
+                                                    d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rightBox">
+                            <figure class="Img">
+                                <img src="./img/500x500_1.jpg" alt="">
+                            </figure>
+                            <div class="Txt">
+                                <div class="titleBox">
+                                    <div class="leftText">
+                                        <p class="title">陳怡安</p>
+                                        <span class="subtitle">院長 | 植牙與美學牙醫</span>
+                                    </div>
+                                    <div class="rightText">
+                                        <a href="#" class="rdmLink">
+                                            <span class="rdmTxt">立即預約</span>
+                                            <span class="svgBg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9"
+                                                    viewBox="0 0 9 9" fill="white">
+                                                    <path
+                                                        d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="textBox">
+                                    <ul class="list">
+                                        <li class="item">國立台灣大學牙醫學士</li>
+                                        <li class="item">德國法蘭克福植牙研修證書</li>
+                                    </ul>
+                                    <p class="text">專長：植牙重建、全口重建、美學瓷牙冠</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> <!-- teamArea end -->
+            <!-- clinicArea -->
+            <section class="clinicArea">
+                <div class="wrap">
+                    <div class="clinicBox">
+                        <!-- 背景圖層 -->
+                        <div class="bgBox">
+                            <div class="bgLeft">
+                                <figure class="Img">
+                                    <!--背景左側點點圖-->
+                                    <img src="./img/bg.jpg" alt="">
+                                </figure>
+                            </div>
+                            <div class="bgRight">
+                            </div><!-- 背景灰色色塊 -->
+                        </div>
+
+                        <div class="centerBox">
+                            <div class="titleBox">
+                                <h2 class="title">CLINIC</h2>
+                                <h3 class="subtitle">診所環境</h3>
+                            </div>
+
+                            <div class="imgBox">
+                                <button class="slickArrow clinicImgPrev">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="black">
+                                        <path
+                                            d="M6.32307 10.2632L5.77804 10.8224C5.54726 11.0592 5.17409 11.0592 4.94576 10.8224L0.173083 5.92821C-0.0576949 5.69143 -0.0576949 5.30856 0.173083 5.07431L4.94577 0.177581C5.17654 -0.0591941 5.54972 -0.0591941 5.77804 0.177581L6.32307 0.736775C6.5563 0.97607 6.55139 1.3665 6.31325 1.60076L3.35487 4.49244L10.4108 4.49244C10.7373 4.49244 11 4.76196 11 5.09698L11 5.90302C11 6.23804 10.7373 6.50756 10.4108 6.50756L3.35487 6.50756L6.31325 9.39924C6.55384 9.6335 6.55875 10.0239 6.32307 10.2632Z"
+                                            fill="url(#paint0_linear_0_1546)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1546" x1="7.70649" y1="12.2174"
+                                                x2="1.5472" y2="10.2903" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <div class="clinicImgList">
+
+                                    <div class="imgItem">
+                                        <a href="#" class="imgLink">
+                                            <div class="item">
+                                                <figure class="Img">
+                                                    <img src="./img/500x500_2.jpg" alt="">
+                                                </figure>
+                                                <div class="text">
+                                                    <div class="title">診療間</div>
+                                                    <div class="subtitle">odfkwpo room</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imgItem">
+                                        <a href="#" class="imgLink">
+                                            <div class="item">
+                                                <figure class="Img">
+                                                    <img src="./img/500x500_2.jpg" alt="">
+                                                </figure>
+                                                <div class="text">
+                                                    <div class="title">診療間</div>
+                                                    <div class="subtitle">odfkwpo room</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imgItem">
+                                        <a href="#" class="imgLink">
+                                            <div class="item">
+                                                <figure class="Img">
+                                                    <img src="./img/500x500_2.jpg" alt="">
+                                                </figure>
+                                                <div class="text">
+                                                    <div class="title">診療間</div>
+                                                    <div class="subtitle">odfkwpo room</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="imgItem">
+                                        <a href="#" class="imgLink">
+                                            <div class="item">
+                                                <figure class="Img">
+                                                    <img src="./img/500x500_2.jpg" alt="">
+                                                </figure>
+                                                <div class="text">
+                                                    <div class="title">診療間</div>
+                                                    <div class="subtitle">odfkwpo room</div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <button class="slickArrow clinicImgNext">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="none">
+                                        <path
+                                            d="M4.67693 0.736776L5.22196 0.177582C5.45274 -0.059194 5.82591 -0.059194 6.05424 0.177582L10.8269 5.07179C11.0577 5.30856 11.0577 5.69144 10.8269 5.92569L6.05424 10.8224C5.82346 11.0592 5.45028 11.0592 5.22196 10.8224L4.67693 10.2632C4.4437 10.0239 4.44861 9.6335 4.68675 9.39924L7.64513 6.50756H0.58922C0.262694 6.50756 0 6.23804 0 5.90302V5.09698C0 4.76196 0.262694 4.49244 0.58922 4.49244H7.64513L4.68675 1.60076C4.44616 1.3665 4.44125 0.976071 4.67693 0.736776Z"
+                                            fill="url(#paint0_linear_0_1548)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1548" x1="3.29351" y1="-1.21745"
+                                                x2="9.4528" y2="0.709739" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- clinicArea end -->
+            </section>
+            <!-- reviewArea -->
+            <section class="reviewArea">
+                <div class="wrap">
+                    <div class="reviewBox">
+                        <div class="topBox">
+                            <div class="Txt">
+                                <div class="titleBox">
+                                    <div class="title">TESTIMONIALS</div>
+                                    <h2 class="subtitle">患者安心評價</h2>
+                                    <p class="text">透過每位患者的經驗分享，讓您更放心選擇我們的專業牙科服務。多年服務累積的肯定，是我們持續精進的最佳證明。</p>
+                                </div>
+                            </div>
+                            <div class="buttonBox">
+                                <a href="#" class="rdmLink">
+                                    <span class="rdmTxt">Read More</span>
+                                    <span class="svgBg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 9 9"
+                                            fill="white">
+                                            <path
+                                                d="M3.82658 0.602817L4.27251 0.145294C4.46133 -0.0484314 4.76666 -0.0484314 4.95347 0.145294L8.85839 4.14965C9.0472 4.34337 9.0472 4.65663 8.85839 4.84829L4.95347 8.85471C4.76465 9.04843 4.45932 9.04843 4.27251 8.85471L3.82658 8.39718C3.63576 8.2014 3.63977 7.88196 3.83462 7.69029L6.25511 5.32436H0.482089C0.214931 5.32436 0 5.10385 0 4.82975V4.17025C0 3.89615 0.214931 3.67564 0.482089 3.67564H6.25511L3.83462 1.30971C3.63776 1.11804 3.63375 0.798603 3.82658 0.602817Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                </a>
+                                <button class="slickPrev slickArrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="black">
+                                        <path
+                                            d="M6.32307 10.2632L5.77804 10.8224C5.54726 11.0592 5.17409 11.0592 4.94576 10.8224L0.173083 5.92821C-0.0576949 5.69143 -0.0576949 5.30856 0.173083 5.07431L4.94577 0.177581C5.17654 -0.0591941 5.54972 -0.0591941 5.77804 0.177581L6.32307 0.736775C6.5563 0.97607 6.55139 1.3665 6.31325 1.60076L3.35487 4.49244L10.4108 4.49244C10.7373 4.49244 11 4.76196 11 5.09698L11 5.90302C11 6.23804 10.7373 6.50756 10.4108 6.50756L3.35487 6.50756L6.31325 9.39924C6.55384 9.6335 6.55875 10.0239 6.32307 10.2632Z"
+                                            fill="url(#paint0_linear_0_1546)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1546" x1="7.70649" y1="12.2174"
+                                                x2="1.5472" y2="10.2903" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                                <button class="slickNext slickArrow">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"
+                                        fill="none">
+                                        <path
+                                            d="M4.67693 0.736776L5.22196 0.177582C5.45274 -0.059194 5.82591 -0.059194 6.05424 0.177582L10.8269 5.07179C11.0577 5.30856 11.0577 5.69144 10.8269 5.92569L6.05424 10.8224C5.82346 11.0592 5.45028 11.0592 5.22196 10.8224L4.67693 10.2632C4.4437 10.0239 4.44861 9.6335 4.68675 9.39924L7.64513 6.50756H0.58922C0.262694 6.50756 0 6.23804 0 5.90302V5.09698C0 4.76196 0.262694 4.49244 0.58922 4.49244H7.64513L4.68675 1.60076C4.44616 1.3665 4.44125 0.976071 4.67693 0.736776Z"
+                                            fill="url(#paint0_linear_0_1548)" />
+                                        <defs>
+                                            <linearGradient id="paint0_linear_0_1548" x1="3.29351" y1="-1.21745"
+                                                x2="9.4528" y2="0.709739" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="#88BCFF" />
+                                                <stop offset="1" stop-color="#7691FF" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bottomBox">
+                            <div class="dataList">
+
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="img/review1.jpg" alt="患者照片">
+                                        </figure>
+                                        <div class="Txt">
+                                            <p class="title">
+                                                「洗牙過程很舒服，醫師會細心講解，<br>
+                                                讓我不再害怕看牙。」
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="img/500x500_1.jpg" alt="患者照片">
+                                        </figure>
+                                        <div class="Txt">
+                                            <p class="title">
+                                                「洗牙過程很舒服，醫師會細心講解，<br>
+                                                讓我不再害怕看牙。」
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="img/500x500_1.jpg" alt="患者照片">
+                                        </figure>
+                                        <div class="Txt">
+                                            <p class="title">
+                                                「洗牙過程很舒服，醫師會細心講解，<br>
+                                                讓我不再害怕看牙。」
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="img/500x500_1.jpg" alt="患者照片">
+                                        </figure>
+                                        <div class="Txt">
+                                            <p class="title">
+                                                「洗牙過程很舒服，醫師會細心講解，<br>
+                                                讓我不再害怕看牙。」
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dataItem">
+                                    <div class="item">
+                                        <figure class="Img">
+                                            <img src="img/500x500_1.jpg" alt="患者照片">
+                                        </figure>
+                                        <div class="Txt">
+                                            <p class="title">
+                                                「洗牙過程很舒服，醫師會細心講解，<br>
+                                                讓我不再害怕看牙。」
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- reviewArea end -->
+        </main>
+        <!-- mainArea end -->
+
+        <footer class="footer">
+            <!-- footer -->
+            <div class="wrap">
+                <div class="topBox">
+                    <nav class="navBox">
+                        <ul class="navList">
+                            <li class="text">關於我們</li>
+                            <li class="text">服務項目</li>
+                            <li class="text">醫師團隊</li>
+                            <li class="text">最新消息</li>
+                        </ul>
+                    </nav>
+                    <div class="hourBox">
+                        <span class="hoursTitle">看診時間 | </span>
+                        <span class="hoursTxt">週一至週六 10:00-19:00（週日休診）</span>
+                    </div>
+                </div>
+
+                <div class="bottomBox">
+                    <div class="Txt">
+                        <div class="textBox">
+                            <div class="item">
+                                <p class="title">台北分店</p>
+                                <p class="textAddress">地址：台北市OO區OO路123號</p>
+                                <p class="text">電話：02-1234-5678</p>
+                                <p class="text">Email：example@example.com</p>
+                            </div>
+                            <div class="item">
+                                <p class="title">台中分店</p>
+                                <p class="textAddress">地址：台中市OO區OO路123號</p>
+                                <p class="text">電話：04-1234-5678</p>
+                                <p class="text">Email：example@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonBox">
+                        <div class="activeBox">
+                            <span><a href="#" class="contactBtn">線上預約</a></span>
+                            <span><a href="#" class="contactBtn">聯絡我們</a></span>
+                        </div>
+                        <div class="socialBox">
+                            <ul class="socialList">
+                                <li>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="25"
+                                            viewBox="0 0 14 25" fill="none">
+                                            <path
+                                                d="M12.5122 14.0625L13.2065 9.53809H8.86523V6.60205C8.86523 5.36426 9.47168 4.15771 11.416 4.15771H13.3896V0.305664C13.3896 0.305664 11.5986 0 9.88623 0C6.31104 0 3.97412 2.16699 3.97412 6.08984V9.53809H0V14.0625H3.97412V25H8.86523V14.0625H12.5122Z"
+                                                fill="url(#paint0_linear_0_1729)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_0_1729" x1="4.00899" y1="-2.76693"
+                                                    x2="12.0155" y2="-1.4252" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                            viewBox="0 0 23 23" fill="none">
+                                            <path
+                                                d="M13.9694 8.84063V12.4908C13.9694 12.5833 13.8975 12.6551 13.8051 12.6551H13.2199C13.1634 12.6551 13.1121 12.6243 13.0864 12.5884L11.4127 10.3295V12.496C11.4127 12.5884 11.3408 12.6603 11.2484 12.6603H10.6632C10.5708 12.6603 10.4989 12.5884 10.4989 12.496V8.84576C10.4989 8.75335 10.5708 8.68148 10.6632 8.68148H11.2433C11.2946 8.68148 11.3511 8.70715 11.3768 8.75335L13.0504 11.0123V8.84576C13.0504 8.75335 13.1223 8.68148 13.2147 8.68148H13.8C13.8924 8.67634 13.9694 8.75335 13.9694 8.84063ZM9.7596 8.67634H9.17433C9.08192 8.67634 9.01005 8.74822 9.01005 8.84063V12.4908C9.01005 12.5833 9.08192 12.6551 9.17433 12.6551H9.7596C9.85201 12.6551 9.92389 12.5833 9.92389 12.4908V8.84063C9.92389 8.75335 9.85201 8.67634 9.7596 8.67634ZM8.34777 11.7362H6.75112V8.84063C6.75112 8.74822 6.67925 8.67634 6.58684 8.67634H6.00157C5.90916 8.67634 5.83728 8.74822 5.83728 8.84063V12.4908C5.83728 12.5371 5.85268 12.573 5.88349 12.6038C5.91429 12.6295 5.95023 12.65 5.99643 12.65H8.34264C8.43505 12.65 8.50692 12.5781 8.50692 12.4857V11.9004C8.50692 11.8132 8.43505 11.7362 8.34777 11.7362ZM17.0498 8.67634H14.7036C14.6163 8.67634 14.5393 8.74822 14.5393 8.84063V12.4908C14.5393 12.5781 14.6112 12.6551 14.7036 12.6551H17.0498C17.1422 12.6551 17.2141 12.5833 17.2141 12.4908V11.9056C17.2141 11.8132 17.1422 11.7413 17.0498 11.7413H15.4531V11.1252H17.0498C17.1422 11.1252 17.2141 11.0533 17.2141 10.9609V10.3705C17.2141 10.2781 17.1422 10.2063 17.0498 10.2063H15.4531V9.59018H17.0498C17.1422 9.59018 17.2141 9.51831 17.2141 9.42589V8.84063C17.2089 8.75335 17.1371 8.67634 17.0498 8.67634ZM23 4.19443V18.8415C22.9949 21.1415 21.1107 23.0051 18.8056 23H4.15849C1.85849 22.9949 -0.00512334 21.1056 1.05819e-05 18.8056V4.15849C0.00514451 1.85849 1.89443 -0.00512334 4.19443 1.05819e-05H18.8415C21.1415 0.00514451 23.0051 1.88929 23 4.19443ZM19.8375 10.4886C19.8375 6.74085 16.0795 3.6913 11.4641 3.6913C6.84867 3.6913 3.09063 6.74085 3.09063 10.4886C3.09063 13.8462 6.06831 16.6596 10.0933 17.1935C11.0739 17.404 10.9609 17.7634 10.7402 19.0828C10.7042 19.2933 10.5708 19.9094 11.4641 19.5346C12.3574 19.1598 16.2848 16.6955 18.0458 14.6728C19.2574 13.3379 19.8375 11.9877 19.8375 10.4886Z"
+                                                fill="url(#paint0_linear_0_1730)" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_0_1730" x1="6.88643" y1="-2.54557"
+                                                    x2="19.7649" y2="1.484" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="#88BCFF" />
+                                                    <stop offset="1" stop-color="#7691FF" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="copyright">Copyright ©iBest.com All Rights Reserved. Design - iBest</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('.bannerArea .dataList').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: $('.bannerArea .slickPrev'),
+                nextArrow: $('.bannerArea .slickNext'),
+                arrows: true,
+                fade: true,
+                asNavFor: '.imgList, .bgList',
+            });
+            $('.imgList').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.dataList, .bgList',
+            })
+            $('.bgList').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                arrows: false,
+                fade: true,
+                asNavFor: '.dataList, .imgList',
+            });
+            $('.newsArea .dataList').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: $('.newsArea .slickPrev'),
+                nextArrow: $('.newsArea .slickNext'),
+                arrows: true,
+                speed: 600,
+                cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',  // 緩動曲線，比預設的 ease 更有質感
+                // autoplay: true,
+                autoplaySpeed: 4000,
+                pauseOnHover: true,      // 滑鼠移上去暫停
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: true,
+                            centerPadding: '100px', // 左右各露出 100px
+                        },
+                        arrows: false,
+                    }
+                ]
+            });
+            $('.clinicImgList').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: $('.clinicImgPrev'),
+                nextArrow: $('.clinicImgNext'),
+                arrows: true,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: { slidesToShow: 2 }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 1,
+                            centerMode: true,
+                            centerPadding: '100px', // 左右各露出 100px
+                            infinite: true, // 無限循環；
+                        },
+                        arrows: false,
+                    }
+                ]
+            });
+            $('.reviewArea .dataList').slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                prevArrow: $('.reviewArea .slickPrev'),
+                nextArrow: $('.reviewArea .slickNext'),
+                arrows: true,
+
+                speed: 600,
+                cssEase: 'cubic-bezier(0.645, 0.045, 0.355, 1)',  // 緩動曲線，比預設的 ease 更有質感
+                // autoplay: true,
+                autoplaySpeed: 4000,
+                pauseOnHover: true,      // 滑鼠移上去暫停
+            });
+        });
+
+    </script>
+</body>
+
+</html>
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700;900&family=Noto+Serif+TC:wght@300;400;500;600;700;900&display=swap");
+
+// ─── Variables ───
+$blue-light: #88bcff;
+$blue-dark: #7691ff;
+$gradient: linear-gradient(107deg, $blue-light 20.17%, $blue-dark 66.99%);
+$text-main: #2d2d2d;
+$text-sub: #535353;
+$text-muted: #606060;
+$text-light: #b7b7b7;
+$border: #e3e3e3;
+$border-light: #ddd;
+$line: #ccc;
+$white: #fff;
+
+$font-en: "Cormorant Garamond";
+$font-zh: "Noto Sans TC", sans-serif;
+$font-zh-serif: "Noto Serif TC", serif;
+
+$font-size-title: 56px;
+$font-size-subtitle: 24px;
+$font-size-text: 16px;
+
+@import "reset";
+
+// ─── Mixin ───
+
+@mixin wrap {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0;
+
+    // 預設首頁所有字體
+    font-family: $font-zh;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// ─── 標題、文字 ───
+
+@mixin title {
+    font-family: $font-en;
+    font-size: $font-size-title;
+    font-weight: 700;
+    line-height: 64px;
+    letter-spacing: 1.68px;
+    text-transform: uppercase;
+    @include gradient-text;
+}
+
+@mixin subtitle {
+    color: $text-sub;
+    font-family: $font-zh;
+    font-size: $font-size-subtitle;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+    margin-bottom: 40px;
+}
+
+@mixin text {
+    color: $text-muted;
+    font-family: $font-zh;
+    font-size: $font-size-text;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.32px;
+}
+
+// 漸層文字
+@mixin gradient-text {
+    background: $gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// --- 按鈕 ---
+@mixin buttonBox {
+    color: $text-muted;
+    font-family: $font-en;
+    font-size: $font-size-text;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 0.32px;
+}
+
+@mixin rdmTxt {
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+@mixin svgBg {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 19px;
+    background: $gradient;
+}
+
+@mixin slickArrow {
+    // position: absolute;
+    z-index: 2;
+
+    display: inline-flex;
+    width: 65px;
+    height: 46px;
+    padding: 10px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 35px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    background-color: $white;
+
+    // ?這邊到底要怎麼做才能跟線對齊?
+    transform: translateY(10%);
+}
+
+@mixin slickPrev {
+    margin-left: 50px;
+    margin-right: 5px;
+}
+
+// ─── 預設 ───
+
+.wrap {
+    @include wrap;
+}
+
+.title {
+    @include title;
+}
+
+.subtitle {
+    @include subtitle;
+}
+
+.text {
+    @include text;
+}
+
+.buttonBox {
+    @include buttonBox;
+}
+
+.rdmTxt {
+    @include rdmTxt;
+}
+
+.svgBg {
+    @include svgBg;
+}
+
+.slickArrow {
+    @include slickArrow;
+}
+
+.slickPrev {
+    @include slickPrev;
+}
+
+// ─── Header ───
+header {
+    .wrap {
+        max-width: 100%;
+        padding: 0 60px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border;
+    }
+
+    // ─── LOGO ───
+
+    .logo {
+        // 把LOGO推到最左邊
+        margin-right: auto;
+    }
+
+    .logoLink {
+        font-family: $font-en;
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: 0.96px;
+        text-transform: uppercase;
+        @include gradient-text;
+    }
+
+    // ─── Menu ───
+    .menu {
+        display: flex;
+        align-items: center;
+        gap: 42px;
+    }
+
+    .menuItem {
+        color: $text-main;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 28px 0;
+    }
+
+    .menuItem:hover {
+        @include gradient-text;
+    }
+
+    // ─── Func Box ───
+    .funcBox {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: 50px;
+    }
+
+    .contactBtn {
+        @include flex-center;
+        padding: 8px 35px;
+        border-radius: 37px;
+        border: 1px solid $blue-light;
+        @include gradient-text;
+    }
+
+    .contactBtn:hover {
+        background: $gradient;
+        -webkit-text-fill-color: white;
+    }
+
+    // ─── Social ───
+    .socialBox {
+        margin-left: 25px;
+    }
+
+    .socialList {
+        display: flex;
+        align-items: center;
+        // 這邊調svg間距
+        gap: 28px;
+    }
+}
+
+// ─── Banner ───
+
+.bannerArea {
+    .wrap {
+        max-width: 1536px;
+    }
+
+    .bannerBox {
+        // 讓Txt和bg圖片在同一行
+        display: flex;
+        //讓中間img浮在上面
+        position: relative;
+        width: 100%;
+    }
+
+    // --- 左、中、右版塊 ---
+    .leftBox {
+        width: 50%;
+        padding: 85px 0px 225px 175px;
+
+        position: relative;
+
+        // --- 頁碼區 ---
+        .pageBox {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            // 設定pageBox裡的顏色預設是這個顏色
+            color: $text-light;
+            font-size: $font-size-text;
+            font-weight: 500;
+            line-height: 30px;
+            letter-spacing: 0.32px;
+
+            .currentPage {
+                @include gradient-text;
+            }
+
+            .pageLine {
+                // 線的長度
+                width: 110px;
+                height: 1px;
+                border-bottom: 1px dashed $line;
+            }
+        }
+
+        // --- 標題文字 ---
+
+        // banner的標題最大所以要別設定
+        .title {
+            font-size: 80px;
+            line-height: 80px;
+            letter-spacing: 2.4px;
+            margin: 90px 0px 30px 0px;
+        }
+
+        .subtitle {
+            margin-bottom: 60px;
+        }
+
+        .text {
+            width: 445px;
+            margin-bottom: 40px;
+
+            // 分隔線
+            &::before {
+                content: "";
+                display: block;
+                width: 450px;
+                height: 1px;
+                border-top: 1px dashed rgba(0, 0, 0, 0.27);
+                margin-bottom: 10px;
+            }
+        }
+
+        // --- read more 按鈕 & slick 箭頭---
+        .buttonBox {
+            &::after {
+                content: "";
+                display: block;
+                width: 150px;
+                height: 1px;
+                border-top: 1px solid rgba(0, 0, 0, 0.27);
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .centerBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        // bannerBox的四分之一寬
+        width: 25%;
+        // ?這邊可能還要設個最大寬度?
+
+        .imgList {
+            .slick-list {
+                padding: 10px;
+            }
+        }
+
+        .imgLink {
+            position: relative;
+            display: inline-block;
+        }
+
+        .imgLink::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background: $gradient;
+            opacity: 1;
+            transform: scale(0.9) rotate(8deg);
+            border-radius: 30px;
+        }
+
+        .Img {
+            border-radius: 30px;
+            aspect-ratio: 4 / 5;
+            overflow: hidden;
+        }
+
+        img {
+            //如果不能寫在img上要怎麼寫?
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.3);
+        }
+    }
+
+    .rightBox {
+        // bannerBox的子元素，和leftBox並列，寬度各一半
+        width: 50%;
+
+        .bgImg {
+            width: auto;
+            border-radius: 10px 10px 10px 160px;
+            overflow: hidden;
+
+            margin: 10px 10px 0px 10px;
+            // 控制圖片比例
+            aspect-ratio: 940 / 865;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.3);
+            transform-origin: right bottom;
+        }
+    }
+}
+
+.marqueeBox {
+    color: #fff;
+    font-family: $font-en;
+    font-size: 140px;
+    font-weight: 700;
+    line-height: 87px; /* 62.143% */
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+
+    position: absolute;
+    top: 100%;
+    padding-left: 60px;
+    transform: translateY(-100%);
+    text-transform: uppercase;
+}
+
+.newsArea {
+    position: relative;
+    padding: 160px 0;
+    overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
+
+    .bg {
+        position: absolute;
+        top: 0px; // 上方留白
+        bottom: 0px; // 下方留白
+        left: 0px;
+        right: 30%; // 延伸到最右邊（超出畫面）
+        border-radius: 10px 120px 120px 10px;
+        background: #f6f6f6;
+        z-index: 1;
+    }
+
+    .wrap {
+        position: relative;
+        z-index: 2; // 確保內容在背景之上
+    }
+
+    .newsBox {
+        display: flex;
+        gap: 100px;
+
+        // 平板以下：改直排
+        @media (max-width: 1024px) {
+            .newsBox {
+                flex-direction: column;
+            }
+            .leftBox {
+                width: 100%;
+            }
+        }
+    }
+
+    .leftBox {
+        width: 380px;
+        padding-top: 50px;
+
+        .textBox {
+            margin-bottom: 70px;
+        }
+
+        .title {
+            white-space: nowrap; 
+        }
+
+        .text {
+
+            // 分隔線
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 1px;
+                border-top: 1px dashed rgba(0, 0, 0, 0.27);
+                margin-bottom: 10px;
+            }
+        }
+
+        .buttonBox::after {
+            content: "";
+            display: block;
+            width: 150px;
+            height: 1px;
+            border-top: 1px solid rgba(0, 0, 0, 0.27);
+            margin-top: 5px;
+        }
+    }
+
+    .rightBox {
+        min-width: 0; // 防止 flex 子項目撐破父層
+
+        // 讓右邊延伸出去
+        // 10vw = wrap 80% 兩邊各 10% 的空間
+        // 再加額外想超出畫面的量
+        margin-right: -15vw;
+
+        @media (max-width: 1024px) {
+            margin-right: 0vw;
+        }
+
+        .dataList {
+            margin: 0 -25px; // 把slick slide的padding抵消掉，讓第一個和最後一個slide對齊邊界
+
+            .slick-slide .rightText .title {
+                // 覆蓋掉 mixin 的漸層
+                background: none;
+                -webkit-text-fill-color: #606060;
+                color: #606060;
+            }
+
+            .slick-slide.slick-current .rightText .title {
+                @include gradient-text; // 只有當前卡片用漸層
+            }
+        }
+
+        .item {
+            width: 100%;
+            max-width: 470px; // 內容寬 420px + 左右 padding 各 20px
+            max-height: 420px;
+            padding: 0 25px;
+            margin: 0 auto;
+            position: relative;
+
+            .linkWrap {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 20px;
+                right: 20px;
+                z-index: 1; // 確保連結在圖片上方可點擊
+            }
+
+            .Img { 
+                border-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .Txt {
+            padding-top: 20px;
+        }
+
+        .topBox {
+            display: flex;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
+            gap: 15px;
+
+            .title {
+                font-family: $font-zh-serif;
+                font-size: 36px;
+            }
+
+            .subtitle {
+                @include gradient-text;
+                margin: 0;
+                font-size: 20px;
+                padding-bottom: 5px;
+            }
+
+            .leftText {
+                width: 80px;
+                text-align: center;
+
+                .date {
+                    font-family: $font-zh-serif;
+                    font-size: 36px;
+                    font-weight: 700;
+                    letter-spacing: 1.8px;
+                    @include gradient-text;
+                }
+                .yearMonth {
+                    color: $text-muted;
+                    font-family: $font-zh-serif;
+                    font-size: 13px;
+                    font-weight: 700;
+                    white-space: nowrap;
+                }
+            }
+            .rightText {
+                .text {
+                    // 讓這段文字顯示最多兩行，其他變成...
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
+                .title {
+                    font-family: $font-zh;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 24px; /* 120% */
+                    letter-spacing: 1px;
+
+                    white-space: nowrap;
+                }
+            }
+        }
+
+        .bottomBox {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 10px;
+
+            .text {
+                color: #666;
+                font-size: 13px;
+            }
+
+            .rdmTxt {
+                color: #606060;
+                font-family: $font-en;
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: 30px; /* 187.5% */
+                letter-spacing: 0.32px;
+            }
+        }
+    }
+}
+
+.teamArea {
+    .text {
+        margin-bottom: 40px;
+
+        // 分隔線
+        &::before {
+            content: "";
+            display: block;
+            width: 450px;
+            height: 1px;
+            border-top: 1px dashed rgba(0, 0, 0, 0.27);
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.clinicArea {
+    .clinicBox {
+        display: grid;
+    }
+
+    .bgBox {
+        grid-area: 1 / 1;
+        z-index: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .bgLeft {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .Img {
+            width: 100%;
+            max-width: 390px;
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .bgRight {
+        border-radius: 180px 10px 10px 10px;
+        background: #f6f6f6;
+        flex: 3;
+        aspect-ratio: 686 / 409;
+    }
+
+    .centerBox {
+        grid-area: 1 / 1;
+        z-index: 1;
+        width: 100%;
+        min-width: 0; /* 防止 flex/grid 子項目撐破父層 */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        padding-bottom: 100px;
+
+        .titleBox {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+
+    .imgBox {
+        width: 1435px;
+        max-width: calc(100% - 40px); // 左右各留 20px
+        margin: 0 auto;
+
+        // 讓slick arrow可以定位
+        position: relative;
+    }
+
+    .clinicImgList {
+        margin: 0px;
+
+        .slick-slide {
+            // 每個 slide 左右各 40px,slide 之間就會剛好 80px 等距
+            padding: 15px 25px;
+            box-sizing: border-box;
+        }
+
+        .imgItem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .imgLink {
+            position: relative;
+        }
+
+        .imgLink:hover::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            aspect-ratio: 420 / 330;
+            transform: rotate(4.632deg) translateX(15px);
+
+            background: $gradient;
+            opacity: 1;
+            border-radius: 10px;
+            z-index: -1;
+        }
+
+        .item {
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+        }
+
+        .Img {
+            width: 100%;
+            aspect-ratio: 420 / 330;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .text {
+            text-align: center;
+            width: auto;
+
+            // 覆蓋全站 .title / .subtitle,只在這個區塊生效
+            .title {
+                font-family: $font-zh-serif;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 32px; /* 160% */
+                letter-spacing: 1.2px;
+
+                text-transform: none;
+                // 把 mixin 的漸層字拆掉,改回純色
+                background: none;
+                background-clip: initial;
+                -webkit-background-clip: initial;
+                -webkit-text-fill-color: initial;
+
+                color: $text-sub;
+            }
+
+            .subtitle {
+                font-family: $font-zh-serif;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 32px; /* 200% */
+                letter-spacing: 0.48px;
+                @include gradient-text;
+            }
+        }
+    }
+
+    .clinicImgPrev {
+        position: absolute;
+        left: -5%;
+        top: 50%;
+    }
+    .clinicImgNext {
+        position: absolute;
+        right: -5%;
+        top: 50%;
+    }
+
+    @media (max-width: 1600px) {
+        .clinicImgPrev {
+            left: 0;
+        }
+        .clinicImgNext {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        // 手機改放在 titleBox 旁邊、或下方置中
+        .clinicImgPrev {
+            left: 35%;
+            top: 100%;
+        }
+        .clinicImgNext {
+            right: 30%;
+            top: 100%;
+        }
+    }
+}
+
+.reviewArea {
+    background-image: url("../img/reviewBg.png");
+    width: 100%;
+    height: 650px;
+
+    .reviewBox {
+        padding-top: 140px;
+
+        .title {
+            color: #fff;
+            font-weight: 600;
+            // 變成白色
+            background: none;
+            -webkit-text-fill-color: $white;
+        }
+
+        .subtitle {
+            margin-bottom: 40px;
+        }
+
+        .text {
+
+                        // 分隔線
+            &::before {
+                content: "";
+                display: block;
+                width: 450px;
+                height: 1px;
+                border-top: 1px dashed rgba(255, 255, 255, 0.59);
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    // Slick 容器需要上方留白給凸出的頭像
+    .slick-list {
+        padding-top: 55px; // 至少等於頭像凸出的高度
+        margin: -40px -17px 0; // 上 -40px 抵消 padding-top / 左右 -17px 抵消 dataItem 的 padding
+    }
+
+    .topBox {
+        margin-bottom: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .title {
+            color: $white;
+        }
+
+        .subtitle {
+            color: $white;
+        }
+
+        .text {
+            color: $white;
+        }
+    }
+
+    // --- read more 按鈕 & slick 箭頭---
+    .buttonBox {
+        color: $white;
+        &::after {
+            content: "";
+            display: block;
+            width: 160px;
+            height: 1px;
+            border-top: 1px solid $white;
+            margin-top: 5px;
+        }
+    }
+
+    .dataItem {
+        // 只管排版、間距
+        width: calc(100% / 3);
+        padding: 0 20px;
+    }
+
+    .item {
+        width: 100%;
+        max-width: 345px;
+        margin: 0 auto;
+        min-height: 145px; // 至少 140px，內容多就自動撐開
+
+        position: relative;
+        background: #fff;
+        border-radius: 10px;
+        padding-top: 80px;
+
+        .Img {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0; // 清掉 figure 的預設 margin
+
+            // 漸層邊框本體
+            background: $gradient;
+            padding: 5px; // 邊框粗細
+
+            img {
+                height: 100%;
+                object-fit: cover;
+
+                border-radius: 50%; // 內層圖片也要圓形
+                display: block; // 去掉 img 底部的空隙
+            }
+        }
+
+        // 卡片內的引言文字，不繼承 topBox 的白色
+        .Txt {
+            text-align: center;
+
+            .title {
+                color: $text-muted;
+                font-size: 14px;
+                line-height: 24px; /* 171.429% */
+                margin: 0; // 清掉 p 的預設 margin
+
+                // 取消漸層
+                background: none;
+                -webkit-text-fill-color: $text-muted;
+                color: #606060;
+
+                font-family: "$font-zh";
+                font-weight: 400;
+                letter-spacing: 0.28px;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 60px 0;
+
+    .topBox {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding-bottom: 20px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
+    }
+
+    .navList {
+        display: flex;
+        gap: 40px;
+
+        .text {
+            color: $text-main;
+        }
+    }
+
+    .bottomBox {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 40px;
+
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            margin: 0;
+        }
+
+        .textAddress {
+            color: $text-main;
+            font-weight: 400;
+            line-height: 16px;
+            letter-spacing: 0.8px;
+        }
+
+        .text {
+            margin: 0;
+        }
+    }
+
+    .textBox {
+        display: flex;
+        gap: 90px;
+    }
+
+    .buttonBox {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        text-align: end;
+    }
+
+    .activeBox {
+        display: flex;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+
+    .contactBtn {
+        @include flex-center;
+        padding: 8px 35px;
+        border-radius: 37px;
+        border: 1px solid $blue-light;
+        @include gradient-text;
+    }
+
+    .contactBtn:hover {
+        background: $gradient;
+        -webkit-text-fill-color: white;
+    }
+
+    .socialList {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+}
