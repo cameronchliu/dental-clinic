@@ -385,25 +385,50 @@ header {
     }
 
     .centerBox {
-        width: fit-content;
-
+        // 讓圖片區可以重疊在背景上
         position: absolute;
-        top: 50%;
         left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%);
-        z-index: 2;
+        width: 400px; // 圖片的寬度
+        z-index: 0;
 
-        .linkWrap {
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0; // top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 20px;
+            z-index: -1;
+
+            opacity: 0;
+            transform: rotate(0deg);
+            background: $gradient;
+
+            transition: all 0.5s ease-in-out;
+            pointer-events: none;
+        }
+
+        &:hover::before {
+            opacity: 1;
+            transform: rotate(5deg) translateX(5px);
+        }
+
+        .imgItem {
             position: relative;
-            top: 0;
-            left: 0;
-            z-index: 3;
+
+            .linkWarp {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            img {
+                border-radius: 20px;
+                width: 400px;
+                display: block;
+            }
         }
 
-        img {
-            border-radius: 30px;
-            width: 400px;
-        }
     }
 
 
@@ -502,8 +527,9 @@ header {
 
     .rightBox {
         min-width: 0; // 防止 flex 子項目撐破父層
+        padding-top: 10px; // 把 slick 整體往上推一點，和設計稿對齊
 
-        margin-right: -20vw;
+        margin-right: -20vw; // 讓slick slide可以超出右邊界，露出部分下一張卡片的內容
 
         .newsList {
             margin: 0 -25px; // 把slick slide的padding抵消掉，讓第一個和最後一個slide對齊邊界
@@ -520,37 +546,24 @@ header {
             }
         }
 
+        .newsItem {
+            &:hover .Img::before {
+                opacity: 1;
+                transform: rotate(4.6deg) translateX(15px);
+            }
+        }
+
         .item {
             width: 100%;
             padding: 20px 25px 0px;
             margin: 0 auto;
-            position: relative;
-
-            &::before {
-                content: "";
-                position: absolute;
-                top: 15px;
-                left: 25px;
-                right: 25px;
-                aspect-ratio: 420 / 260;
-                background: $gradient;
-                border-radius: 10px;
-                opacity: 0;
-                transform: rotate(0deg);
-                transition: all 0.5s ease-in-out;
-                pointer-events: none;
-                z-index: -1;
-            }
 
             .bottomBox .btn {
                 position: relative;
                 z-index: 2; // 蓋過 linkWrap 的 z-index: 1
             }
 
-            &:hover::before {
-                opacity: 1;
-                transform: rotate(4.6deg) translateX(15px);
-            }
+
 
             .linkWrap {
                 position: absolute;
@@ -564,6 +577,23 @@ header {
             .Img {
                 border-radius: 10px;
                 overflow: hidden;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 15px;
+                    left: 25px;
+                    right: 25px;
+                    aspect-ratio: 420 / 260;
+                    background: $gradient;
+                    border-radius: 10px;
+                    opacity: 0;
+                    transform: rotate(0deg);
+                    transition: all 0.5s ease-in-out;
+                    pointer-events: none;
+                    z-index: -1;
+                }
 
                 img {
                     width: 100%;

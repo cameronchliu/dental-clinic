@@ -305,23 +305,41 @@ header .socialList {
   margin-top: 5px;
 }
 .bannerArea .centerBox {
-  width: -moz-fit-content;
-  width: fit-content;
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
-}
-.bannerArea .centerBox .linkWrap {
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 3;
-}
-.bannerArea .centerBox img {
-  border-radius: 30px;
   width: 400px;
+  z-index: 0;
+}
+.bannerArea .centerBox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transform: rotate(0deg);
+  background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+.bannerArea .centerBox:hover::before {
+  opacity: 1;
+  transform: rotate(5deg) translateX(5px);
+}
+.bannerArea .centerBox .imgItem {
+  position: relative;
+}
+.bannerArea .centerBox .imgItem .linkWarp {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.bannerArea .centerBox .imgItem img {
+  border-radius: 20px;
+  width: 400px;
+  display: block;
 }
 .bannerArea .marqueeBox {
   color: #f5cece;
@@ -400,6 +418,7 @@ header .socialList {
 }
 .newsArea .rightBox {
   min-width: 0;
+  padding-top: 10px;
   margin-right: -20vw;
 }
 .newsArea .rightBox .newsList {
@@ -416,13 +435,33 @@ header .socialList {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.newsArea .rightBox .newsItem:hover .Img::before {
+  opacity: 1;
+  transform: rotate(4.6deg) translateX(15px);
+}
 .newsArea .rightBox .item {
   width: 100%;
   padding: 20px 25px 0px;
   margin: 0 auto;
+}
+.newsArea .rightBox .item .bottomBox .btn {
+  position: relative;
+  z-index: 2;
+}
+.newsArea .rightBox .item .linkWrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.newsArea .rightBox .item .Img {
+  border-radius: 10px;
+  overflow: hidden;
   position: relative;
 }
-.newsArea .rightBox .item::before {
+.newsArea .rightBox .item .Img::before {
   content: "";
   position: absolute;
   top: 15px;
@@ -436,26 +475,6 @@ header .socialList {
   transition: all 0.5s ease-in-out;
   pointer-events: none;
   z-index: -1;
-}
-.newsArea .rightBox .item .bottomBox .btn {
-  position: relative;
-  z-index: 2;
-}
-.newsArea .rightBox .item:hover::before {
-  opacity: 1;
-  transform: rotate(4.6deg) translateX(15px);
-}
-.newsArea .rightBox .item .linkWrap {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 20px;
-  right: 20px;
-  z-index: 1;
-}
-.newsArea .rightBox .item .Img {
-  border-radius: 10px;
-  overflow: hidden;
 }
 .newsArea .rightBox .item .Img img {
   width: 100%;
