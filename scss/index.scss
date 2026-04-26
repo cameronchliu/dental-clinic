@@ -289,24 +289,24 @@ header {
     padding: 80px 0 250px 0;
     margin-bottom: 150px;
 
+    .wrap {
+        max-width: 1536px;
+    }
+
     .bgBox {
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 51%;
+        left: 52%;
         right: 0;
 
         padding: 10px 10px 0 0; // 讓圖片之間有空隙，但最左邊和最右邊不會有空隙
-        
+
         img {
             border-radius: 10px 10px 10px 160px;
             aspect-ratio: 940 / 865;
             width: 100%;
         }
-    }
-
-    .wrap {
-        max-width: 1536px;
     }
 
     .bannerBox {
@@ -394,8 +394,6 @@ header {
         transform: translate(-50%, -50%);
         z-index: 2;
         // bannerBox的四分之一寬
-        width: 25%;
-        // ?這邊可能還要設個最大寬度?
 
         .imgList {
             .slick-list {
@@ -403,37 +401,16 @@ header {
             }
         }
 
-        .imgLink {
+        .linkWrap {
             position: relative;
-            display: inline-block;
-        }
-
-        .imgLink::before {
-            content: "";
-            position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-
-            background: $gradient;
-            opacity: 1;
-            transform: scale(0.9) rotate(8deg);
-            border-radius: 30px;
-        }
-
-        .Img {
-            border-radius: 30px;
-            aspect-ratio: 4 / 5;
-            overflow: hidden;
+            z-index: 2;
         }
 
         img {
-            //如果不能寫在img上要怎麼寫?
+            border-radius: 30px;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scale(1.3);
         }
     }
 
