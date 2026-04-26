@@ -247,7 +247,6 @@ header .socialList {
   width: 100%;
 }
 .bannerArea .bannerBox {
-  display: flex;
   position: relative;
   width: 100%;
 }
@@ -306,24 +305,23 @@ header .socialList {
   margin-top: 5px;
 }
 .bannerArea .centerBox {
+  width: -moz-fit-content;
+  width: fit-content;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-.bannerArea .centerBox .imgList .slick-list {
-  padding: 10px;
-}
 .bannerArea .centerBox .linkWrap {
   position: relative;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
 }
 .bannerArea .centerBox img {
   border-radius: 30px;
-  width: 100%;
+  width: 400px;
 }
 .bannerArea .marqueeBox {
   color: #f5cece;

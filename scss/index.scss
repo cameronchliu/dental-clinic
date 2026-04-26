@@ -310,9 +310,6 @@ header {
     }
 
     .bannerBox {
-        // 讓Txt和bg圖片在同一行
-        display: flex;
-        //讓中間img浮在上面
         position: relative;
         width: 100%;
     }
@@ -388,29 +385,24 @@ header {
     }
 
     .centerBox {
+        width: fit-content;
+
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 2;
-        // bannerBox的四分之一寬
-
-        .imgList {
-            .slick-list {
-                padding: 10px;
-            }
-        }
 
         .linkWrap {
             position: relative;
             top: 0;
             left: 0;
-            z-index: 2;
+            z-index: 3;
         }
 
         img {
             border-radius: 30px;
-            width: 100%;
+            width: 400px;
         }
     }
 
