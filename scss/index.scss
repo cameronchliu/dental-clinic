@@ -119,14 +119,13 @@ $font-size-text: 16px;
     border-radius: 35px;
     border: 1px solid #ddd;
     cursor: pointer;
-    background-color: $white;
+    background-color: transparent;
 
-    // ?這邊到底要怎麼做才能跟線對齊?
     transform: translateY(10%);
 }
 
 @mixin slickPrev {
-    margin-left: 60px;
+    // margin-left: 60px;
     margin-right: 5px;
 }
 
@@ -171,6 +170,7 @@ $font-size-text: 16px;
 .btn {
     display: inline-flex;
     align-items: center;
+    margin-right: 50px;
 
     .svgBg {
         transition: transform 0.3s ease;
@@ -428,9 +428,7 @@ header {
                 display: block;
             }
         }
-
     }
-
 
     .marqueeBox {
         color: #f5cece;
@@ -452,41 +450,64 @@ header {
     }
 }
 
-
 .newsArea {
     position: relative;
     padding: 160px 0;
     overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
 
+    // ─── RWD：整區上下留白依螢幕縮小 ───
+    @media (max-width: 1180px) {
+        padding: 120px 0; // 平板：縮小上下空間
+    }
+
+    @media (max-width: 768px) {
+        padding: 80px 0 60px; // 手機：再縮一階
+    }
+
+    @media (max-width: 480px) {
+        padding: 60px 0 40px; // 小手機：最緊湊
+    }
+
     .bg {
         position: absolute;
-        top: 0px; // 上方留白
-        bottom: 0px; // 下方留白
+        top: 5px; // 上方留白
+        bottom: 30px; // 下方留白
         left: 0px;
         right: 30%; // 延伸到最右邊（超出畫面）
         border-radius: 10px 120px 120px 10px;
         background: #f6f6f6;
         z-index: 1;
+
+        // 平板以下：bg 改成全寬、圓角縮小（直排版型用簡單方塊）
+        @media (max-width: 1180px) {
+            right: 0;
+            border-radius: 10px;
+        }
     }
 
     .wrap {
         position: relative;
         z-index: 2; // 確保內容在背景之上
+        padding: 0 60px; // 桌機左右內距
+
+        // ─── RWD：左右 padding 依螢幕縮小 ───
+        @media (max-width: 1180px) {
+            padding: 0 40px; // 平板
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 20px; // 手機
+        }
     }
 
     .newsBox {
         display: flex;
-        gap: 100px;
+        gap: 100px; // 桌機：左右兩欄水平間距
 
-        // 平板以下：改直排
-        @media (max-width: 1024px) {
-            .newsBox {
-                flex-direction: column;
-            }
-
-            .leftBox {
-                width: 100%;
-            }
+        // 平板以下：改直排，gap 變成上下間距
+        @media (max-width: 1180px) {
+            flex-direction: column;
+            gap: 50px;
         }
     }
 
@@ -494,8 +515,20 @@ header {
         width: 380px;
         padding-top: 50px;
 
+        // 直排時 leftBox 撐滿，且不再需要上方對齊用 padding
+        @media (max-width: 1180px) {
+            width: 100%;
+            padding-top: 0;
+            text-align: center;
+        }
+
         .textBox {
             margin-bottom: 70px;
+
+            // 直排時文字區與輪播間距縮短
+            @media (max-width: 1180px) {
+                margin-bottom: 30px;
+            }
         }
 
         .title {
@@ -503,7 +536,6 @@ header {
         }
 
         .text {
-
             // 分隔線
             &::before {
                 content: "";
@@ -523,16 +555,67 @@ header {
             border-top: 1px solid rgba(0, 0, 0, 0.27);
             margin-top: 5px;
         }
+
+        .actionArea {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            @media (max-width: 1180px) {
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .btnBox::after {
+                @media (max-width: 1180px) {
+                    margin: 5px auto 0;
+                }
+            }
+        }
+
+        .arrowGroup {
+            display: flex;
+            gap: 10px;
+            transform: translateY(-10%);
+            @media (max-width: 1180px) {
+                margin-top: 20px;
+                justify-content: center;
+            }
+        }
     }
 
     .rightBox {
         min-width: 0; // 防止 flex 子項目撐破父層
-        padding-top: 10px; // 把 slick 整體往上推一點，和設計稿對齊
 
-        margin-right: -20vw; // 讓slick slide可以超出右邊界，露出部分下一張卡片的內容
+        margin-right: -15vw; // 讓 slick slide 可以超出右邊界，露出部分下一張卡片的內容
+
+        // ─── RWD：1920px 以上 ───
+        // 確保每個 newsItem 圖片本體至少 420px
+        // 計算：3 slides × (420 + 55間距) = 1425px
+        // wrap=1440 - leftBox(380) - gap(100) = 960，差額 465px 用負 margin 補
+        @media (min-width: 1920px) {
+            margin-right: -465px;
+        }
+
+        // ─── RWD：平板以下 ───
+        // 直排時 rightBox 撐滿父層，不需要負 margin 讓 slide 露出邊界
+        @media (max-width: 1180px) {
+            margin-right: 0;
+            width: 100%;
+        }
 
         .newsList {
-            margin: 0 -25px; // 把slick slide的padding抵消掉，讓第一個和最後一個slide對齊邊界
+            // slide 之間 55px 間距：每個 slick-slide 左右各 padding 27.5px
+            .slick-list {
+                padding-top: 20px; // 預留 hover 時偽元素往上外擴的空間
+                margin: -20px -27.5px 0; // 抵消 padding-top 與左右 slide padding
+            }
+
+            .slick-slide {
+                padding: 0 27.5px;
+                box-sizing: border-box;
+            }
 
             .slick-slide .rightText .title {
                 // 覆蓋掉 mixin 的漸層
@@ -547,45 +630,45 @@ header {
         }
 
         .newsItem {
+            width: 100%;
+
             &:hover .Img::before {
                 opacity: 1;
-                transform: rotate(4.6deg) translateX(15px);
+                transform: rotate(4deg) translate(10px, -5px);
             }
         }
 
         .item {
             width: 100%;
-            padding: 20px 25px 0px;
-            margin: 0 auto;
+            position: relative; // 讓下面的 linkWrap 可以絕對定位在這個 item 上
 
             .bottomBox .btn {
                 position: relative;
                 z-index: 2; // 蓋過 linkWrap 的 z-index: 1
             }
 
-
-
             .linkWrap {
                 position: absolute;
+                z-index: 1; // 確保連結在圖片上方可點擊
                 top: 0;
                 bottom: 0;
-                left: 20px;
-                right: 20px;
-                z-index: 1; // 確保連結在圖片上方可點擊
+                left: 0;
+                right: 0;
             }
 
             .Img {
-                border-radius: 10px;
-                overflow: hidden;
+                // overflow: hidden;
                 position: relative;
 
                 &::before {
+                    width: 100%;
+                    height: 100%;
                     content: "";
                     position: absolute;
-                    top: 15px;
-                    left: 25px;
-                    right: 25px;
-                    aspect-ratio: 420 / 260;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
                     background: $gradient;
                     border-radius: 10px;
                     opacity: 0;
@@ -596,24 +679,31 @@ header {
                 }
 
                 img {
+                    border-radius: 10px;
                     width: 100%;
                 }
             }
         }
 
         .Txt {
-            padding-top: 20px;
+            padding-top: 25px;
         }
 
         .topBox {
             display: flex;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
             border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
-            gap: 15px;
+            gap: 20px; // 日期欄與標題欄的間距
+
+            // 小手機：日期與標題距離再縮一點，避免擠壓
+            @media (max-width: 480px) {
+                gap: 12px;
+            }
 
             .title {
                 font-family: $font-zh-serif;
                 font-size: 36px;
+                margin-bottom: 10px;
             }
 
             .subtitle {
@@ -624,15 +714,33 @@ header {
             }
 
             .leftText {
-                width: 80px;
+                min-width: 90px;
                 text-align: center;
+
+                // 小手機：縮小日期欄寬度，把空間讓給標題
+                @media (max-width: 480px) {
+                    min-width: 70px;
+                }
 
                 .date {
                     font-family: $font-zh-serif;
                     font-size: 36px;
                     font-weight: 700;
                     letter-spacing: 1.8px;
+
                     @include gradient-text;
+
+                    padding-top: 10px;
+                    margin-bottom: 10px;
+
+                    // ─── RWD：日期字級依螢幕縮小 ───
+                    @media (max-width: 1180px) {
+                        font-size: 32px;
+                    }
+
+                    @media (max-width: 480px) {
+                        font-size: 26px;
+                    }
                 }
 
                 .yearMonth {
@@ -645,6 +753,8 @@ header {
             }
 
             .rightText {
+                min-width: 0; // flex 子項預設最小寬度=內容寬，要設 0 才能讓 ellipsis 觸發
+
                 .text {
                     // 讓這段文字顯示最多兩行，其他變成...
                     display: -webkit-box;
@@ -661,7 +771,19 @@ header {
                     /* 120% */
                     letter-spacing: 1px;
 
+                    // 標題單行+超出顯示「…」，避免換行撐破卡片
                     white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    // ─── RWD：標題字級依螢幕縮小 ───
+                    @media (max-width: 1180px) {
+                        font-size: 18px;
+                    }
+
+                    @media (max-width: 480px) {
+                        font-size: 16px;
+                    }
                 }
             }
         }
@@ -675,6 +797,8 @@ header {
                 color: #666;
                 font-size: 13px;
                 position: relative;
+
+                padding-left: 20px; // 讓文字往右內縮
 
                 &::after {
                     content: "";
@@ -698,6 +822,7 @@ header {
                 line-height: 30px;
                 /* 187.5% */
                 letter-spacing: 0.32px;
+                margin-right: 35px;
             }
         }
     }
@@ -722,50 +847,47 @@ header {
 .clinicArea {
     position: relative;
     padding: 120px 0;
+    overflow: hidden;
+
+    .clinicBox {
+        width: 100%;
+    }
 
     .bgRight {
         position: absolute;
-        top: 0;
+        top: 15px;
         bottom: 10px;
-        left: 30%;
+        left: 28%;
         right: 10px;
         border-radius: 180px 10px 10px 10px;
         background: #f6f6f6;
+
+        z-index: -1;
     }
 
     .bgLeft {
         position: absolute;
         top: 50%;
-        left: 5%;
-        transform: translateY(-50%);
+
+        left: 3.5%;
+        transform: translateY(-60%);
         display: flex;
         justify-content: center;
         align-items: center;
 
-        .Img {
-            width: 100%;
-            max-width: 390px;
-            aspect-ratio: 1 / 1;
-            overflow: hidden;
+        z-index: -1;
 
+        .Img {
             img {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
             }
         }
     }
 
-    .clinicBox {
-        display: grid;
-    }
-
     .centerBox {
-        grid-area: 1 / 1;
-        z-index: 1;
         width: 100%;
-        min-width: 0;
         /* 防止 flex/grid 子項目撐破父層 */
+        min-width: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -773,7 +895,6 @@ header {
 
         .titleBox {
             text-align: center;
-            margin-bottom: 50px;
         }
 
         .subtitle {
@@ -782,39 +903,54 @@ header {
     }
 
     .imgBox {
-        width: 1435px;
-        max-width: calc(100% - 40px); // 左右各留 20px
-        margin: 0 auto;
+        width: 100%; // 只顯示三張slick-slide，超出部分會被裁切掉
+        padding-top: 35px;
 
         // 讓slick arrow可以定位
         position: relative;
+
+        .clinicImgPrev {
+            background-color: $white; // 讓箭頭背景變白，遮住背景圖
+        }
     }
 
-    .clinicImgList {
-        margin: 0px;
+    .clinicList {
+        .slick-list {
+            margin: 0 -50px;
+        }
 
         .slick-slide {
             // 每個 slide 左右各 40px,slide 之間就會剛好 80px 等距
-            padding: 15px 25px;
-            box-sizing: border-box;
+            padding: 15px 50px;
         }
 
         .imgItem {
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            &:hover .Img::before {
+                opacity: 1;
+                transform: rotate(4.6deg) translateX(15px);
+            }
         }
 
         .imgLink {
+            position: relative;
+        }
+
+        .item {
+            margin: 0 auto;
+        }
+
+        .Img {
+            margin-bottom: 20px;
             position: relative;
 
             &::before {
                 content: "";
                 position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                aspect-ratio: 420 / 330;
+                inset: 0;
                 background: $gradient;
                 border-radius: 10px;
                 opacity: 0;
@@ -823,37 +959,14 @@ header {
                 pointer-events: none;
                 z-index: -1;
             }
-
-            &:hover::before {
-                opacity: 1;
-                transform: rotate(4.6deg) translateX(15px);
-            }
-        }
-
-        .item {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-
-        .Img {
-            width: 100%;
-            aspect-ratio: 420 / 330;
-            border-radius: 10px;
-            overflow: hidden;
-            margin: 0;
-            margin-bottom: 20px;
         }
 
         img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            border-radius: 10px;
         }
 
         .text {
             text-align: center;
-            width: auto;
 
             // 覆蓋全站 .title / .subtitle,只在這個區塊生效
             .title {
@@ -878,7 +991,7 @@ header {
                 font-family: $font-zh-serif;
                 font-size: 16px;
                 font-weight: 600;
-                line-height: 32px;
+                line-height: 24px;
                 /* 200% */
                 letter-spacing: 0.48px;
                 @include gradient-text;
@@ -888,13 +1001,13 @@ header {
 
     .clinicImgPrev {
         position: absolute;
-        left: -5%;
+        left: -8%;
         top: 50%;
     }
 
     .clinicImgNext {
         position: absolute;
-        right: -5%;
+        right: -8%;
         top: 50%;
     }
 
@@ -909,7 +1022,6 @@ header {
     }
 
     @media (max-width: 768px) {
-
         // 手機改放在 titleBox 旁邊、或下方置中
         .clinicImgPrev {
             left: 35%;
@@ -927,6 +1039,7 @@ header {
     background-image: url("../img/reviewBg.png");
     width: 100%;
     height: 650px;
+    overflow: hidden;
 
     .reviewBox {
         padding-top: 140px;
@@ -944,7 +1057,6 @@ header {
         }
 
         .text {
-
             // 分隔線
             &::before {
                 content: "";
