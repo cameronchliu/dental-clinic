@@ -354,19 +354,21 @@ header .socialList {
 .bannerArea .marqueeBox {
   font-family: "Cormorant Garamond";
   font-size: 140px;
-  font-weight: 700;
-  line-height: 87px;
-  letter-spacing: 4.2px;
+  font-weight: 500;
+  line-height: 90px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   pointer-events: none;
-  position: absolute;
-  padding-left: 60px;
+  position: relative;
+  margin-top: 90px;
+  margin-left: 40px;
 }
 .bannerArea .marqueeBox .marqueeWhite {
   position: absolute;
   top: 0;
   left: 0;
-  color: #f5cece;
+  color: #fff;
+  clip-path: inset(0 0 0 65%);
 }
 .bannerArea .marqueeBox .marqueeGradient {
   position: absolute;
@@ -376,6 +378,8 @@ header .socialList {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0.1;
+  clip-path: inset(0 35% 0 0);
 }
 
 .newsArea {
