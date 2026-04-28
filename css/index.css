@@ -443,7 +443,7 @@ header .socialList {
 }
 @media (max-width: 360px) {
   .newsArea .wrap {
-    padding: 0 14px;
+    padding: 0 15px;
   }
 }
 .newsArea .newsBox {
@@ -507,43 +507,31 @@ header .socialList {
   border-top: 1px solid rgba(0, 0, 0, 0.27);
   margin-top: 5px;
 }
-.newsArea .leftBox .actionArea {
+.newsArea .leftBox .actionBox {
   display: flex;
   align-items: center;
-  position: relative;
 }
 @media (max-width: 1180px) {
-  .newsArea .leftBox .actionArea {
+  .newsArea .leftBox .actionBox {
     flex-direction: column;
     justify-content: center;
     gap: 30px;
   }
 }
 @media (max-width: 1180px) {
-  .newsArea .leftBox .actionArea .btn {
+  .newsArea .leftBox .actionBox .btn {
     margin-right: 0;
   }
 }
 @media (max-width: 1180px) {
-  .newsArea .leftBox .actionArea .btnTxt {
+  .newsArea .leftBox .actionBox .btnTxt {
     margin-left: 20px;
-  }
-}
-@media (max-width: 1180px) {
-  .newsArea .leftBox .actionArea .btnBox::after {
-    margin: 5px auto 0;
   }
 }
 .newsArea .leftBox .arrowGroup {
   display: flex;
   gap: 10px;
   transform: translateY(-10%);
-}
-@media (max-width: 1180px) {
-  .newsArea .leftBox .arrowGroup {
-    margin-top: 20px;
-    justify-content: center;
-  }
 }
 .newsArea .rightBox {
   width: calc(100% - 380px);
@@ -1538,4 +1526,4 @@ header .socialList {
   display: flex;
   gap: 10px;
   justify-content: flex-end;
-}
+}/*# sourceMappingURL=index.css.map */

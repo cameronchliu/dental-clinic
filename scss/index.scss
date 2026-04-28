@@ -494,17 +494,18 @@ header {
         padding: 45px 0 35px;
     }
 
+    // 灰色背景色塊
     .bg {
         position: absolute;
         top: 5px; // 上方留白
         bottom: 30px; // 下方留白
         left: 0px;
-        right: 30%; // 延伸到最右邊（超出畫面）
+        right: 30%; // 延伸到最左邊（超出畫面）
         border-radius: 10px 120px 120px 10px;
         background: #f6f6f6;
         z-index: 1;
 
-        // 平板以下：bg 改成全寬、圓角縮小（直排版型用簡單方塊）
+        // 平板以下：改成全寬、圓角縮小
         @media (max-width: 1180px) {
             right: 0;
             border-radius: 10px;
@@ -513,7 +514,7 @@ header {
 
     .wrap {
         position: relative;
-        z-index: 2; // 確保內容在背景之上
+        z-index: 2; // 確保內容在背景色塊之上
         padding-left: 50px;
         margin-left: auto;
         margin-right: 0;
@@ -530,12 +531,14 @@ header {
         }
 
         @media (max-width: 360px) {
-            padding: 0 14px;
+            padding: 0 15px; // 絕版手機 (iphone SE)
         }
     }
 
     .newsBox {
         display: flex;
+
+        // leftBox 和 rightBox 的間距
         gap: 100px; // 桌機：左右兩欄水平間距
 
         // 平板以下：改直排，gap 變成上下間距
@@ -549,11 +552,11 @@ header {
         width: 380px;
         padding-top: 50px;
 
-        // 直排時 leftBox 撐滿，且不再需要上方對齊用 padding
+        // 直排時 leftBox 變成全寬，且不再需要上方對齊用 padding
         @media (max-width: 1180px) {
             width: 100%;
             padding-top: 0;
-            text-align: center;
+            text-align: center; //文字從置左->變置中對齊
         }
 
         .textBox {
@@ -566,7 +569,7 @@ header {
         }
 
         .title {
-            white-space: nowrap;
+            white-space: nowrap; // 讓標題不換行，保持在一行
 
             @media (max-width: 480px) {
                 font-size: 42px;
@@ -601,15 +604,14 @@ header {
             margin-top: 5px;
         }
 
-        .actionArea {
+        .actionBox {
             display: flex;
             align-items: center;
-            position: relative;
 
             @media (max-width: 1180px) {
                 flex-direction: column;
                 justify-content: center;
-                gap: 30px;
+                gap: 30px; // 直排時按鈕區上下間距
             }
 
             .btn {
@@ -619,13 +621,7 @@ header {
             }
             .btnTxt {
                 @media (max-width: 1180px) {
-                    margin-left: 20px;
-                }
-            }
-
-            .btnBox::after {
-                @media (max-width: 1180px) {
-                    margin: 5px auto 0;
+                    margin-left: 20px; //看起來更置中
                 }
             }
         }
@@ -633,11 +629,7 @@ header {
         .arrowGroup {
             display: flex;
             gap: 10px;
-            transform: translateY(-10%);
-            @media (max-width: 1180px) {
-                margin-top: 20px;
-                justify-content: center;
-            }
+            transform: translateY(-10%); // 讓箭頭往上移動，對齊設計稿的樣子
         }
     }
 
