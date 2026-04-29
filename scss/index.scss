@@ -60,7 +60,7 @@ $font-size-text: 16px;
     font-weight: 500;
     line-height: 30px;
     letter-spacing: 1.2px;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
 }
 
 @mixin text {
@@ -221,6 +221,10 @@ $font-size-text: 16px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width:480px) {
+            padding: 0 30px;            
+        }
     }
 
     // ─── LOGO ───
@@ -309,18 +313,25 @@ $font-size-text: 16px;
         position: relative;
         z-index: 3; // 確保漢堡選單在其他內容之上
 
-        .line {
-            width: 25px;
-            height: 3px;
-            margin: 6px auto;
-            background-color: $text-main;
-        }
-
         // 平板以下顯示漢堡選單
         @media (max-width: 1180px) {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            justify-content: center;
+        }
+
+        .line {
+            width: 35px;
+            height: 3px;
+            margin: 4px auto;
+            background: $gradient;
+            border-radius: 20%;
+
+            @media (max-width: 480px) {
+                width: 28px;
+                height: 2px;
+                margin: 3px auto;
+            }
         }
     }
 }
@@ -329,11 +340,16 @@ $font-size-text: 16px;
 .bannerArea {
     overflow: hidden;
     position: relative;
-    padding: 85px 0 250px 0;
-    margin-bottom: 150px;
+    padding: 85px 0 180px 0;
+    margin-bottom: 135px;
 
     .wrap {
         max-width: 1570px;
+        padding: 0;
+
+        @media (max-width:1700px) {
+                     padding: 0 100px;   
+        }
     }
 
     .bgBox {
@@ -438,8 +454,8 @@ $font-size-text: 16px;
         // 讓圖片區可以重疊在背景上
         position: absolute;
         left: 50%;
-        top: 42%;
-        transform: translate(-53%, -50%);
+        top: 45%;
+        transform: translate(-50%, -50%);
 
         width: 100%;
         max-width: 450px;
@@ -488,12 +504,13 @@ $font-size-text: 16px;
         font-size: 140px;
         font-weight: 700;
         line-height: 90px;
+        letter-spacing: 4.2px;
         text-transform: uppercase;
         pointer-events: none; // 讓滑鼠事件穿透，點擊到下面的內容
         position: relative;
 
         margin-top: 110px; // 讓跑馬燈往下移動，對齊設計稿
-        margin-left: 30px;
+        margin-left: 40px;
 
         .marqueeWhite {
             position: absolute;
@@ -536,7 +553,7 @@ $font-size-text: 16px;
 
 .newsArea {
     position: relative;
-    padding: 160px 0;
+    padding: 160px 0 120px;
     overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
 
     // ─── RWD：整區上下留白依螢幕縮小 ───
@@ -559,8 +576,8 @@ $font-size-text: 16px;
     // 灰色背景色塊
     .bg {
         position: absolute;
-        top: 5px; // 上方留白
-        bottom: 30px; // 下方留白
+        top: 15px; // 上方留白
+        bottom: 0px; // 下方留白
         left: 0px;
         right: 30%; // 延伸到最左邊（超出畫面）
         border-radius: 10px 120px 120px 10px;
@@ -993,11 +1010,9 @@ $font-size-text: 16px;
 }
 
 .aboutArea {
-    // 給bgBox定位用
+    position: relative; // 給bgBox定位用
 
-    position: relative;
-
-    padding: 120px 0 160px;
+    padding: 200px 0 160px;
 
     overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
 
@@ -1009,27 +1024,27 @@ $font-size-text: 16px;
 
         .imgLeftBottom {
             position: absolute;
-            bottom: 0;
+            bottom: 6%;
             left: 3%;
         }
 
         .imgRightTop {
             position: absolute;
-            top: 0;
+            top: 2%;
             right: 3%;
         }
 
         .imgRightDot {
             position: absolute;
             top: 10%;
-            right: 10%;
+            right: 8%;
             z-index: -1;
         }
 
         .blueGradient {
             position: absolute;
-            top: -20%;
-            left: -15%;
+            top: -15%;
+            left: -5%;
 
             width: 660px;
             height: 660px;
@@ -1051,15 +1066,16 @@ $font-size-text: 16px;
         }
 
         .marquee {
+            font-family: $font-en;
             position: absolute;
-            right: 0;
-            bottom: 0;
+            right: -1%;
+            bottom: 7%;
             z-index: -1;
 
-            opacity: 0.3;
-            font-size: 120px;
-            font-weight: 500;
-            letter-spacing: 5px;
+            opacity: 0.1;
+            font-size: 140px;
+            font-weight: 700;
+            letter-spacing: 4px;
             text-transform: uppercase;
             @include gradient-text();
         }
@@ -1080,12 +1096,17 @@ $font-size-text: 16px;
         width: 100%;
 
         padding-top: 50px; // 讓文字區往下，對齊右邊的圖片
+        margin-left: 25px;
 
         .Txt {
             margin-bottom: 70px; // 跟按鈕區的距離高度
         }
 
         .textBox {
+            .subtitle {
+                letter-spacing: 1.2px;
+            }
+
             .text {
                 margin-bottom: 40px;
 
@@ -1208,8 +1229,8 @@ $font-size-text: 16px;
 
             .Txt {
                 position: absolute;
-                bottom: -15%;
-                right: -10%;
+                bottom: -14%;
+                right: -11%;
                 z-index: 2;
 
                 width: 100%;
@@ -1264,7 +1285,7 @@ $font-size-text: 16px;
 
             .ulList {
                 color: $text-muted;
-                line-height: 25px;
+                line-height: 28px;
                 font-size: 16px;
             }
         }
@@ -1293,15 +1314,15 @@ $font-size-text: 16px;
 
         .slickPrev {
             position: absolute;
-            top: 50%;
-            left: -20%;
+            top: 48%;
+            left: -18%;
             transform: translateY(-50%);
         }
 
         .slickNext {
             position: absolute;
-            top: 50%;
-            right: -20%;
+            top: 48%;
+            right: -18%;
             transform: translateY(-50%);
         }
     }
@@ -1503,7 +1524,7 @@ $font-size-text: 16px;
         top: 50%;
     }
 
-    @media (max-width: 1600px) {
+    @media (max-width: 1700px) {
         // 小桌機:箭頭改放在圖片邊緣
         .clinicImgPrev {
             left: 0;
