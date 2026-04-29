@@ -223,7 +223,7 @@ $font-size-text: 16px;
         align-items: center;
 
         @media (max-width:480px) {
-            padding: 0 30px;            
+            padding: 0 30px;
         }
     }
 
@@ -335,6 +335,7 @@ $font-size-text: 16px;
         }
     }
 }
+
 // ─── Banner ───
 
 .bannerArea {
@@ -348,7 +349,7 @@ $font-size-text: 16px;
         padding: 0;
 
         @media (max-width:1700px) {
-                     padding: 0 100px;   
+            padding: 0 100px;
         }
     }
 
@@ -519,6 +520,7 @@ $font-size-text: 16px;
             color: $white;
             clip-path: inset(0 0 0 58%); // 只顯示右半段
         }
+
         .marqueeGradient {
             position: absolute;
             top: 0;
@@ -538,16 +540,12 @@ $font-size-text: 16px;
         height: 1120px;
         border-radius: 100%;
         background:
-            radial-gradient(
-                50% 50% at 50% 50%,
+            radial-gradient(50% 50% at 50% 50%,
                 rgba(255, 255, 255, 0) 0%,
-                #fff 100%
-            ),
-            linear-gradient(
-                107deg,
+                #fff 100%),
+            linear-gradient(107deg,
                 rgba(136, 188, 255, 0.12) 20.17%,
-                rgba(118, 145, 255, 0.12) 66.99%
-            );
+                rgba(118, 145, 255, 0.12) 66.99%);
     }
 }
 
@@ -671,6 +669,7 @@ $font-size-text: 16px;
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -706,6 +705,7 @@ $font-size-text: 16px;
                     margin-right: 0;
                 }
             }
+
             .btnTxt {
                 @media (max-width: 1180px) {
                     margin-left: 20px; //看起來更置中
@@ -729,6 +729,7 @@ $font-size-text: 16px;
         @media (max-width: 1180px) {
             width: 100%; // 直排時 rightBox 變成全寬
         }
+
         .newsList {
             margin: 0 -27.5px 0; // 抵消 padding-top 與左右 slide padding
             width: 100%;
@@ -772,6 +773,7 @@ $font-size-text: 16px;
                     opacity: 1;
                     transform: rotate(4deg) translate(10px, -5px);
                 }
+
                 .rightText .title {
                     @include gradient-text;
                     transition: all 0.3s ease-in-out;
@@ -1053,16 +1055,12 @@ $font-size-text: 16px;
 
             // ⬇️這是copy Figma的
             background:
-                radial-gradient(
-                    50% 50% at 50% 50%,
+                radial-gradient(50% 50% at 50% 50%,
                     rgba(255, 255, 255, 0) 0%,
-                    #fff 100%
-                ),
-                linear-gradient(
-                    107deg,
+                    #fff 100%),
+                linear-gradient(107deg,
                     rgba(136, 188, 255, 0.19) 20.17%,
-                    rgba(118, 145, 255, 0.19) 66.99%
-                );
+                    rgba(118, 145, 255, 0.19) 66.99%);
         }
 
         .marquee {
@@ -1145,10 +1143,8 @@ $font-size-text: 16px;
                 top: 50%;
                 left: 50%;
                 z-index: -1; // 確保背景在文字和圖示下方
-                transform: translate(
-                    -50%,
-                    -50%
-                ); // 讓偽元素的中心點對齊在iconItem的中心
+                transform: translate(-50%,
+                        -50%); // 讓偽元素的中心點對齊在iconItem的中心
 
                 width: calc(100% - 30px); // 30px是每個左右間距15px * 2
                 height: 100%;
@@ -1165,6 +1161,7 @@ $font-size-text: 16px;
                 &::before {
                     opacity: 1;
                 }
+
                 .text {
                     color: $white;
                 }
@@ -1176,6 +1173,7 @@ $font-size-text: 16px;
 
             &.hasBorder {
                 position: relative;
+
                 &::after {
                     content: "";
                     position: absolute;
@@ -1289,6 +1287,7 @@ $font-size-text: 16px;
                 font-size: 16px;
             }
         }
+
         .Img {
             position: relative;
 
@@ -1332,6 +1331,7 @@ $font-size-text: 16px;
     position: relative;
     padding: 120px 0 150px;
     margin-top: 90px;
+
     // 調整上下留白
     @media (max-width: 768px) {
         padding: 90px 0 80px;
@@ -1525,6 +1525,7 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 1700px) {
+
         // 小桌機:箭頭改放在圖片邊緣
         .clinicImgPrev {
             left: 0;
@@ -1536,6 +1537,7 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 768px) {
+
         // 手機改放在下方置中
         .clinicImgPrev {
             display: inline-flex;
@@ -1581,6 +1583,7 @@ $font-size-text: 16px;
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -1729,6 +1732,11 @@ $font-size-text: 16px;
     padding: 80px 0 70px;
     overflow: hidden;
 
+    .wrap {
+        max-width: 1520px;
+        padding: 0 40px;
+    }
+
     .topBox {
         display: flex;
         justify-content: space-between;
@@ -1737,20 +1745,63 @@ $font-size-text: 16px;
         padding-bottom: 20px;
         border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
 
+        @media (max-width:1180px) {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            align-items: flex-start; // 直排時文字靠左對齊
+        }
+
         .hourBox {
             padding-right: 5px;
             font-family: $font-zh;
             font-size: 16px;
             letter-spacing: 0.32px;
+
+            @media (max-width:480px) {
+                display: flex;
+                flex-direction: column;
+            }
+
+            @media (max-width:360px) {
+                font-size: 14px;
+            }
+
         }
+.hoursTitle {
+    &::after {
+        content: " | ";
+        margin: 0 4px;
+
+        @media (max-width: 480px) {
+            content: "";
+            display: none;
+            margin: 0;
+        }
+    }
+}
+
     }
 
     .navList {
         display: flex;
         gap: 40px;
 
+        @media (max-width:480px) {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+
+
         .text {
             color: $text-main;
+
+            @media (max-width:360px) {
+                font-size: 14px;
+            }
+
         }
 
         .navLink {
@@ -1766,9 +1817,19 @@ $font-size-text: 16px;
         justify-content: space-between;
         padding-top: 40px;
 
+        @media (max-width:1180px) {
+            flex-direction: column; // 直排
+            gap: 60px;
+        }
+
         .textBox {
             display: flex;
             gap: 75px;
+
+            @media (max-width:768px) {
+                flex-direction: column;
+            }
+
         }
 
         .item {
@@ -1793,6 +1854,7 @@ $font-size-text: 16px;
             .text {
                 color: #626262;
             }
+
             .email {
                 line-height: 5px;
             }
@@ -1804,12 +1866,27 @@ $font-size-text: 16px;
         gap: 15px;
         flex-direction: column;
         text-align: end;
+
+        @media (max-width:1180px) {
+            // margin-top: 60px;
+        }
     }
 
     .activeBox {
         display: flex;
         justify-content: flex-end;
         gap: 20px;
+
+        @media (max-width:1180px) {
+            justify-content: start; // 直排時靠左
+        }
+
+        @media (max-width:480px) {
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
     }
 
     .contactBtn {
@@ -1832,6 +1909,10 @@ $font-size-text: 16px;
 
     .socialBox {
         padding-top: 10px;
+
+        @media (max-width:1180px) {
+            justify-items: start; // 直排時靠左
+        }
     }
 
     .socialList {
@@ -1847,6 +1928,15 @@ $font-size-text: 16px;
         font-size: 14px;
         font-weight: 400;
         line-height: 0px;
+
+        @media (max-width:1180px) {
+            text-align: left; // 直排時靠左
+        }
+
+        @media (max-width:360px) {
+            font-size: 12px;
+            line-height: 15px;
+        }
 
         .link:hover {
             color: $text-main;

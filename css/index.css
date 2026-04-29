@@ -1464,6 +1464,10 @@ figure {
   padding: 80px 0 70px;
   overflow: hidden;
 }
+.footer .wrap {
+  max-width: 1520px;
+  padding: 0 40px;
+}
 .footer .topBox {
   display: flex;
   justify-content: space-between;
@@ -1471,18 +1475,52 @@ figure {
   padding-bottom: 20px;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
 }
+@media (max-width: 1180px) {
+  .footer .topBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
 .footer .topBox .hourBox {
   padding-right: 5px;
   font-family: "Noto Sans TC", sans-serif;
   font-size: 16px;
   letter-spacing: 0.32px;
 }
+@media (max-width: 480px) {
+  .footer .topBox .hourBox {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 360px) {
+  .footer .topBox .hourBox {
+    font-size: 14px;
+  }
+}
+.footer .topBox .hoursTitle::after {
+  content: " | ";
+  margin: 0 4px;
+}
 .footer .navList {
   display: flex;
   gap: 40px;
 }
+@media (max-width: 480px) {
+  .footer .navList {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
 .footer .navList .text {
   color: #2d2d2d;
+}
+@media (max-width: 360px) {
+  .footer .navList .text {
+    font-size: 14px;
+  }
 }
 .footer .navList .navLink:hover {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
@@ -1496,9 +1534,20 @@ figure {
   justify-content: space-between;
   padding-top: 40px;
 }
+@media (max-width: 1180px) {
+  .footer .bottomBox {
+    flex-direction: column;
+    gap: 60px;
+  }
+}
 .footer .bottomBox .textBox {
   display: flex;
   gap: 75px;
+}
+@media (max-width: 768px) {
+  .footer .bottomBox .textBox {
+    flex-direction: column;
+  }
 }
 .footer .bottomBox .item {
   display: flex;
@@ -1534,6 +1583,18 @@ figure {
   justify-content: flex-end;
   gap: 20px;
 }
+@media (max-width: 1180px) {
+  .footer .activeBox {
+    justify-content: start;
+  }
+}
+@media (max-width: 480px) {
+  .footer .activeBox {
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+}
 .footer .contactBtn {
   display: flex;
   justify-content: center;
@@ -1557,6 +1618,11 @@ figure {
 .footer .socialBox {
   padding-top: 10px;
 }
+@media (max-width: 1180px) {
+  .footer .socialBox {
+    justify-items: start;
+  }
+}
 .footer .socialList {
   display: flex;
   gap: 25px;
@@ -1570,7 +1636,18 @@ figure {
   font-weight: 400;
   line-height: 0px;
 }
+@media (max-width: 1180px) {
+  .footer .copyright {
+    text-align: left;
+  }
+}
+@media (max-width: 360px) {
+  .footer .copyright {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
 .footer .copyright .link:hover {
   color: #2d2d2d;
   transition: all 0.2s ease-in-out;
-}
+}/*# sourceMappingURL=index.css.map */
