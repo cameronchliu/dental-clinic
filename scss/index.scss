@@ -125,7 +125,6 @@ $font-size-text: 16px;
 }
 
 @mixin slickPrev {
-    // margin-left: 60px;
     margin-right: 5px;
 }
 
@@ -211,50 +210,56 @@ $font-size-text: 16px;
 }
 
 // ─── Header ───
-header {
-    overflow: hidden;
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $border;
+
     .wrap {
-        max-width: 100%;
+        max-width: 100%; // 讓header撐滿整個寬
         padding: 0 60px;
 
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid $border;
     }
 
     // ─── LOGO ───
 
     .logo {
-        // 把LOGO推到最左邊
-        margin-right: auto;
+        margin-right: auto; // 推到最左邊
     }
 
     .logoLink {
         font-family: $font-en;
         font-size: 32px;
         font-weight: 700;
-        letter-spacing: 0.96px;
+        letter-spacing: 1px;
         text-transform: uppercase;
         @include gradient-text;
     }
 
     // ─── Menu ───
-    .menu {
-        display: flex;
-        align-items: center;
-        gap: 42px;
-    }
+    .menuBox {
+        @media (max-width: 1180px) {
+            display: none; // 平板以下隱藏選單
+        }
 
-    .menuItem {
-        color: $text-main;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 28px 0;
-    }
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: 40px;
 
-    .menuItem:hover {
-        @include gradient-text;
+            .menuItem {
+                color: $text-main;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            .menuItem:hover {
+                transition: all 0.3s ease-in-out;
+                @include gradient-text;
+            }
+        }
     }
 
     // ─── Func Box ───
@@ -263,65 +268,88 @@ header {
         align-items: center;
         gap: 16px;
         margin-left: 50px;
+
+        @media (max-width: 1180px) {
+            display: none; // 平板以下隱藏選單
+        }
+
+        .contactBtn {
+            padding: 8px 35px;
+            border-radius: 37px;
+            border: 1px solid $blue-light;
+            @include flex-center;
+            @include gradient-text;
+
+            &:hover {
+                background: $gradient;
+                -webkit-text-fill-color: white;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+
+        // ─── Social ───
+        .socialBox {
+            margin-left: 25px;
+
+            .socialList {
+                display: flex;
+                align-items: center;
+                gap: 30px; // svg間距
+            }
+        }
     }
 
-    .contactBtn {
-        @include flex-center;
-        padding: 8px 35px;
-        border-radius: 37px;
-        border: 1px solid $blue-light;
-        @include gradient-text;
-    }
+    // ─── Hamburger Box ───
+    .hamburger {
+        display: none; // 預設先隱藏
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
 
-    .contactBtn:hover {
-        background: $gradient;
-        -webkit-text-fill-color: white;
-    }
+        position: relative;
+        z-index: 3; // 確保漢堡選單在其他內容之上
 
-    // ─── Social ───
-    .socialBox {
-        margin-left: 25px;
-    }
+        .line {
+            width: 25px;
+            height: 3px;
+            margin: 6px auto;
+            background-color: $text-main;
+        }
 
-    .socialList {
-        display: flex;
-        align-items: center;
-        // 這邊調svg間距
-        gap: 28px;
+        // 平板以下顯示漢堡選單
+        @media (max-width: 1180px) {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
     }
 }
-
 // ─── Banner ───
 
 .bannerArea {
     overflow: hidden;
     position: relative;
-    padding: 80px 0 250px 0;
+    padding: 85px 0 250px 0;
     margin-bottom: 150px;
 
     .wrap {
-        max-width: 1536px;
+        max-width: 1570px;
     }
 
     .bgBox {
         position: absolute;
         top: 0;
-        bottom: 0;
-        left: 52%;
         right: 0;
+
+        width: 100%;
+        max-width: 950px;
 
         padding: 10px 10px 0 0; // 讓圖片之間有空隙，但最左邊和最右邊不會有空隙
 
         img {
             border-radius: 10px 10px 10px 160px;
-            aspect-ratio: 940 / 865;
             width: 100%;
         }
-    }
-
-    .bannerBox {
-        position: relative;
-        width: 100%;
     }
 
     .leftBox {
@@ -383,6 +411,18 @@ header {
 
         // --- read more 按鈕 & slick 箭頭---
         .btnBox {
+            .btn {
+                margin-right: 60px;
+            }
+
+            .btnTxt {
+                margin-right: 35px;
+            }
+
+            .slickArrow {
+                transform: translateY(15%); // 讓箭頭往下移動，對齊設計稿
+            }
+
             &::after {
                 content: "";
                 display: block;
@@ -398,9 +438,12 @@ header {
         // 讓圖片區可以重疊在背景上
         position: absolute;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 400px; // 圖片的寬度
+        top: 42%;
+        transform: translate(-53%, -50%);
+
+        width: 100%;
+        max-width: 450px;
+
         z-index: 0;
 
         &::before {
@@ -433,9 +476,8 @@ header {
             }
 
             img {
+                width: 100%;
                 border-radius: 20px;
-                width: 400px;
-                display: block;
             }
         }
     }
@@ -446,13 +488,12 @@ header {
         font-size: 140px;
         font-weight: 700;
         line-height: 90px;
-        letter-spacing: 5px;
         text-transform: uppercase;
         pointer-events: none; // 讓滑鼠事件穿透，點擊到下面的內容
         position: relative;
 
-        margin-top: 90px; // 讓跑馬燈往下移動，對齊設計稿
-        margin-left: 50px;
+        margin-top: 110px; // 讓跑馬燈往下移動，對齊設計稿
+        margin-left: 30px;
 
         .marqueeWhite {
             position: absolute;
@@ -469,6 +510,27 @@ header {
             opacity: 0.1;
             clip-path: inset(0 42% 0 0); // 只顯示左半段
         }
+    }
+
+    .deco {
+        position: absolute;
+        top: -25%;
+        left: 15%;
+        z-index: -1;
+        width: 1120px;
+        height: 1120px;
+        border-radius: 100%;
+        background:
+            radial-gradient(
+                50% 50% at 50% 50%,
+                rgba(255, 255, 255, 0) 0%,
+                #fff 100%
+            ),
+            linear-gradient(
+                107deg,
+                rgba(136, 188, 255, 0.12) 20.17%,
+                rgba(118, 145, 255, 0.12) 66.99%
+            );
     }
 }
 
@@ -526,6 +588,10 @@ header {
             padding: 0 40px; // 平板
         }
 
+        @media (max-width: 768px) {
+            padding: 0;
+        }
+
         @media (max-width: 480px) {
             padding: 0 20px; // 手機
         }
@@ -550,7 +616,7 @@ header {
 
     .leftBox {
         width: 380px;
-        padding-top: 50px;
+        padding-top: 60px;
 
         // 直排時 leftBox 變成全寬，且不再需要上方對齊用 padding
         @media (max-width: 1180px) {
@@ -559,8 +625,12 @@ header {
             text-align: center; //文字從置左->變置中對齊
         }
 
+        @media (max-width: 768px) {
+            padding: 0 50px;
+        }
+
         .textBox {
-            margin-bottom: 70px;
+            margin-bottom: 80px;
 
             // 直排時文字區與輪播間距縮短
             @media (max-width: 1180px) {
@@ -595,15 +665,6 @@ header {
             }
         }
 
-        .btnBox::after {
-            content: "";
-            display: block;
-            width: 150px;
-            height: 1px;
-            border-top: 1px solid rgba(0, 0, 0, 0.27);
-            margin-top: 5px;
-        }
-
         .actionBox {
             display: flex;
             align-items: center;
@@ -612,6 +673,15 @@ header {
                 flex-direction: column;
                 justify-content: center;
                 gap: 30px; // 直排時按鈕區上下間距
+            }
+
+            .btnBox::after {
+                content: "";
+                display: block;
+                width: 150px;
+                height: 1px;
+                border-top: 1px solid rgba(0, 0, 0, 0.27);
+                margin-top: 15px;
             }
 
             .btn {
@@ -630,63 +700,46 @@ header {
             display: flex;
             gap: 10px;
             transform: translateY(-10%); // 讓箭頭往上移動，對齊設計稿的樣子
+            margin-left: 15px; // 讓箭頭往右移動一點，對齊設計稿
         }
     }
 
     .rightBox {
-        width: calc(100% - 380px);
+        width: calc(100% - 380px); //為newsBox-leftBox(380px)的寬度
         overflow: hidden;
 
-        // ─── RWD：1920px 以上 ───
-        // 確保每個 newsItem 圖片本體至少 420px
-        // 計算：3 slides × (420 + 55間距) = 1425px
-        // wrap=1440 - leftBox(380) - gap(100) = 960，差額 465px 用負 margin 補
-        // @media (min-width: 1920px) {
-        //     margin-right: -465px;
-        // }
-
         // ─── RWD：平板以下 ───
-        // 直排時 rightBox 撐滿父層，不需要負 margin 讓 slide 露出邊界
         @media (max-width: 1180px) {
-            margin-right: 0;
-            width: 100%;
+            width: 100%; // 直排時 rightBox 變成全寬
         }
-
         .newsList {
-            padding-top: 20px; // 預留 hover 時偽元素往上外擴的空間
-            margin: -20px -27.5px 0; // 抵消 padding-top 與左右 slide padding
-            width: 950px; // 兩張slide的寬度
+            margin: 0 -27.5px 0; // 抵消 padding-top 與左右 slide padding
+            width: 100%;
+            max-width: 950px; // 兩張slide的寬度
 
             .slick-list {
-                overflow: visible;
+                overflow: visible; // 讓最右邊卡片被 slick-list 裁掉的部分顯示出來
             }
 
-            // slide 之間 55px 間距：每個 slick-slide 左右各 padding 27.5px
-
-            // 600px 以下卡片會被 centerPadding 壓窄，取消 slick-list 左右外推避免貼邊。
-            @media (max-width: 600px) {
-                margin: -20px 0 0;
-            }
-
-            .slick-slide .rightText .title {
+            .title {
                 // 覆蓋掉 mixin 的漸層
                 background: none;
                 -webkit-text-fill-color: #606060;
                 color: #606060;
             }
 
-            .slick-slide.slick-current .rightText .title {
-                @include gradient-text; // 只有當前卡片用漸層
+            @media (max-width: 1180px) {
+                margin: auto; // 讓輪播區在直排時置中
+                overflow: hidden; // 讓被裁掉的部分隱藏起來
             }
         }
 
         .newsItem {
             width: 100%;
-            padding: 0 27.5px;
-            box-sizing: border-box;
+            padding: 20px 27.5px; //每個slide的間距，才不會貼邊
 
             @media (max-width: 600px) {
-                padding: 0 12px;
+                padding: 0 20px;
             }
 
             @media (max-width: 480px) {
@@ -713,9 +766,10 @@ header {
             width: 100%;
             position: relative; // 讓下面的 linkWrap 可以絕對定位在這個 item 上
 
-            .bottomBox .btn {
+            .btn {
                 position: relative;
                 z-index: 2; // 蓋過 linkWrap 的 z-index: 1
+                margin-right: 0px;
             }
 
             .linkWrap {
@@ -728,25 +782,24 @@ header {
             }
 
             .Img {
-                // overflow: hidden;
                 position: relative;
 
                 &::before {
-                    width: 100%;
-                    height: 100%;
                     content: "";
                     position: absolute;
                     top: 0;
                     bottom: 0;
-                    left: 0;
-                    right: 0;
+                    z-index: -1;
+                    transform: rotate(0deg);
+                    transition: all 0.5s ease-in-out;
+
+                    width: 100%;
+                    height: 100%;
+
                     background: $gradient;
                     border-radius: 10px;
                     opacity: 0;
-                    transform: rotate(0deg);
-                    transition: all 0.5s ease-in-out;
                     pointer-events: none;
-                    z-index: -1;
                 }
 
                 img {
@@ -772,28 +825,15 @@ header {
 
             // 小手機：日期與標題距離再縮一點，避免擠壓
             @media (max-width: 480px) {
-                gap: 12px;
+                gap: 15px;
             }
 
             @media (max-width: 360px) {
-                gap: 8px;
-            }
-
-            .title {
-                font-family: $font-zh-serif;
-                font-size: 36px;
-                margin-bottom: 10px;
-            }
-
-            .subtitle {
-                @include gradient-text;
-                margin: 0;
-                font-size: 20px;
-                padding-bottom: 5px;
+                gap: 10px;
             }
 
             .leftText {
-                min-width: 90px;
+                min-width: 80px;
                 text-align: center;
 
                 // 小手機：縮小日期欄寬度，把空間讓給標題
@@ -807,29 +847,28 @@ header {
 
                 .date {
                     font-family: $font-zh-serif;
-                    font-size: 36px;
+                    font-size: 35px;
                     font-weight: 700;
-                    letter-spacing: 1.8px;
+                    letter-spacing: 2px;
 
                     @include gradient-text;
 
-                    padding-top: 10px;
                     margin-bottom: 10px;
 
                     // ─── RWD：日期字級依螢幕縮小 ───
                     @media (max-width: 1180px) {
-                        font-size: 32px;
+                        font-size: 30px;
                     }
 
                     @media (max-width: 480px) {
-                        font-size: 26px;
+                        font-size: 25px;
                     }
 
                     @media (max-width: 360px) {
-                        font-size: 22px;
-                        letter-spacing: 0.8px;
-                        padding-top: 6px;
-                        margin-bottom: 6px;
+                        font-size: 20px;
+                        letter-spacing: 1px;
+                        padding-top: 5px;
+                        margin-bottom: 5px;
                     }
                 }
 
@@ -847,21 +886,13 @@ header {
             }
 
             .rightText {
-                // min-width: 0; // flex 子項預設最小寬度=內容寬，要設 0 才能讓 ellipsis 觸發
-
-                .text {
-                    // 讓這段文字顯示最多兩行，其他變成...
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                    overflow: hidden;
-                }
-
                 .title {
+                    margin-bottom: 10px;
+
                     font-family: $font-zh;
                     font-size: 20px;
                     font-weight: 500;
-                    line-height: 24px;
+                    line-height: 25px;
                     /* 120% */
                     letter-spacing: 1px;
 
@@ -884,63 +915,78 @@ header {
                         line-height: 22px;
                     }
                 }
-            }
-        }
 
-        .bottomBox {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 10px;
-
-            @media (max-width: 360px) {
-                align-items: center;
-                gap: 8px;
-            }
-
-            .text {
-                color: #666;
-                font-size: 13px;
-                position: relative;
-
-                padding-left: 20px; // 讓文字往右內縮
-
-                @media (max-width: 360px) {
-                    padding-left: 0;
-                    font-size: 12px;
-                }
-
-                &::after {
-                    content: "";
-                    position: absolute;
-                    right: -20px; // 文字右側偏移
-                    top: 50%;
-                    // scaleX(0.5) 把 1px 的寬度在視覺上壓成 0.5px
-                    transform: translateY(-60%) scaleX(0.5);
-                    width: 1px;
-                    height: 10px;
-                    background-color: #666;
+                .text {
+                    // 讓這段文字顯示最多兩行，其他變成...
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    font-size: 15px;
+                    line-height: 25px;
 
                     @media (max-width: 360px) {
-                        display: none;
+                        font-size: 10px;
+                        line-height: 15px;
                     }
                 }
             }
+        }
+    }
 
-            .btnTxt {
-                color: #606060;
-                font-family: $font-en;
-                font-size: 16px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 30px;
-                /* 187.5% */
-                letter-spacing: 0.32px;
-                margin-right: 35px;
+    .bottomBox {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10px;
+
+        .text {
+            color: #666;
+            font-size: 13px;
+            position: relative;
+
+            padding-left: 20px; // 讓文字往右內縮
+
+            @media (max-width: 480px) {
+                padding-left: 0;
+            }
+
+            @media (max-width: 360px) {
+                padding-left: 0;
+                font-size: 12px;
+            }
+
+            &::after {
+                // 線
+                content: "";
+                position: absolute;
+                right: -20px; // 文字右側偏移
+                top: 50%;
+                // scaleX(0.5) 把 1px 的寬度在視覺上壓成 0.5px
+                transform: translateY(-60%) scaleX(0.5);
+                width: 1px;
+                height: 10px;
+                background-color: #666;
 
                 @media (max-width: 360px) {
-                    font-size: 14px;
-                    margin-right: 10px;
+                    display: none;
                 }
+            }
+        }
+
+        .btnTxt {
+            color: #606060;
+            font-family: $font-en;
+            font-weight: 600;
+            letter-spacing: 0.32px;
+            margin-right: 35px;
+
+            @media (max-width: 480px) {
+                margin-right: 15px;
+            }
+
+            @media (max-width: 360px) {
+                font-size: 15px;
+                margin-right: 10px;
             }
         }
     }
@@ -983,7 +1029,7 @@ header {
         .blueGradient {
             position: absolute;
             top: -20%;
-            left: -10%;
+            left: -15%;
 
             width: 660px;
             height: 660px;
@@ -1263,9 +1309,9 @@ header {
 
 .clinicArea {
     position: relative;
-    padding: 120px 0;
-    overflow: hidden;
-
+    padding: 120px 0 150px;
+    margin-top: 90px;
+    // 調整上下留白
     @media (max-width: 768px) {
         padding: 90px 0 80px;
     }
@@ -1275,8 +1321,10 @@ header {
     }
 
     .wrap {
+        max-width: 1530px;
+
         @media (max-width: 768px) {
-            padding: 0 40px;
+            padding: 0px; //讓左右圖片可以貼邊
         }
 
         @media (max-width: 480px) {
@@ -1288,22 +1336,19 @@ header {
         }
     }
 
-    .clinicBox {
-        width: 100%;
-    }
-
     .bgRight {
         position: absolute;
-        top: 15px;
+        top: 10px;
         bottom: 10px;
         left: 28%;
         right: 10px;
+        z-index: -1;
+
         border-radius: 180px 10px 10px 10px;
         background: #f6f6f6;
 
-        z-index: -1;
-
         @media (max-width: 768px) {
+            // 平板以下改全寬，圓角縮小
             left: 0;
             right: 0;
             border-radius: 10px;
@@ -1313,39 +1358,16 @@ header {
     .bgLeft {
         position: absolute;
         top: 50%;
-
         left: 3.5%;
         transform: translateY(-60%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        z-index: -2; // 確保這個背景在右邊的灰色背景下方
 
-        z-index: -1;
-
-        @media (max-width: 1600px) {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            display: none;
-        }
-
-        .Img {
-            img {
-                width: 100%;
-            }
+        img {
+            width: 100%;
         }
     }
 
     .centerBox {
-        width: 100%;
-        /* 防止 flex/grid 子項目撐破父層 */
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
         .titleBox {
             text-align: center;
         }
@@ -1356,16 +1378,15 @@ header {
     }
 
     .imgBox {
-        width: 100%; // 只顯示三張slick-slide，超出部分會被裁切掉
+        position: relative; // 讓slick arrow可以定位
         padding-top: 35px;
-        min-width: 0;
-
-        // 讓slick arrow可以定位
-        position: relative;
 
         @media (max-width: 600px) {
-            overflow: visible;
-            padding-bottom: 56px;
+            padding-bottom: 30px; // 與箭頭保持距離
+        }
+
+        @media (max-width: 480px) {
+            padding-bottom: 10px; // 與箭頭保持距離
         }
 
         .clinicImgPrev,
@@ -1375,107 +1396,67 @@ header {
     }
 
     .clinicList {
-        // 鎖住 slick 的可視範圍，避免 track 或 hover 效果把內容推出 clinicList。
-        width: 100%;
-        max-width: 100%;
-        min-width: 0;
-        overflow: hidden;
-
-        .slick-list {
-            // 大螢幕也不使用負 margin 外推，間距改由 slide padding 控制。
-            margin: 0;
-            overflow: hidden;
-
-            @media (max-width: 600px) {
-                margin: 0;
-            }
-        }
-
-        .slick-slide {
-            // 每個 slide 左右各 40px,slide 之間就會剛好 80px 等距
-            // slide padding 控制卡片間距，隨斷點縮小以避免中間空隙過寬。
-            padding: 15px 24px;
-            max-width: 100%;
-            box-sizing: border-box;
-
-            > div {
-                max-width: 100%;
-            }
-
-            @media (max-width: 1024px) {
-                padding: 15px 16px;
-            }
-
-            @media (max-width: 600px) {
-                padding: 15px 12px;
-            }
-
-            @media (max-width: 480px) {
-                padding: 15px 8px;
-            }
-
-            @media (max-width: 360px) {
-                padding: 12px 0;
-            }
-        }
-
         .imgItem {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative; //給linkWrap定位用
+
+            padding: 15px 45px;
 
             &:hover .Img::before {
                 opacity: 1;
                 transform: rotate(4.6deg) translateX(15px);
             }
 
+            @media (max-width: 1024px) {
+                padding: 15px 15px;
+            }
+
             @media (max-width: 600px) {
+                padding: 15px 10px;
+
                 &:hover .Img::before {
                     transform: none;
                 }
             }
+
+            @media (max-width: 480px) {
+                padding: 15px 5px;
+            }
+
+            @media (max-width: 360px) {
+                padding: 10px 0;
+            }
         }
 
-        .imgLink {
-            display: block;
-            width: 100%;
-            position: relative;
-        }
-
-        .item {
-            width: 100%;
-            max-width: 420px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 600px) {
-            max-width: 100%;
-        }
-    }
-
-    .Img {
-        max-width: 100%;
-        margin-bottom: 20px;
-        position: relative;
-
-        &::before {
-            content: "";
+        .linkWrap {
             position: absolute;
             inset: 0;
-            background: $gradient;
-            border-radius: 10px;
-            opacity: 0;
-            transform: rotate(0deg);
-            transition: all 0.5s ease-in-out;
-            pointer-events: none;
-            z-index: -1;
+            z-index: 1;
         }
-    }
 
-    img {
-        border-radius: 10px;
-        width: 100%;
-        display: block;
+        .Img {
+            margin-bottom: 20px;
+            position: relative;
+
+            &::before {
+                content: "";
+
+                position: absolute;
+                inset: 0;
+                transform: rotate(0deg);
+                transition: all 0.5s ease-in-out;
+                pointer-events: none;
+                z-index: -1;
+
+                background: $gradient;
+                border-radius: 10px;
+                opacity: 0;
+            }
+        }
+
+        img {
+            border-radius: 10px;
+            width: 100%;
+        }
     }
 
     .text {
@@ -1486,9 +1467,8 @@ header {
             font-family: $font-zh-serif;
             font-size: 20px;
             font-weight: 700;
-            line-height: 32px;
-            /* 160% */
-            letter-spacing: 1.2px;
+            line-height: 30px;
+            letter-spacing: 1.5px;
 
             text-transform: none;
             // 把 mixin 的漸層字拆掉,改回純色
@@ -1506,53 +1486,52 @@ header {
             font-weight: 600;
             line-height: 24px;
             /* 200% */
-            letter-spacing: 0.48px;
+            letter-spacing: 0.5px;
             @include gradient-text;
+        }
+    }
+
+    .clinicImgPrev {
+        position: absolute;
+        left: -5%;
+        top: 50%;
+    }
+
+    .clinicImgNext {
+        position: absolute;
+        right: -5%;
+        top: 50%;
+    }
+
+    @media (max-width: 1600px) {
+        // 小桌機:箭頭改放在圖片邊緣
+        .clinicImgPrev {
+            left: 0;
+        }
+
+        .clinicImgNext {
+            right: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        // 手機改放在下方置中
+        .clinicImgPrev {
+            display: inline-flex;
+            left: calc(50% - 70px);
+            top: 100%;
+        }
+
+        .clinicImgNext {
+            display: inline-flex;
+            right: calc(50% - 70px);
+            top: 100%;
         }
     }
 }
 
-.clinicImgPrev {
-    position: absolute;
-    left: -8%;
-    top: 50%;
-}
-
-.clinicImgNext {
-    position: absolute;
-    right: -8%;
-    top: 50%;
-}
-
-@media (max-width: 1600px) {
-    .clinicImgPrev {
-        left: 0;
-    }
-
-    .clinicImgNext {
-        right: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    // 手機改放在 titleBox 旁邊、或下方置中
-    .clinicImgPrev {
-        display: inline-flex;
-        left: calc(50% - 72px);
-        top: calc(100% - 4px);
-        transform: none;
-    }
-
-    .clinicImgNext {
-        display: inline-flex;
-        right: calc(50% - 72px);
-        top: calc(100% - 4px);
-        transform: none;
-    }
-}
-
 .reviewArea {
-    background-image: url("../img/reviewBg.png");
+    background-image: url("../img/reviewBg.jpg");
     width: 100%;
     height: 650px;
     overflow: hidden;
@@ -1566,7 +1545,7 @@ header {
     }
 
     .reviewBox {
-        padding-top: 140px;
+        padding-top: 120px;
 
         .title {
             color: #fff;
@@ -1585,7 +1564,7 @@ header {
             &::before {
                 content: "";
                 display: block;
-                width: 450px;
+                width: 950px;
                 height: 1px;
                 border-top: 1px dashed rgba(255, 255, 255, 0.59);
                 margin-bottom: 10px;
@@ -1629,15 +1608,20 @@ header {
             height: 1px;
             border-top: 1px solid $white;
             margin-top: 5px;
-            margin-left: 250px;
+            margin-left: 200px;
         }
 
         .btn {
-            margin-left: 45px;
+            margin-right: 0;
+            margin-left: 60px;
+        }
+
+        .slickArrow {
+            transform: translateY(15%);
         }
     }
 
-    .dataItem {
+    .reviewItem {
         // 只管排版、間距
         width: calc(100% / 3);
         padding: 0 20px;
@@ -1721,7 +1705,7 @@ header {
 }
 
 .footer {
-    padding: 60px 0;
+    padding: 80px 0 70px;
     overflow: hidden;
 
     .topBox {
@@ -1731,6 +1715,13 @@ header {
 
         padding-bottom: 20px;
         border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
+
+        .hourBox {
+            padding-right: 5px;
+            font-family: $font-zh;
+            font-size: 16px;
+            letter-spacing: 0.32px;
+        }
     }
 
     .navList {
@@ -1740,6 +1731,13 @@ header {
         .text {
             color: $text-main;
         }
+
+        .navLink {
+            &:hover {
+                @include gradient-text;
+                transition: all 0.2s ease-in-out;
+            }
+        }
     }
 
     .bottomBox {
@@ -1747,33 +1745,42 @@ header {
         justify-content: space-between;
         padding-top: 40px;
 
-        .title {
-            font-size: 20px;
-            font-weight: 500;
-            line-height: 30px;
-            margin: 0;
+        .textBox {
+            display: flex;
+            gap: 75px;
         }
 
-        .textAddress {
-            color: $text-main;
-            font-weight: 400;
-            line-height: 16px;
-            letter-spacing: 0.8px;
-        }
+        .item {
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
 
-        .text {
-            margin: 0;
-        }
-    }
+            .title {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 30px;
+                margin-bottom: 5px;
+            }
 
-    .textBox {
-        display: flex;
-        gap: 90px;
+            .textAddress {
+                color: $text-main;
+                font-weight: 400;
+                line-height: 16px;
+                letter-spacing: 0.8px;
+            }
+
+            .text {
+                color: #626262;
+            }
+            .email {
+                line-height: 5px;
+            }
+        }
     }
 
     .btnBox {
         display: flex;
-        gap: 16px;
+        gap: 15px;
         flex-direction: column;
         text-align: end;
     }
@@ -1781,25 +1788,48 @@ header {
     .activeBox {
         display: flex;
         justify-content: flex-end;
-        gap: 16px;
+        gap: 20px;
     }
 
     .contactBtn {
         @include flex-center;
-        padding: 8px 35px;
-        border-radius: 37px;
+        padding: 5px 50px;
+        border-radius: 35px;
         border: 1px solid $blue-light;
         @include gradient-text;
+
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
     }
 
     .contactBtn:hover {
         background: $gradient;
         -webkit-text-fill-color: white;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .socialBox {
+        padding-top: 10px;
     }
 
     .socialList {
         display: flex;
-        gap: 10px;
+        gap: 25px;
         justify-content: flex-end;
+    }
+
+    .copyright {
+        color: #707070;
+        text-align: right;
+        font-family: $font-zh;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 0px;
+
+        .link:hover {
+            color: $text-main;
+            transition: all 0.2s ease-in-out;
+        }
     }
 }
