@@ -970,7 +970,7 @@ figure {
 }
 @media (max-width: 768px) {
   .aboutArea .wrap {
-    padding: 0 20px;
+    padding: 0 30px;
   }
 }
 .aboutArea .aboutBox {
@@ -1120,6 +1120,11 @@ figure {
     margin: 0 auto;
   }
 }
+@media (max-width: 960px) {
+  .aboutArea .rightBox {
+    width: 75%;
+  }
+}
 .aboutArea .rightBox .slick-list {
   overflow: visible;
 }
@@ -1159,6 +1164,13 @@ figure {
     border-radius: 20px 20px 20px 20px;
   }
 }
+@media (max-width: 960px) {
+  .aboutArea .rightBox .item .Txt {
+    position: static;
+    transform: translate(0%, -20%);
+    max-width: 100%;
+  }
+}
 .aboutArea .rightBox .item .titleBox {
   display: flex;
   justify-content: space-between;
@@ -1177,6 +1189,11 @@ figure {
   -webkit-background-clip: initial;
   -webkit-text-fill-color: initial;
 }
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .title {
+    font-size: 24px;
+  }
+}
 .aboutArea .rightBox .item .subtitle {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   background-clip: text;
@@ -1184,6 +1201,11 @@ figure {
   -webkit-text-fill-color: transparent;
   font-size: 16px;
   line-height: initial;
+}
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .subtitle {
+    font-size: 15px;
+  }
 }
 .aboutArea .rightBox .item .btn {
   margin-right: 0px;
@@ -1198,6 +1220,16 @@ figure {
   color: #606060;
   line-height: 28px;
   font-size: 16px;
+}
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .ulList {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .text {
+    font-size: 15px;
+  }
 }
 .aboutArea .rightBox .Img {
   position: relative;
@@ -1231,6 +1263,11 @@ figure {
     transition: all 0.3s ease-in-out;
   }
 }
+@media (max-width: 960px) {
+  .aboutArea .rightBox .slickPrev {
+    top: 38%;
+  }
+}
 .aboutArea .rightBox .slickNext {
   position: absolute;
   top: 48%;
@@ -1242,6 +1279,11 @@ figure {
     right: -5%;
     background-color: #fff;
     transition: all 0.3s ease-in-out;
+  }
+}
+@media (max-width: 960px) {
+  .aboutArea .rightBox .slickNext {
+    top: 38%;
   }
 }
 

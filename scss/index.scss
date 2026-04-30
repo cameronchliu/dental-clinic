@@ -1111,7 +1111,7 @@ $font-size-text: 16px;
     .wrap {
         max-width: 1300px;
         @media (max-width: 768px) {
-            padding: 0 20px;
+            padding: 0 30px;
         }
     }
 
@@ -1289,6 +1289,10 @@ $font-size-text: 16px;
             margin: 0 auto;
         }
 
+        @media (max-width: 960px) {
+            width: 75%;
+        }
+
         .slick-list {
             // about 的文字卡片會刻意凸出圖片，slick 預設 hidden 會把它裁掉。
             overflow: visible;
@@ -1331,6 +1335,21 @@ $font-size-text: 16px;
                     max-width: 90%;
                     border-radius: 20px 20px 20px 20px;
                 }
+
+                @media (max-width: 960px) {
+                    position: static;
+                    transform: translate(0%, -20%);
+                    max-width: 100%;
+                }
+
+                // @media (max-width: 960px) {
+                //     bottom: -40%;
+                // }
+
+                // @media (max-width: 768px) {
+                //     bottom: -60%;
+                //     max-width: 100%;
+                // }
             }
 
             .titleBox {
@@ -1354,12 +1373,19 @@ $font-size-text: 16px;
                 background-clip: initial;
                 -webkit-background-clip: initial;
                 -webkit-text-fill-color: initial;
+
+                @media (max-width: 768px) {
+                    font-size: 24px;
+                }
             }
 
             .subtitle {
                 @include gradient-text;
                 font-size: 16px;
                 line-height: initial;
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
             }
 
             .btn {
@@ -1377,6 +1403,14 @@ $font-size-text: 16px;
                 color: $text-muted;
                 line-height: 28px;
                 font-size: 16px;
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
+            }
+            .text {
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                }
             }
         }
 
@@ -1415,6 +1449,10 @@ $font-size-text: 16px;
                 background-color: $white;
                 transition: all 0.3s ease-in-out;
             }
+
+            @media (max-width: 960px) {
+                top: 38%;
+            }
         }
 
         .slickNext {
@@ -1427,6 +1465,10 @@ $font-size-text: 16px;
                 right: -5%;
                 background-color: $white;
                 transition: all 0.3s ease-in-out;
+            }
+
+            @media (max-width: 960px) {
+                top: 38%;
             }
         }
     }
