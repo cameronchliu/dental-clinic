@@ -143,9 +143,6 @@ figure {
 .slickArrow {
   transition: background 0.3s ease, border-color 0.3s ease;
 }
-.slickArrow img {
-  transition: filter 0.3s ease;
-}
 .slickArrow svg path {
   transition: fill 0.3s ease;
 }
@@ -281,8 +278,7 @@ figure {
 .bannerArea {
   overflow: hidden;
   position: relative;
-  padding: 85px 0 180px 0;
-  margin-bottom: 135px;
+  margin-bottom: 315px;
 }
 .bannerArea .wrap {
   max-width: 1570px;
@@ -293,10 +289,10 @@ figure {
     padding: 0 100px;
   }
 }
+.bannerArea .bannerBox {
+  display: flex;
+}
 .bannerArea .bgBox {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 100%;
   max-width: 950px;
   padding: 10px 10px 0 0;
@@ -413,21 +409,19 @@ figure {
   letter-spacing: 4.2px;
   text-transform: uppercase;
   pointer-events: none;
-  position: relative;
-  margin-top: 110px;
-  margin-left: 40px;
+  white-space: nowrap;
 }
 .bannerArea .marqueeBox .marqueeWhite {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 40px;
+  left: 40px;
   color: #fff;
   clip-path: inset(0 0 0 58%);
 }
 .bannerArea .marqueeBox .marqueeGradient {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 40px;
+  left: 40px;
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -886,6 +880,13 @@ figure {
 .aboutArea {
   position: relative;
   padding: 200px 0 160px;
+}
+@media (max-width: 1180px) {
+  .aboutArea {
+    padding: 200px 0 260px;
+  }
+}
+.aboutArea {
   overflow: hidden;
 }
 .aboutArea .bgBox {
@@ -898,16 +899,31 @@ figure {
   bottom: 6%;
   left: 3%;
 }
+@media (max-width: 1780px) {
+  .aboutArea .bgBox .imgLeftBottom {
+    display: none;
+  }
+}
 .aboutArea .bgBox .imgRightTop {
   position: absolute;
   top: 2%;
   right: 3%;
+}
+@media (max-width: 1780px) {
+  .aboutArea .bgBox .imgRightTop {
+    display: none;
+  }
 }
 .aboutArea .bgBox .imgRightDot {
   position: absolute;
   top: 10%;
   right: 8%;
   z-index: -1;
+}
+@media (max-width: 1180px) {
+  .aboutArea .bgBox .imgRightDot {
+    display: none;
+  }
 }
 .aboutArea .bgBox .blueGradient {
   position: absolute;
@@ -933,23 +949,64 @@ figure {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+@media (max-width: 1667px) {
+  .aboutArea .bgBox .marquee {
+    font-size: 110px;
+    transition: all 0.3s ease-in-out;
+    right: 5%;
+  }
+}
+@media (max-width: 1440px) {
+  .aboutArea .bgBox .marquee {
+    font-size: 90px;
+    transition: all 0.3s ease-in-out;
+    right: 5%;
+  }
 }
 .aboutArea .wrap {
   max-width: 1300px;
 }
+@media (max-width: 768px) {
+  .aboutArea .wrap {
+    padding: 0 20px;
+  }
+}
 .aboutArea .aboutBox {
   display: flex;
-  gap: 190px;
+  justify-content: space-between;
   width: 100%;
 }
+@media (max-width: 1180px) {
+  .aboutArea .aboutBox {
+    flex-direction: column;
+  }
+}
 .aboutArea .leftBox {
-  max-width: 440px;
-  width: 100%;
+  width: 440px;
   padding-top: 50px;
   margin-left: 25px;
 }
+@media (max-width: 1536px) {
+  .aboutArea .leftBox {
+    margin-left: 50px;
+  }
+}
+@media (max-width: 1180px) {
+  .aboutArea .leftBox {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 80px;
+  }
+}
 .aboutArea .leftBox .Txt {
   margin-bottom: 70px;
+}
+@media (max-width: 1180px) {
+  .aboutArea .leftBox .Txt {
+    margin-bottom: 20px;
+  }
 }
 .aboutArea .leftBox .textBox .subtitle {
   letter-spacing: 1.2px;
@@ -965,10 +1022,22 @@ figure {
   border-top: 1px dashed rgba(0, 0, 0, 0.27);
   margin-bottom: 10px;
 }
+@media (max-width: 1180px) {
+  .aboutArea .leftBox .textBox .text::before {
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+}
 .aboutArea .leftBox .iconBox {
   display: flex;
   justify-content: space-between;
   text-align: center;
+}
+@media (max-width: 1180px) {
+  .aboutArea .leftBox .iconBox {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 .aboutArea .leftBox .iconItem {
   position: relative;
@@ -1017,6 +1086,11 @@ figure {
 .aboutArea .leftBox .btnBox {
   margin-left: 5px;
 }
+@media (max-width: 1180px) {
+  .aboutArea .leftBox .btnBox .btn {
+    margin-right: 0;
+  }
+}
 .aboutArea .leftBox .btnBox::after {
   content: "";
   display: block;
@@ -1025,12 +1099,28 @@ figure {
   border-top: 1px solid rgba(0, 0, 0, 0.27);
   margin-top: 10px;
 }
+@media (max-width: 1180px) {
+  .aboutArea .leftBox .btnBox::after {
+    margin: 10px auto 0;
+  }
+}
 .aboutArea .rightBox {
   position: relative;
-  width: 100%;
-  max-width: 600px;
+  width: calc(100% - 720px);
+  margin-right: 55px;
 }
-.aboutArea .rightBox .aboutList .slick-list {
+@media (max-width: 1440px) {
+  .aboutArea .rightBox {
+    margin-right: 85px;
+  }
+}
+@media (max-width: 1180px) {
+  .aboutArea .rightBox {
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+.aboutArea .rightBox .slick-list {
   overflow: visible;
 }
 .aboutArea .rightBox .item {
@@ -1052,6 +1142,22 @@ figure {
   background-color: #fff;
   border-radius: 20px 20px 80px 20px;
   box-shadow: 0 0 17.7px 0 rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 1536px) {
+  .aboutArea .rightBox .item .Txt {
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+  }
+}
+@media (max-width: 1180px) {
+  .aboutArea .rightBox .item .Txt {
+    transform: scale(1);
+    bottom: -30%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    max-width: 90%;
+    border-radius: 20px 20px 20px 20px;
+  }
 }
 .aboutArea .rightBox .item .titleBox {
   display: flex;
@@ -1109,6 +1215,7 @@ figure {
   border-radius: 20px;
 }
 .aboutArea .rightBox .Img img {
+  width: 100%;
   border-radius: 20px;
 }
 .aboutArea .rightBox .slickPrev {
@@ -1117,11 +1224,25 @@ figure {
   left: -18%;
   transform: translateY(-50%);
 }
+@media (max-width: 1536px) {
+  .aboutArea .rightBox .slickPrev {
+    left: -5%;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
+}
 .aboutArea .rightBox .slickNext {
   position: absolute;
   top: 48%;
   right: -18%;
   transform: translateY(-50%);
+}
+@media (max-width: 1536px) {
+  .aboutArea .rightBox .slickNext {
+    right: -5%;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .clinicArea {
@@ -1329,6 +1450,15 @@ figure {
   height: 650px;
   overflow: hidden;
 }
+.reviewArea .wrap {
+  max-width: 1540px;
+  padding: 0 50px;
+}
+@media (max-width: 996px) {
+  .reviewArea .wrap {
+    padding: 0;
+  }
+}
 .reviewArea .slickArrow {
   background: #fff;
 }
@@ -1337,6 +1467,7 @@ figure {
 }
 .reviewArea .reviewBox {
   padding-top: 120px;
+  overflow: hidden;
 }
 .reviewArea .reviewBox .title {
   color: #fff;
@@ -1355,15 +1486,48 @@ figure {
   border-top: 1px dashed rgba(255, 255, 255, 0.59);
   margin-bottom: 10px;
 }
-.reviewArea .slick-list {
+.reviewArea .reviewList {
   padding-top: 55px;
   margin: -40px -17px 0;
+}
+@media (max-width: 996px) {
+  .reviewArea .reviewList {
+    width: 85%;
+    padding-top: 35px;
+    margin: auto;
+  }
+}
+@media (max-width: 768px) {
+  .reviewArea .reviewList {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .reviewList {
+    width: 65%;
+  }
+}
+.reviewArea .slick-list {
+  overflow: visible;
 }
 .reviewArea .topBox {
   margin-bottom: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 1440px) {
+  .reviewArea .topBox {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 996px) {
+  .reviewArea .topBox {
+    margin: 0 40px 40px;
+  }
 }
 .reviewArea .topBox .title {
   color: #fff;
@@ -1376,6 +1540,11 @@ figure {
 }
 .reviewArea .btnBox {
   color: #fff;
+}
+@media (max-width: 1440px) {
+  .reviewArea .btnBox {
+    width: 950px;
+  }
 }
 .reviewArea .btnBox::after {
   content: "";
@@ -1394,18 +1563,42 @@ figure {
   transform: translateY(15%);
 }
 .reviewArea .reviewItem {
-  width: 33.3333333333%;
   padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .reviewArea .reviewItem {
+    padding: 0 10px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .reviewItem {
+    padding: 0 15px;
+  }
 }
 .reviewArea .item {
   width: 100%;
-  max-width: 345px;
+  max-width: 325px;
   margin: 0 auto;
   min-height: 145px;
   position: relative;
   background: #fff;
   border-radius: 10px;
-  padding-top: 80px;
+  padding: 80px 0 15px;
+}
+@media (max-width: 1440px) {
+  .reviewArea .item {
+    height: 130px;
+  }
+}
+@media (max-width: 996px) {
+  .reviewArea .item {
+    height: 160px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .item {
+    height: 170px;
+  }
 }
 .reviewArea .item::before {
   content: "";
@@ -1434,12 +1627,9 @@ figure {
   overflow: hidden;
   margin: 0;
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
-  padding: 5px;
+  padding: 6px;
 }
 .reviewArea .item .Img img {
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 50%;
   display: block;
 }
@@ -1447,10 +1637,11 @@ figure {
   text-align: center;
 }
 .reviewArea .item .Txt .title {
+  width: 100%;
   color: #606060;
   font-size: 14px;
   line-height: 24px;
-  /* 171.429% */
+  padding: 0 40px;
   margin: 0;
   background: none;
   -webkit-text-fill-color: #606060;
@@ -1459,20 +1650,30 @@ figure {
   font-weight: 400;
   letter-spacing: 0.28px;
 }
+@media (max-width: 1536px) {
+  .reviewArea .item .Txt .title {
+    padding: 0 15px;
+  }
+}
 
 .footer {
-  padding: 80px 0 70px;
+  padding: 80px 0 85px;
   overflow: hidden;
 }
 .footer .wrap {
   max-width: 1520px;
   padding: 0 40px;
 }
+@media (max-width: 480px) {
+  .footer .wrap {
+    padding: 0 20px;
+  }
+}
 .footer .topBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
 }
 @media (max-width: 1180px) {
@@ -1504,9 +1705,16 @@ figure {
   content: " | ";
   margin: 0 4px;
 }
+@media (max-width: 480px) {
+  .footer .topBox .hoursTitle::after {
+    content: "";
+    display: none;
+    margin: 0;
+  }
+}
 .footer .navList {
   display: flex;
-  gap: 40px;
+  gap: 42px;
 }
 @media (max-width: 480px) {
   .footer .navList {
@@ -1514,11 +1722,11 @@ figure {
     gap: 10px;
   }
 }
-.footer .navList .text {
+.footer .navList .navItem {
   color: #2d2d2d;
 }
 @media (max-width: 360px) {
-  .footer .navList .text {
+  .footer .navList .navItem {
     font-size: 14px;
   }
 }
@@ -1599,7 +1807,7 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5px 50px;
+  padding: 5px 46px;
   border-radius: 35px;
   border: 1px solid #88bcff;
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
@@ -1650,4 +1858,4 @@ figure {
 .footer .copyright .link:hover {
   color: #2d2d2d;
   transition: all 0.2s ease-in-out;
-}/*# sourceMappingURL=index.css.map */
+}

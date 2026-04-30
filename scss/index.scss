@@ -187,10 +187,6 @@ $font-size-text: 16px;
         background 0.3s ease,
         border-color 0.3s ease;
 
-    img {
-        transition: filter 0.3s ease;
-    }
-
     svg path {
         transition: fill 0.3s ease;
     }
@@ -222,7 +218,7 @@ $font-size-text: 16px;
         justify-content: space-between;
         align-items: center;
 
-        @media (max-width:480px) {
+        @media (max-width: 480px) {
             padding: 0 30px;
         }
     }
@@ -341,23 +337,22 @@ $font-size-text: 16px;
 .bannerArea {
     overflow: hidden;
     position: relative;
-    padding: 85px 0 180px 0;
-    margin-bottom: 135px;
+    margin-bottom: 315px;
 
     .wrap {
         max-width: 1570px;
         padding: 0;
 
-        @media (max-width:1700px) {
+        @media (max-width: 1700px) {
             padding: 0 100px;
         }
     }
 
-    .bgBox {
-        position: absolute;
-        top: 0;
-        right: 0;
+    .bannerBox {
+        display: flex;
+    }
 
+    .bgBox {
         width: 100%;
         max-width: 950px;
 
@@ -508,23 +503,20 @@ $font-size-text: 16px;
         letter-spacing: 4.2px;
         text-transform: uppercase;
         pointer-events: none; // 讓滑鼠事件穿透，點擊到下面的內容
-        position: relative;
-
-        margin-top: 110px; // 讓跑馬燈往下移動，對齊設計稿
-        margin-left: 40px;
+        white-space: nowrap;
 
         .marqueeWhite {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 40px;
+            left: 40px;
             color: $white;
             clip-path: inset(0 0 0 58%); // 只顯示右半段
         }
 
         .marqueeGradient {
             position: absolute;
-            top: 0;
-            left: 0;
+            bottom: 40px;
+            left: 40px;
             @include gradient-text;
             opacity: 0.1;
             clip-path: inset(0 42% 0 0); // 只顯示左半段
@@ -540,12 +532,16 @@ $font-size-text: 16px;
         height: 1120px;
         border-radius: 100%;
         background:
-            radial-gradient(50% 50% at 50% 50%,
+            radial-gradient(
+                50% 50% at 50% 50%,
                 rgba(255, 255, 255, 0) 0%,
-                #fff 100%),
-            linear-gradient(107deg,
+                #fff 100%
+            ),
+            linear-gradient(
+                107deg,
                 rgba(136, 188, 255, 0.12) 20.17%,
-                rgba(118, 145, 255, 0.12) 66.99%);
+                rgba(118, 145, 255, 0.12) 66.99%
+            );
     }
 }
 
@@ -669,7 +665,6 @@ $font-size-text: 16px;
         }
 
         .text {
-
             // 分隔線
             &::before {
                 content: "";
@@ -1016,6 +1011,10 @@ $font-size-text: 16px;
 
     padding: 200px 0 160px;
 
+    @media (max-width: 1180px) {
+        padding: 200px 0 260px;
+    }
+
     overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
 
     .bgBox {
@@ -1028,12 +1027,20 @@ $font-size-text: 16px;
             position: absolute;
             bottom: 6%;
             left: 3%;
+
+            @media (max-width: 1780px) {
+                display: none;
+            }
         }
 
         .imgRightTop {
             position: absolute;
             top: 2%;
             right: 3%;
+
+            @media (max-width: 1780px) {
+                display: none;
+            }
         }
 
         .imgRightDot {
@@ -1041,6 +1048,10 @@ $font-size-text: 16px;
             top: 10%;
             right: 8%;
             z-index: -1;
+
+            @media (max-width: 1180px) {
+                display: none;
+            }
         }
 
         .blueGradient {
@@ -1055,12 +1066,16 @@ $font-size-text: 16px;
 
             // ⬇️這是copy Figma的
             background:
-                radial-gradient(50% 50% at 50% 50%,
+                radial-gradient(
+                    50% 50% at 50% 50%,
                     rgba(255, 255, 255, 0) 0%,
-                    #fff 100%),
-                linear-gradient(107deg,
+                    #fff 100%
+                ),
+                linear-gradient(
+                    107deg,
                     rgba(136, 188, 255, 0.19) 20.17%,
-                    rgba(118, 145, 255, 0.19) 66.99%);
+                    rgba(118, 145, 255, 0.19) 66.99%
+                );
         }
 
         .marquee {
@@ -1076,28 +1091,62 @@ $font-size-text: 16px;
             letter-spacing: 4px;
             text-transform: uppercase;
             @include gradient-text();
+
+            white-space: nowrap;
+
+            @media (max-width: 1667px) {
+                font-size: 110px;
+                transition: all 0.3s ease-in-out;
+                right: 5%;
+            }
+
+            @media (max-width: 1440px) {
+                font-size: 90px;
+                transition: all 0.3s ease-in-out;
+                right: 5%;
+            }
         }
     }
 
     .wrap {
         max-width: 1300px;
+        @media (max-width: 768px) {
+            padding: 0 20px;
+        }
     }
 
     .aboutBox {
         display: flex;
-        gap: 190px; //leftBox 與 rightBox 的間距
+        justify-content: space-between;
         width: 100%;
+
+        @media (max-width: 1180px) {
+            flex-direction: column;
+        }
     }
 
     .leftBox {
-        max-width: 440px;
-        width: 100%;
+        width: 440px;
 
         padding-top: 50px; // 讓文字區往下，對齊右邊的圖片
         margin-left: 25px;
 
+        @media (max-width: 1536px) {
+            margin-left: 50px;
+        }
+
+        @media (max-width: 1180px) {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 80px;
+        }
+
         .Txt {
             margin-bottom: 70px; // 跟按鈕區的距離高度
+
+            @media (max-width: 1180px) {
+                margin-bottom: 20px;
+            }
         }
 
         .textBox {
@@ -1116,6 +1165,11 @@ $font-size-text: 16px;
                     height: 1px;
                     border-top: 1px dashed rgba(0, 0, 0, 0.27);
                     margin-bottom: 10px;
+
+                    @media (max-width: 1180px) {
+                        width: 90%;
+                        margin: 0 auto 20px;
+                    }
                 }
             }
         }
@@ -1125,6 +1179,11 @@ $font-size-text: 16px;
             justify-content: space-between;
 
             text-align: center; // 讓icon的文字置中
+
+            @media (max-width: 1180px) {
+                width: 70%;
+                margin: 0 auto;
+            }
         }
 
         .iconItem {
@@ -1143,8 +1202,10 @@ $font-size-text: 16px;
                 top: 50%;
                 left: 50%;
                 z-index: -1; // 確保背景在文字和圖示下方
-                transform: translate(-50%,
-                        -50%); // 讓偽元素的中心點對齊在iconItem的中心
+                transform: translate(
+                    -50%,
+                    -50%
+                ); // 讓偽元素的中心點對齊在iconItem的中心
 
                 width: calc(100% - 30px); // 30px是每個左右間距15px * 2
                 height: 100%;
@@ -1192,6 +1253,12 @@ $font-size-text: 16px;
         .btnBox {
             margin-left: 5px; // 讓按鈕往右靠近一點
 
+            .btn {
+                @media (max-width: 1180px) {
+                    margin-right: 0;
+                }
+            }
+
             &::after {
                 content: "";
                 display: block;
@@ -1199,21 +1266,32 @@ $font-size-text: 16px;
                 height: 1px;
                 border-top: 1px solid rgba(0, 0, 0, 0.27);
                 margin-top: 10px;
+
+                @media (max-width: 1180px) {
+                    margin: 10px auto 0;
+                }
             }
         }
     }
 
     .rightBox {
         position: relative; // 給arrow定位用
+        width: calc(100% - 720px);
 
-        width: 100%;
-        max-width: 600px;
+        margin-right: 55px;
 
-        .aboutList {
-            .slick-list {
-                // about 的文字卡片會刻意凸出圖片，slick 預設 hidden 會把它裁掉。
-                overflow: visible;
-            }
+        @media (max-width: 1440px) {
+            margin-right: 85px;
+        }
+
+        @media (max-width: 1180px) {
+            width: 65%;
+            margin: 0 auto;
+        }
+
+        .slick-list {
+            // about 的文字卡片會刻意凸出圖片，slick 預設 hidden 會把它裁掉。
+            overflow: visible;
         }
 
         .item {
@@ -1239,6 +1317,20 @@ $font-size-text: 16px;
                 background-color: $white;
                 border-radius: 20px 20px 80px 20px;
                 box-shadow: 0 0 17.7px 0 rgba(0, 0, 0, 0.1);
+
+                @media (max-width: 1536px) {
+                    transform: scale(0.9);
+                    transition: all 0.3s ease-in-out;
+                }
+
+                @media (max-width: 1180px) {
+                    transform: scale(1);
+                    bottom: -30%;
+                    right: 50%;
+                    transform: translate(50%, -50%);
+                    max-width: 90%;
+                    border-radius: 20px 20px 20px 20px;
+                }
             }
 
             .titleBox {
@@ -1307,6 +1399,7 @@ $font-size-text: 16px;
             }
 
             img {
+                width: 100%;
                 border-radius: 20px;
             }
         }
@@ -1316,6 +1409,12 @@ $font-size-text: 16px;
             top: 48%;
             left: -18%;
             transform: translateY(-50%);
+
+            @media (max-width: 1536px) {
+                left: -5%;
+                background-color: $white;
+                transition: all 0.3s ease-in-out;
+            }
         }
 
         .slickNext {
@@ -1323,6 +1422,12 @@ $font-size-text: 16px;
             top: 48%;
             right: -18%;
             transform: translateY(-50%);
+
+            @media (max-width: 1536px) {
+                right: -5%;
+                background-color: $white;
+                transition: all 0.3s ease-in-out;
+            }
         }
     }
 }
@@ -1525,7 +1630,6 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 1700px) {
-
         // 小桌機:箭頭改放在圖片邊緣
         .clinicImgPrev {
             left: 0;
@@ -1537,7 +1641,6 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 768px) {
-
         // 手機改放在下方置中
         .clinicImgPrev {
             display: inline-flex;
@@ -1559,6 +1662,15 @@ $font-size-text: 16px;
     height: 650px;
     overflow: hidden;
 
+    .wrap {
+        max-width: 1540px;
+        padding: 0 50px;
+
+        @media (max-width: 996px) {
+            padding: 0;
+        }
+    }
+
     .slickArrow {
         background: #fff;
 
@@ -1569,6 +1681,7 @@ $font-size-text: 16px;
 
     .reviewBox {
         padding-top: 120px;
+        overflow: hidden;
 
         .title {
             color: #fff;
@@ -1583,7 +1696,6 @@ $font-size-text: 16px;
         }
 
         .text {
-
             // 分隔線
             &::before {
                 content: "";
@@ -1595,11 +1707,27 @@ $font-size-text: 16px;
             }
         }
     }
-
-    // Slick 容器需要上方留白給凸出的頭像
-    .slick-list {
+    .reviewList {
         padding-top: 55px; // 至少等於頭像凸出的高度
-        margin: -40px -17px 0; // 上 -40px 抵消 padding-top / 左右 -17px 抵消 dataItem 的 padding
+        margin: -40px -17px 0;
+
+        @media (max-width: 996px) {
+            width: 85%;
+            padding-top: 35px;
+            margin: auto;
+        }
+
+        @media (max-width: 768px) {
+            width: 50%;
+        }
+
+        @media (max-width: 480px) {
+            width: 65%;
+        }
+    }
+
+    .slick-list {
+        overflow: visible;
     }
 
     .topBox {
@@ -1607,6 +1735,17 @@ $font-size-text: 16px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @media (max-width: 1440px) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 996px) {
+            margin: 0 40px 40px;
+        }
 
         .title {
             color: $white;
@@ -1624,6 +1763,13 @@ $font-size-text: 16px;
     // --- read more 按鈕 & slick 箭頭---
     .btnBox {
         color: $white;
+
+        @media (max-width: 1440px) {
+            width: 950px;
+        }
+
+        @media (max-width: 996px) {
+        }
 
         &::after {
             content: "";
@@ -1646,21 +1792,41 @@ $font-size-text: 16px;
     }
 
     .reviewItem {
-        // 只管排版、間距
-        width: calc(100% / 3);
         padding: 0 20px;
+
+        @media (max-width: 768px) {
+            padding: 0 10px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 15px;
+        }
     }
 
     .item {
         width: 100%;
-        max-width: 345px;
+        max-width: 325px;
         margin: 0 auto;
         min-height: 145px; // 至少 140px，內容多就自動撐開
 
         position: relative;
         background: #fff;
         border-radius: 10px;
-        padding-top: 80px;
+        padding: 80px 0 15px;
+
+        @media (max-width: 1440px) {
+            height: 130px;
+        }
+
+        @media (max-width: 996px) {
+            //iPad Air
+            height: 160px;
+        }
+
+        @media (max-width: 480px) {
+            //iPad Air
+            height: 170px;
+        }
 
         &::before {
             content: "";
@@ -1693,12 +1859,9 @@ $font-size-text: 16px;
 
             // 漸層邊框本體
             background: $gradient;
-            padding: 5px; // 邊框粗細
+            padding: 6px; // 邊框粗細
 
             img {
-                height: 100%;
-                object-fit: cover;
-
                 border-radius: 50%; // 內層圖片也要圓形
                 display: block; // 去掉 img 底部的空隙
             }
@@ -1709,10 +1872,13 @@ $font-size-text: 16px;
             text-align: center;
 
             .title {
+                width: 100%;
+
                 color: $text-muted;
                 font-size: 14px;
                 line-height: 24px;
-                /* 171.429% */
+
+                padding: 0 40px; // 讓文字不要貼邊
                 margin: 0; // 清掉 p 的預設 margin
 
                 // 取消漸層
@@ -1723,18 +1889,26 @@ $font-size-text: 16px;
                 font-family: "$font-zh";
                 font-weight: 400;
                 letter-spacing: 0.28px;
+
+                @media (max-width: 1536px) {
+                    padding: 0 15px;
+                }
             }
         }
     }
 }
 
 .footer {
-    padding: 80px 0 70px;
+    padding: 80px 0 85px;
     overflow: hidden;
 
     .wrap {
         max-width: 1520px;
         padding: 0 40px;
+
+        @media (max-width: 480px) {
+            padding: 0 20px;
+        }
     }
 
     .topBox {
@@ -1742,10 +1916,10 @@ $font-size-text: 16px;
         justify-content: space-between;
         align-items: center;
 
-        padding-bottom: 20px;
+        padding-bottom: 25px;
         border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -1759,49 +1933,44 @@ $font-size-text: 16px;
             font-size: 16px;
             letter-spacing: 0.32px;
 
-            @media (max-width:480px) {
+            @media (max-width: 480px) {
                 display: flex;
                 flex-direction: column;
             }
 
-            @media (max-width:360px) {
+            @media (max-width: 360px) {
                 font-size: 14px;
             }
-
         }
-.hoursTitle {
-    &::after {
-        content: " | ";
-        margin: 0 4px;
+        .hoursTitle {
+            &::after {
+                content: " | ";
+                margin: 0 4px;
 
-        @media (max-width: 480px) {
-            content: "";
-            display: none;
-            margin: 0;
+                @media (max-width: 480px) {
+                    content: "";
+                    display: none;
+                    margin: 0;
+                }
+            }
         }
-    }
-}
-
     }
 
     .navList {
         display: flex;
-        gap: 40px;
+        gap: 42px;
 
-        @media (max-width:480px) {
+        @media (max-width: 480px) {
             flex-direction: column;
             gap: 10px;
         }
 
-
-
-        .text {
+        .navItem {
             color: $text-main;
 
-            @media (max-width:360px) {
+            @media (max-width: 360px) {
                 font-size: 14px;
             }
-
         }
 
         .navLink {
@@ -1817,7 +1986,7 @@ $font-size-text: 16px;
         justify-content: space-between;
         padding-top: 40px;
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             flex-direction: column; // 直排
             gap: 60px;
         }
@@ -1826,10 +1995,9 @@ $font-size-text: 16px;
             display: flex;
             gap: 75px;
 
-            @media (max-width:768px) {
+            @media (max-width: 768px) {
                 flex-direction: column;
             }
-
         }
 
         .item {
@@ -1867,7 +2035,7 @@ $font-size-text: 16px;
         flex-direction: column;
         text-align: end;
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             // margin-top: 60px;
         }
     }
@@ -1877,21 +2045,20 @@ $font-size-text: 16px;
         justify-content: flex-end;
         gap: 20px;
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             justify-content: start; // 直排時靠左
         }
 
-        @media (max-width:480px) {
+        @media (max-width: 480px) {
             flex-direction: column;
             gap: 10px;
             margin-bottom: 10px;
         }
-
     }
 
     .contactBtn {
         @include flex-center;
-        padding: 5px 50px;
+        padding: 5px 46px;
         border-radius: 35px;
         border: 1px solid $blue-light;
         @include gradient-text;
@@ -1910,7 +2077,7 @@ $font-size-text: 16px;
     .socialBox {
         padding-top: 10px;
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             justify-items: start; // 直排時靠左
         }
     }
@@ -1929,11 +2096,11 @@ $font-size-text: 16px;
         font-weight: 400;
         line-height: 0px;
 
-        @media (max-width:1180px) {
+        @media (max-width: 1180px) {
             text-align: left; // 直排時靠左
         }
 
-        @media (max-width:360px) {
+        @media (max-width: 360px) {
             font-size: 12px;
             line-height: 15px;
         }
