@@ -532,16 +532,12 @@ $font-size-text: 16px;
         height: 1120px;
         border-radius: 100%;
         background:
-            radial-gradient(
-                50% 50% at 50% 50%,
+            radial-gradient(50% 50% at 50% 50%,
                 rgba(255, 255, 255, 0) 0%,
-                #fff 100%
-            ),
-            linear-gradient(
-                107deg,
+                #fff 100%),
+            linear-gradient(107deg,
                 rgba(136, 188, 255, 0.12) 20.17%,
-                rgba(118, 145, 255, 0.12) 66.99%
-            );
+                rgba(118, 145, 255, 0.12) 66.99%);
     }
 }
 
@@ -665,6 +661,7 @@ $font-size-text: 16px;
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -1012,8 +1009,17 @@ $font-size-text: 16px;
     padding: 200px 0 160px;
 
     @media (max-width: 1180px) {
-        padding: 200px 0 260px;
+        padding: 130px 0 260px;
     }
+
+    @media (max-width: 768px) {
+        padding: 80px 0 0;
+    }
+
+    @media (max-width: 480px) {
+        padding: 0;
+    }
+
 
     overflow: hidden; // 防止 rightBox 超出造成橫向捲軸
 
@@ -1058,6 +1064,7 @@ $font-size-text: 16px;
             position: absolute;
             top: -15%;
             left: -5%;
+            z-index: -1;
 
             width: 660px;
             height: 660px;
@@ -1066,16 +1073,13 @@ $font-size-text: 16px;
 
             // ⬇️這是copy Figma的
             background:
-                radial-gradient(
-                    50% 50% at 50% 50%,
+                radial-gradient(50% 50% at 50% 50%,
                     rgba(255, 255, 255, 0) 0%,
-                    #fff 100%
-                ),
-                linear-gradient(
-                    107deg,
+                    #fff 100%),
+                linear-gradient(107deg,
                     rgba(136, 188, 255, 0.19) 20.17%,
-                    rgba(118, 145, 255, 0.19) 66.99%
-                );
+                    rgba(118, 145, 255, 0.19) 66.99%);
+
         }
 
         .marquee {
@@ -1110,8 +1114,13 @@ $font-size-text: 16px;
 
     .wrap {
         max-width: 1300px;
+
         @media (max-width: 768px) {
-            padding: 0 30px;
+            padding: 0 50px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 20px;
         }
     }
 
@@ -1141,21 +1150,51 @@ $font-size-text: 16px;
             margin: 0 0 80px;
         }
 
+        @media (max-width: 480px) {
+            margin-bottom: 40px;
+        }
+
         .Txt {
             margin-bottom: 70px; // 跟按鈕區的距離高度
 
             @media (max-width: 1180px) {
                 margin-bottom: 20px;
             }
+
+            @media (max-width:480px) {
+                margin-bottom: 40px;
+            }
         }
 
         .textBox {
+
+            .title {
+                white-space: nowrap;
+
+                @media (max-width:480px) {
+                    font-size: 36px;
+                    white-space: normal;
+                    line-height: normal;
+                }
+            }
+
             .subtitle {
                 letter-spacing: 1.2px;
+
+                @media (max-width:480px) {
+                    font-size: 22px;
+                    margin-bottom: 25px;
+                }
             }
 
             .text {
                 margin-bottom: 40px;
+
+                @media (max-width:480px) {
+                    font-size: 14px;
+                    margin-bottom: 25px;
+                    line-height: 24px;
+                }
 
                 // 分隔線
                 &::before {
@@ -1184,16 +1223,56 @@ $font-size-text: 16px;
                 width: 70%;
                 margin: 0 auto;
             }
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+
+            @media (max-width: 480px) {
+                width: 100%;
+            }
         }
 
         .iconItem {
             position: relative;
+            z-index: 2;
 
             width: calc(100% / 3);
 
             padding: 20px 30px;
 
             text-align: center; // 讓icon的文字置中
+
+            @media (max-width: 768px) {
+                padding: 5px 10px;
+            }
+
+            img {
+                @media (max-width: 768px) {
+                    transform: scale(0.85);
+                }
+
+                @media (max-width: 480px) {
+                    transform: scale(0.65);
+                }
+
+                @media (max-width: 360px) {
+                    transform: scale(0.55);
+
+                }
+            }
+
+            .text {
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                    line-height: 5px;
+                }
+
+                @media (max-width: 360px) {
+                    font-size: 12px;
+                    line-height: 3px;
+                }
+            }
 
             &::before {
                 content: "";
@@ -1202,10 +1281,8 @@ $font-size-text: 16px;
                 top: 50%;
                 left: 50%;
                 z-index: -1; // 確保背景在文字和圖示下方
-                transform: translate(
-                    -50%,
-                    -50%
-                ); // 讓偽元素的中心點對齊在iconItem的中心
+                transform: translate(-50%,
+                        -50%); // 讓偽元素的中心點對齊在iconItem的中心
 
                 width: calc(100% - 30px); // 30px是每個左右間距15px * 2
                 height: 100%;
@@ -1216,6 +1293,10 @@ $font-size-text: 16px;
 
                 opacity: 0;
                 transition: all 0.2s ease-in-out;
+
+                @media (max-width: 480px) {
+                    top: 60%;
+                }
             }
 
             &:hover {
@@ -1289,8 +1370,16 @@ $font-size-text: 16px;
             margin: 0 auto;
         }
 
-        @media (max-width: 960px) {
+        @media (max-width: 768px) {
             width: 75%;
+        }
+
+        @media (max-width: 576px) {
+            width: 100%;
+        }
+
+        @media (max-width: 480px) {
+            width: 90%;
         }
 
         .slick-list {
@@ -1342,14 +1431,15 @@ $font-size-text: 16px;
                     max-width: 100%;
                 }
 
-                // @media (max-width: 960px) {
-                //     bottom: -40%;
-                // }
+                @media (max-width: 768px) {
+                    padding: 20px 35px;
+                }
 
-                // @media (max-width: 768px) {
-                //     bottom: -60%;
-                //     max-width: 100%;
-                // }
+                @media (max-width: 480px) {
+                    padding: 15px 25px;
+                }
+
+
             }
 
             .titleBox {
@@ -1359,6 +1449,19 @@ $font-size-text: 16px;
 
                 padding-bottom: 15px; // 讓標題和分隔線保持距離
                 border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
+
+                @media (max-width: 768px) {
+                    padding-bottom: 10px;
+                }
+
+                @media (max-width: 390px) {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .rightText {
+                    font-size: 12px;
+                }
             }
 
             .title {
@@ -1377,14 +1480,23 @@ $font-size-text: 16px;
                 @media (max-width: 768px) {
                     font-size: 24px;
                 }
+
+                @media (max-width: 480px) {
+                    font-size: 20px;
+                }
             }
 
             .subtitle {
                 @include gradient-text;
                 font-size: 16px;
                 line-height: initial;
+
                 @media (max-width: 768px) {
                     font-size: 15px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 12px;
                 }
             }
 
@@ -1395,6 +1507,12 @@ $font-size-text: 16px;
                 color: $text-muted;
             }
 
+            .btnTxt {
+                margin-left: 0px;
+                margin-right: 10px;
+                font-size: 14px;
+            }
+
             .textBox {
                 padding-top: 10px; //跟上面的分隔線保持距離
             }
@@ -1403,13 +1521,25 @@ $font-size-text: 16px;
                 color: $text-muted;
                 line-height: 28px;
                 font-size: 16px;
+
                 @media (max-width: 768px) {
+                    line-height: 25px;
                     font-size: 15px;
                 }
+
+                @media (max-width: 480px) {
+                    font-size: 14px;
+                }
             }
+
             .text {
                 @media (max-width: 768px) {
                     font-size: 15px;
+                    line-height: 25px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 13px;
                 }
             }
         }
@@ -1672,6 +1802,7 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 1700px) {
+
         // 小桌機:箭頭改放在圖片邊緣
         .clinicImgPrev {
             left: 0;
@@ -1683,6 +1814,7 @@ $font-size-text: 16px;
     }
 
     @media (max-width: 768px) {
+
         // 手機改放在下方置中
         .clinicImgPrev {
             display: inline-flex;
@@ -1738,6 +1870,7 @@ $font-size-text: 16px;
         }
 
         .text {
+
             // 分隔線
             &::before {
                 content: "";
@@ -1749,6 +1882,7 @@ $font-size-text: 16px;
             }
         }
     }
+
     .reviewList {
         padding-top: 55px; // 至少等於頭像凸出的高度
         margin: -40px -17px 0;
@@ -1810,8 +1944,7 @@ $font-size-text: 16px;
             width: 950px;
         }
 
-        @media (max-width: 996px) {
-        }
+        @media (max-width: 996px) {}
 
         &::after {
             content: "";
@@ -1984,6 +2117,7 @@ $font-size-text: 16px;
                 font-size: 14px;
             }
         }
+
         .hoursTitle {
             &::after {
                 content: " | ";

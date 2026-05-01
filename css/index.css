@@ -883,7 +883,17 @@ figure {
 }
 @media (max-width: 1180px) {
   .aboutArea {
-    padding: 200px 0 260px;
+    padding: 130px 0 260px;
+  }
+}
+@media (max-width: 768px) {
+  .aboutArea {
+    padding: 80px 0 0;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea {
+    padding: 0;
   }
 }
 .aboutArea {
@@ -929,6 +939,7 @@ figure {
   position: absolute;
   top: -15%;
   left: -5%;
+  z-index: -1;
   width: 660px;
   height: 660px;
   border-radius: 100%;
@@ -970,7 +981,12 @@ figure {
 }
 @media (max-width: 768px) {
   .aboutArea .wrap {
-    padding: 0 30px;
+    padding: 0 50px;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .wrap {
+    padding: 0 20px;
   }
 }
 .aboutArea .aboutBox {
@@ -1000,6 +1016,11 @@ figure {
     margin: 0 0 80px;
   }
 }
+@media (max-width: 480px) {
+  .aboutArea .leftBox {
+    margin-bottom: 40px;
+  }
+}
 .aboutArea .leftBox .Txt {
   margin-bottom: 70px;
 }
@@ -1008,11 +1029,39 @@ figure {
     margin-bottom: 20px;
   }
 }
+@media (max-width: 480px) {
+  .aboutArea .leftBox .Txt {
+    margin-bottom: 40px;
+  }
+}
+.aboutArea .leftBox .textBox .title {
+  white-space: nowrap;
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .textBox .title {
+    font-size: 36px;
+    white-space: normal;
+    line-height: normal;
+  }
+}
 .aboutArea .leftBox .textBox .subtitle {
   letter-spacing: 1.2px;
 }
+@media (max-width: 480px) {
+  .aboutArea .leftBox .textBox .subtitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+}
 .aboutArea .leftBox .textBox .text {
   margin-bottom: 40px;
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .textBox .text {
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 24px;
+  }
 }
 .aboutArea .leftBox .textBox .text::before {
   content: "";
@@ -1039,11 +1088,54 @@ figure {
     margin: 0 auto;
   }
 }
+@media (max-width: 768px) {
+  .aboutArea .leftBox .iconBox {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .iconBox {
+    width: 100%;
+  }
+}
 .aboutArea .leftBox .iconItem {
   position: relative;
+  z-index: 2;
   width: 33.3333333333%;
   padding: 20px 30px;
   text-align: center;
+}
+@media (max-width: 768px) {
+  .aboutArea .leftBox .iconItem {
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .aboutArea .leftBox .iconItem img {
+    transform: scale(0.85);
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .iconItem img {
+    transform: scale(0.65);
+  }
+}
+@media (max-width: 360px) {
+  .aboutArea .leftBox .iconItem img {
+    transform: scale(0.55);
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .iconItem .text {
+    font-size: 14px;
+    line-height: 5px;
+  }
+}
+@media (max-width: 360px) {
+  .aboutArea .leftBox .iconItem .text {
+    font-size: 12px;
+    line-height: 3px;
+  }
 }
 .aboutArea .leftBox .iconItem::before {
   content: "";
@@ -1059,6 +1151,11 @@ figure {
   border-radius: 10px;
   opacity: 0;
   transition: all 0.2s ease-in-out;
+}
+@media (max-width: 480px) {
+  .aboutArea .leftBox .iconItem::before {
+    top: 60%;
+  }
 }
 .aboutArea .leftBox .iconItem:hover::before {
   opacity: 1;
@@ -1120,9 +1217,19 @@ figure {
     margin: 0 auto;
   }
 }
-@media (max-width: 960px) {
+@media (max-width: 768px) {
   .aboutArea .rightBox {
     width: 75%;
+  }
+}
+@media (max-width: 576px) {
+  .aboutArea .rightBox {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox {
+    width: 90%;
   }
 }
 .aboutArea .rightBox .slick-list {
@@ -1171,12 +1278,36 @@ figure {
     max-width: 100%;
   }
 }
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .Txt {
+    padding: 20px 35px;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .Txt {
+    padding: 15px 25px;
+  }
+}
 .aboutArea .rightBox .item .titleBox {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 15px;
   border-bottom: 1px dashed rgba(0, 0, 0, 0.27);
+}
+@media (max-width: 768px) {
+  .aboutArea .rightBox .item .titleBox {
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .aboutArea .rightBox .item .titleBox {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.aboutArea .rightBox .item .titleBox .rightText {
+  font-size: 12px;
 }
 .aboutArea .rightBox .item .title {
   color: #535353;
@@ -1194,6 +1325,11 @@ figure {
     font-size: 24px;
   }
 }
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .title {
+    font-size: 20px;
+  }
+}
 .aboutArea .rightBox .item .subtitle {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   background-clip: text;
@@ -1207,11 +1343,21 @@ figure {
     font-size: 15px;
   }
 }
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .subtitle {
+    font-size: 12px;
+  }
+}
 .aboutArea .rightBox .item .btn {
   margin-right: 0px;
   font-family: "Noto Serif TC", serif;
   font-weight: 700;
   color: #606060;
+}
+.aboutArea .rightBox .item .btnTxt {
+  margin-left: 0px;
+  margin-right: 10px;
+  font-size: 14px;
 }
 .aboutArea .rightBox .item .textBox {
   padding-top: 10px;
@@ -1223,12 +1369,24 @@ figure {
 }
 @media (max-width: 768px) {
   .aboutArea .rightBox .item .ulList {
+    line-height: 25px;
     font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .ulList {
+    font-size: 14px;
   }
 }
 @media (max-width: 768px) {
   .aboutArea .rightBox .item .text {
     font-size: 15px;
+    line-height: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .text {
+    font-size: 13px;
   }
 }
 .aboutArea .rightBox .Img {
@@ -1900,4 +2058,4 @@ figure {
 .footer .copyright .link:hover {
   color: #2d2d2d;
   transition: all 0.2s ease-in-out;
-}
+}/*# sourceMappingURL=index.css.map */
