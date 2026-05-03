@@ -1045,6 +1045,11 @@ figure {
     gap: 30px;
   }
 }
+@media (max-width: 480px) {
+  .newsArea .leftBox .actionBox {
+    gap: 15px;
+  }
+}
 .newsArea .leftBox .actionBox .btnBox::after {
   content: "";
   display: block;
@@ -1383,7 +1388,7 @@ figure {
     transform: scale(0.75);
   }
 }
-.newsArea .arrowBox {
+.newsArea .arrowGroup {
   position: absolute;
   display: flex;
   gap: 10px;
@@ -1391,28 +1396,28 @@ figure {
   bottom: 60px;
 }
 @media (max-width: 1536px) {
-  .newsArea .arrowBox {
+  .newsArea .arrowGroup {
     bottom: 80px;
   }
 }
 @media (max-width: 1440px) {
-  .newsArea .arrowBox {
+  .newsArea .arrowGroup {
     bottom: 60px;
   }
 }
 @media (max-width: 1366px) {
-  .newsArea .arrowBox {
+  .newsArea .arrowGroup {
     bottom: 5%;
   }
 }
 @media (max-width: 1180px) {
-  .newsArea .arrowBox {
+  .newsArea .arrowGroup {
     position: static;
     justify-content: center;
   }
 }
 @media (max-width: 480px) {
-  .newsArea .arrowBox {
+  .newsArea .arrowGroup {
     transform: scale(0.8);
     gap: 15px;
   }
@@ -2242,14 +2247,7 @@ figure {
 }
 @media (max-width: 768px) {
   .clinicArea .imgBox {
-    padding-bottom: 30px;
-    padding-top: 0px;
-  }
-}
-@media (max-width: 480px) {
-  .clinicArea .imgBox {
-    padding-top: 15px;
-    padding-bottom: 10px;
+    padding: 0;
   }
 }
 .clinicArea .imgBox .clinicImgPrev,
@@ -2266,7 +2264,7 @@ figure {
 }
 @media (max-width: 1024px) {
   .clinicArea .clinicList .imgItem {
-    padding: 15px 15px;
+    padding: 15px;
   }
 }
 @media (max-width: 600px) {
@@ -2279,12 +2277,12 @@ figure {
 }
 @media (max-width: 480px) {
   .clinicArea .clinicList .imgItem {
-    padding: 15px 5px;
+    padding: 15px;
   }
 }
 @media (max-width: 360px) {
   .clinicArea .clinicList .imgItem {
-    padding: 10px 0;
+    padding: 10px;
   }
 }
 .clinicArea .clinicList .linkWrap {
@@ -2328,6 +2326,23 @@ figure {
   -webkit-text-fill-color: initial;
   color: #535353;
 }
+@media (max-width: 1366px) {
+  .clinicArea .text .title {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .clinicArea .text .title {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .clinicArea .text .title {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}
 .clinicArea .text .subtitle {
   font-family: "Noto Serif TC", serif;
   font-size: 16px;
@@ -2340,22 +2355,32 @@ figure {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@media (max-width: 768px) {
+  .clinicArea .text .subtitle {
+    font-size: 15px;
+    line-height: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .clinicArea .text .subtitle {
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+}
+@media (max-width: 390px) {
+  .clinicArea .text .subtitle {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
 .clinicArea .clinicImgPrev {
   position: absolute;
   left: -5%;
   top: 50%;
 }
-.clinicArea .clinicImgNext {
-  position: absolute;
-  right: -5%;
-  top: 50%;
-}
 @media (max-width: 1700px) {
   .clinicArea .clinicImgPrev {
     left: 0;
-  }
-  .clinicArea .clinicImgNext {
-    right: 0;
   }
 }
 @media (max-width: 768px) {
@@ -2364,10 +2389,34 @@ figure {
     left: calc(50% - 70px);
     top: 100%;
   }
+}
+@media (max-width: 480px) {
+  .clinicArea .clinicImgPrev {
+    transform: scale(0.8);
+    left: 33%;
+  }
+}
+.clinicArea .clinicImgNext {
+  position: absolute;
+  right: -5%;
+  top: 50%;
+}
+@media (max-width: 1700px) {
+  .clinicArea .clinicImgNext {
+    right: 0;
+  }
+}
+@media (max-width: 768px) {
   .clinicArea .clinicImgNext {
     display: inline-flex;
     right: calc(50% - 70px);
     top: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .clinicArea .clinicImgNext {
+    transform: scale(0.8);
+    right: 33%;
   }
 }
 
@@ -2402,16 +2451,67 @@ figure {
   background: none;
   -webkit-text-fill-color: #fff;
 }
+@media (max-width: 768px) {
+  .reviewArea .reviewBox .title {
+    font-size: 45px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .reviewBox .title {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: 0.8px;
+  }
+}
+@media (max-width: 360px) {
+  .reviewArea .reviewBox .title {
+    font-size: 28px;
+  }
+}
 .reviewArea .reviewBox .subtitle {
   margin-bottom: 40px;
+}
+@media (max-width: 1536px) {
+  .reviewArea .reviewBox .subtitle {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 1366px) {
+  .reviewArea .reviewBox .subtitle {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .reviewArea .reviewBox .subtitle {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .reviewBox .subtitle {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .reviewBox .text {
+    font-size: 13px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
 }
 .reviewArea .reviewBox .text::before {
   content: "";
   display: block;
-  width: 950px;
+  width: calc(100% + 50px);
   height: 1px;
   border-top: 1px dashed rgba(255, 255, 255, 0.59);
   margin-bottom: 10px;
+}
+@media (max-width: 1180px) {
+  .reviewArea .reviewBox .text::before {
+    width: 100%;
+  }
 }
 .reviewArea .reviewList {
   padding-top: 55px;
@@ -2482,12 +2582,50 @@ figure {
   margin-top: 5px;
   margin-left: 200px;
 }
+@media (max-width: 1180px) {
+  .reviewArea .btnBox::after {
+    margin-top: 5px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .btnBox::after {
+    width: 90px;
+    margin-top: 0px;
+  }
+}
 .reviewArea .btnBox .btn {
   margin-right: 0;
   margin-left: 60px;
 }
+@media (max-width: 768px) {
+  .reviewArea .btnBox .btn {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .btnBox .btn {
+    margin-right: 5px;
+    margin-left: 50px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .btnBox .btnTxt {
+    margin-right: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .reviewArea .btnBox .svgBg {
+    transform: scale(0.75);
+  }
+}
 .reviewArea .btnBox .slickArrow {
   transform: translateY(15%);
+}
+@media (max-width: 480px) {
+  .reviewArea .btnBox .slickArrow {
+    transform: scale(0.8) translateY(20%);
+  }
 }
 .reviewArea .reviewItem {
   padding: 0 20px;

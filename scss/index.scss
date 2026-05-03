@@ -1109,6 +1109,10 @@ $font-size-text: 16px;
                 gap: 30px; // 直排時按鈕區上下間距
             }
 
+            @media (max-width: 480px) {
+                gap: 15px;
+            }
+
             .btnBox::after {
                 content: "";
                 display: block;
@@ -1395,6 +1399,7 @@ $font-size-text: 16px;
         }
     }
 
+
     .bottomBox {
         display: flex;
         justify-content: space-between;
@@ -1467,7 +1472,7 @@ $font-size-text: 16px;
         }
     }
 
-    .arrowBox {
+    .arrowGroup {
         position: absolute;
         display: flex;
         gap: 10px;
@@ -2345,13 +2350,7 @@ $font-size-text: 16px;
         }
 
         @media (max-width: 768px) {
-            padding-bottom: 30px; // 與箭頭保持距離
-            padding-top: 0px;
-        }
-
-        @media (max-width: 480px) {
-            padding-top: 15px;
-            padding-bottom: 10px; // 與箭頭保持距離
+            padding: 0;
         }
 
         .clinicImgPrev,
@@ -2372,7 +2371,7 @@ $font-size-text: 16px;
             }
 
             @media (max-width: 1024px) {
-                padding: 15px 15px;
+                padding: 15px;
             }
 
             @media (max-width: 600px) {
@@ -2384,11 +2383,11 @@ $font-size-text: 16px;
             }
 
             @media (max-width: 480px) {
-                padding: 15px 5px;
+                padding: 15px;
             }
 
             @media (max-width: 360px) {
-                padding: 10px 0;
+                padding: 10px;
             }
         }
 
@@ -2444,6 +2443,20 @@ $font-size-text: 16px;
 
             color: $text-sub;
 
+            @media (max-width: 1366px) {
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+
 
         }
 
@@ -2455,6 +2468,22 @@ $font-size-text: 16px;
             /* 200% */
             letter-spacing: 0.5px;
             @include gradient-text;
+
+            @media (max-width: 768px) {
+                font-size: 15px;
+                line-height: 25px;
+            }
+
+            @media (max-width: 480px) {
+                margin-bottom: 0;
+                font-size: 13px;
+            }
+
+            @media (max-width: 390px) {
+                font-size: 12px;
+                line-height: 15px;
+            }
+
         }
     }
 
@@ -2462,41 +2491,48 @@ $font-size-text: 16px;
         position: absolute;
         left: -5%;
         top: 50%;
+
+        @media (max-width: 1700px) {
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            display: inline-flex;
+            left: calc(50% - 70px);
+            top: 100%;
+        }
+
+
+        @media (max-width: 480px) {
+            transform: scale(0.8);
+            left: 33%;
+        }
     }
 
     .clinicImgNext {
         position: absolute;
         right: -5%;
         top: 50%;
-    }
 
-    @media (max-width: 1700px) {
-
-        // 小桌機:箭頭改放在圖片邊緣
-        .clinicImgPrev {
-            left: 0;
-        }
-
-        .clinicImgNext {
+        @media (max-width: 1700px) {
             right: 0;
-        }
-    }
 
-    @media (max-width: 768px) {
-
-        // 手機改放在下方置中
-        .clinicImgPrev {
-            display: inline-flex;
-            left: calc(50% - 70px);
-            top: 100%;
         }
 
-        .clinicImgNext {
+        @media (max-width: 768px) {
             display: inline-flex;
             right: calc(50% - 70px);
             top: 100%;
+
+        }
+
+        @media (max-width: 480px) {
+            transform: scale(0.8);
+            right: 33%;
+
         }
     }
+
 }
 
 .reviewArea {
@@ -2532,23 +2568,68 @@ $font-size-text: 16px;
             // 變成白色
             background: none;
             -webkit-text-fill-color: $white;
+
+            @media (max-width: 768px) {
+                font-size: 45px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 30px;
+                line-height: normal;
+                letter-spacing: 0.8px;
+            }
+
+            @media (max-width: 360px) {
+                font-size: 28px;
+            }
+
         }
 
         .subtitle {
             margin-bottom: 40px;
+
+
+            @media (max-width: 1536px) {
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 1366px) {
+                margin-bottom: 15px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+                margin-bottom: 10px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
         }
 
         .text {
+
+            @media (max-width: 480px) {
+                font-size: 13px;
+                line-height: 22px;
+                margin-bottom: 10px;
+            }
 
             // 分隔線
             &::before {
                 content: "";
                 display: block;
-                width: 950px;
+                width: calc(100% + 50px);
                 height: 1px;
                 border-top: 1px dashed rgba(255, 255, 255, 0.59);
                 margin-bottom: 10px;
+
+                @media (max-width: 1180px) {
+                    width: 100%;
+                }
             }
+
         }
     }
 
@@ -2613,8 +2694,6 @@ $font-size-text: 16px;
             width: 950px;
         }
 
-        @media (max-width: 996px) {}
-
         &::after {
             content: "";
             display: block;
@@ -2623,16 +2702,63 @@ $font-size-text: 16px;
             border-top: 1px solid $white;
             margin-top: 5px;
             margin-left: 200px;
+
+            @media (max-width: 1180px) {
+                margin-top: 5px;
+            }
+
+            @media (max-width: 480px) {
+                width: 90px;
+                margin-top: 0px;
+            }
         }
 
         .btn {
             margin-right: 0;
             margin-left: 60px;
+
+            @media (max-width: 768px) {
+                font-size: 14px;
+            }
+
+            @media (max-width: 480px) {
+                margin-right: 5px;
+                margin-left: 50px;
+                font-size: 12px;
+            }
+        }
+
+        .btnTxt {
+            @media (max-width: 480px) {
+                margin-right: 10px;
+            }
+        }
+
+        .svgBg {
+            @media (max-width: 480px) {
+                transform: scale(0.75);
+            }
         }
 
         .slickArrow {
             transform: translateY(15%);
+
+            @media (max-width: 480px) {
+                transform: scale(0.8) translateY(20%);
+            }
         }
+
+        .slickPrev {
+            @media (max-width: 480px) {
+            }
+        }
+
+        .slickNext {
+            @media (max-width: 480px) {
+            }
+        }
+
+
     }
 
     .reviewItem {
