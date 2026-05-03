@@ -172,6 +172,7 @@ figure {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 @media (max-width: 480px) {
   .header .wrap {
@@ -197,9 +198,88 @@ figure {
     font-size: 24px;
   }
 }
+.header .hamburger {
+  display: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+}
+@media (max-width: 1180px) {
+  .header .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.header .hamburger .line {
+  width: 35px;
+  height: 3px;
+  margin: 4px auto;
+  background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
+  border-radius: 20%;
+}
+@media (max-width: 480px) {
+  .header .hamburger .line {
+    width: 20px;
+    height: 2px;
+    margin: 3px auto;
+  }
+}
+.header .menuToggle:checked ~ .menuBox {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.header .menuToggle:checked ~ .hamburger .line:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 480px) {
+  .header .menuToggle:checked ~ .hamburger .line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+}
+.header .menuToggle:checked ~ .hamburger .line:nth-child(2) {
+  opacity: 0;
+}
+.header .menuToggle:checked ~ .hamburger .line:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+  transition: all 0.2s ease-in-out;
+}
+@media (max-width: 480px) {
+  .header .menuToggle:checked ~ .hamburger .line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
 @media (max-width: 1180px) {
   .header .menuBox {
-    display: none;
+    position: absolute;
+    top: 72px;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    padding: 40px 0;
+    border-bottom: 1px solid #ccc;
+    background-color: white;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+}
+@media (max-width: 480px) {
+  .header .menuBox {
+    padding: 20px 0;
+    top: 56px;
+  }
+}
+@media (max-width: 360px) {
+  .header .menuBox {
+    padding: 10px 0;
   }
 }
 .header .menuBox .menu {
@@ -207,10 +287,66 @@ figure {
   align-items: center;
   gap: 40px;
 }
+@media (max-width: 1180px) {
+  .header .menuBox .menu {
+    flex-direction: column;
+  }
+}
+@media (max-width: 996px) {
+  .header .menuBox .menu {
+    gap: 35px;
+  }
+}
+@media (max-width: 768px) {
+  .header .menuBox .menu {
+    gap: 25px;
+  }
+}
+@media (max-width: 480px) {
+  .header .menuBox .menu {
+    gap: 15px;
+  }
+}
+@media (max-width: 360px) {
+  .header .menuBox .menu {
+    gap: 10px;
+  }
+}
 .header .menuBox .menu .menuItem {
   color: #2d2d2d;
   font-size: 16px;
   font-weight: 400;
+}
+@media (max-width: 1180px) {
+  .header .menuBox .menu .menuItem {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+@media (max-width: 768px) {
+  .header .menuBox .menu .menuItem {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .header .menuBox .menu .menuItem {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .header .menuBox .menu .menuItem {
+    font-size: 14px;
+  }
+}
+@media (max-width: 360px) {
+  .header .menuBox .menu .menuItem {
+    font-size: 12px;
+  }
 }
 .header .menuBox .menu .menuItem:hover {
   transition: all 0.3s ease-in-out;
@@ -254,35 +390,6 @@ figure {
   display: flex;
   align-items: center;
   gap: 30px;
-}
-.header .hamburger {
-  display: none;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  position: relative;
-  z-index: 3;
-}
-@media (max-width: 1180px) {
-  .header .hamburger {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-.header .hamburger .line {
-  width: 35px;
-  height: 3px;
-  margin: 4px auto;
-  background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
-  border-radius: 20%;
-}
-@media (max-width: 480px) {
-  .header .hamburger .line {
-    width: 28px;
-    height: 2px;
-    margin: 3px auto;
-  }
 }
 
 .bannerArea {
