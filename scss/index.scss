@@ -210,6 +210,10 @@ $font-size-text: 16px;
     padding: 20px 0;
     border-bottom: 1px solid $border;
 
+    @media (max-width: 480px) {
+        padding: 5px 0;
+    }
+
     .wrap {
         max-width: 100%; // 讓header撐滿整個寬
         padding: 0 60px;
@@ -219,7 +223,7 @@ $font-size-text: 16px;
         align-items: center;
 
         @media (max-width: 480px) {
-            padding: 0 30px;
+            padding: 0 20px;
         }
     }
 
@@ -236,6 +240,10 @@ $font-size-text: 16px;
         letter-spacing: 1px;
         text-transform: uppercase;
         @include gradient-text;
+
+        @media (max-width: 480px) {
+            font-size: 24px;
+        }
     }
 
     // ─── Menu ───
@@ -348,6 +356,11 @@ $font-size-text: 16px;
         padding: 0 0 50px;
     }
 
+    @media (max-width: 480px) {
+        margin-bottom: 0;
+        padding-bottom: 20px;
+    }
+
     .wrap {
         // 1920px下，wrap總寬為1745px，加上需要50px的padding，所以設定1795px
         // 再用margin-left: auto;，讓wrap在超過1920px的螢幕寬度時，保持在畫面右側，讓左邊有空白
@@ -355,6 +368,11 @@ $font-size-text: 16px;
         padding-left: 50px;
         margin: 0;
         margin-left: auto;
+
+        @media (max-width: 1180px) {
+            padding-left: 0px;
+        }
+
 
     }
 
@@ -366,7 +384,6 @@ $font-size-text: 16px;
             flex-direction: column;
         }
     }
-
 
     .leftBox {
         width: 45%;
@@ -386,11 +403,15 @@ $font-size-text: 16px;
         @media (max-width: 1180px) {
             width: 100%;
             text-align: center;
-            padding: 20px 50px 30px 0;
+            padding: 20px 50px 30px;
         }
 
         @media (max-width: 768px) {
-            padding-bottom: 20px;
+            padding-bottom: 0 20px;
+        }
+
+        @media (max-width: 480px) {
+            padding: 0 25px 0px;
         }
 
 
@@ -448,6 +469,11 @@ $font-size-text: 16px;
                 line-height: 55px;
             }
 
+            @media (max-width: 480px) {
+                line-height: 40px;
+                font-size: 35px;
+                margin: 20px 0 0;
+            }
         }
 
         .subtitle {
@@ -466,6 +492,10 @@ $font-size-text: 16px;
                 margin-bottom: 20px;
             }
 
+            @media (max-width: 480px) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
         }
 
         .text {
@@ -491,6 +521,17 @@ $font-size-text: 16px;
                 margin-bottom: 15px;
             }
 
+            @media (max-width: 768px) {
+                margin-bottom: 10px;
+                line-height: 24px;
+            }
+
+            @media (max-width: 480px) {
+                margin-bottom: 5px;
+                font-size: 13px;
+                line-height: 22px;
+            }
+
             // 分隔線
             &::before {
                 content: "";
@@ -499,7 +540,14 @@ $font-size-text: 16px;
                 height: 1px;
                 border-top: 1px dashed rgba(0, 0, 0, 0.27);
                 margin-bottom: 10px;
+
+                @media (max-width: 480px) {
+                    width: 90%;
+                    margin: auto;
+                    margin-bottom: 10px;
+                }
             }
+
         }
 
         // --- read more 按鈕 & slick 箭頭---
@@ -526,9 +574,19 @@ $font-size-text: 16px;
                     margin-right: 25px;
                 }
 
+                @media (max-width: 480px) {
+                    margin-right: 5px;
+                    margin-left: 10px;
+                    font-size: 12px;
+                }
+
             }
 
-
+            .svgBg {
+                @media (max-width: 480px) {
+                    transform: scale(0.75);
+                }
+            }
 
             &::after {
                 content: "";
@@ -541,9 +599,13 @@ $font-size-text: 16px;
                 @media (max-width: 1180px) {
                     margin-top: 5px;
                 }
+
+                @media (max-width: 480px) {
+                    width: 90px;
+                    margin-top: 0px;
+                }
             }
         }
-
     }
 
     .bgBox {
@@ -565,12 +627,21 @@ $font-size-text: 16px;
             margin-bottom: 20px;
         }
 
+        @media (max-width: 480px) {
+            padding-right: 5px;
+            width: 85%;
+            margin-bottom: 5px;
+        }
 
         position: relative; // 讓centerBox 可以絕對定位在 bgBox 上
 
         img {
             border-radius: 10px 10px 10px 160px;
             width: 100%;
+
+            @media (max-width: 480px) {
+                border-radius: 10px 10px 10px 50px;
+            }
         }
     }
 
@@ -600,6 +671,12 @@ $font-size-text: 16px;
             transform: translate(-50%, -50%);
         }
 
+        @media (max-width: 480px) {
+            width: 40%;
+            top: 50%;
+            left: 4%;
+        }
+
 
 
         &::before {
@@ -615,11 +692,16 @@ $font-size-text: 16px;
 
             transition: all 0.5s ease-in-out;
             pointer-events: none;
+
+            @media (max-width: 480px) {
+                border-radius: 10px;
+            }
         }
 
         &:hover::before {
             opacity: 1;
             transform: rotate(5deg) translateX(5px);
+
         }
 
         .imgItem {
@@ -634,6 +716,10 @@ $font-size-text: 16px;
             img {
                 width: 100%;
                 border-radius: 20px;
+
+                @media (max-width: 480px) {
+                    border-radius: 10px;
+                }
             }
         }
     }
@@ -657,9 +743,13 @@ $font-size-text: 16px;
         }
 
         @media (max-width: 1180px) {
-            width: calc(100% - 50px);
             position: static;
             justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            transform: scale(0.8);
+            gap: 15px;
         }
     }
 
@@ -784,6 +874,7 @@ $font-size-text: 16px;
 
     .newsBox {
         display: flex;
+        position: relative; //給arrow用
 
         // leftBox 和 rightBox 的間距
         gap: 100px; // 桌機：左右兩欄水平間距
@@ -793,6 +884,16 @@ $font-size-text: 16px;
             flex-direction: column;
             gap: 50px;
         }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        @media (max-width: 480px) {
+            gap: 25px;
+        }
+
     }
 
     .leftBox {
@@ -810,6 +911,10 @@ $font-size-text: 16px;
             padding: 0 50px;
         }
 
+        @media (max-width: 480px) {
+            padding: 0 20px;
+        }
+
         .textBox {
             margin-bottom: 80px;
 
@@ -817,24 +922,66 @@ $font-size-text: 16px;
             @media (max-width: 1180px) {
                 margin-bottom: 30px;
             }
+
+            @media (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 480px) {
+                margin-bottom: 15px;
+            }
+
         }
 
         .title {
             white-space: nowrap; // 讓標題不換行，保持在一行
 
+
+            @media (max-width: 768px) {
+                font-size: 45px;
+            }
+
             @media (max-width: 480px) {
-                font-size: 42px;
-                line-height: 48px;
+                font-size: 30px;
+                line-height: normal;
                 letter-spacing: 0.8px;
             }
 
             @media (max-width: 360px) {
-                font-size: 36px;
-                line-height: 42px;
+                font-size: 28px;
+            }
+
+        }
+
+        .subtitle {
+            margin-bottom: 60px;
+
+            @media (max-width: 1536px) {
+                margin-bottom: 40px;
+            }
+
+            @media (max-width: 1366px) {
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+                margin-bottom: 10px;
             }
         }
 
         .text {
+
+            @media (max-width: 480px) {
+                font-size: 13px;
+                line-height: 22px;
+                margin-bottom: 10px;
+            }
 
             // 分隔線
             &::before {
@@ -864,6 +1011,16 @@ $font-size-text: 16px;
                 height: 1px;
                 border-top: 1px solid rgba(0, 0, 0, 0.27);
                 margin-top: 15px;
+
+                @media (max-width: 1180px) {
+                    margin-top: 5px;
+                }
+
+                @media (max-width: 480px) {
+                    width: 90px;
+                    margin-top: 0px;
+                }
+
             }
 
             .btn {
@@ -876,14 +1033,25 @@ $font-size-text: 16px;
                 @media (max-width: 1180px) {
                     margin-left: 20px; //看起來更置中
                 }
-            }
-        }
 
-        .arrowGroup {
-            display: flex;
-            gap: 10px;
-            transform: translateY(-10%); // 讓箭頭往上移動，對齊設計稿的樣子
-            margin-left: 15px; // 讓箭頭往右移動一點，對齊設計稿
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                    margin-right: 25px;
+                }
+
+                @media (max-width: 480px) {
+                    margin-right: 5px;
+                    margin-left: 10px;
+                    font-size: 12px;
+                }
+            }
+
+            .svgBg {
+                @media (max-width: 480px) {
+                    transform: scale(0.75);
+                }
+            }
         }
     }
 
@@ -927,11 +1095,7 @@ $font-size-text: 16px;
             }
 
             @media (max-width: 480px) {
-                padding: 0 8px;
-            }
-
-            @media (max-width: 360px) {
-                padding: 0;
+                padding: 0 18px;
             }
 
             &:hover {
@@ -1023,11 +1187,11 @@ $font-size-text: 16px;
 
                 // 小手機：縮小日期欄寬度，把空間讓給標題
                 @media (max-width: 480px) {
-                    min-width: 70px;
+                    min-width: 55px;
                 }
 
                 @media (max-width: 360px) {
-                    min-width: 56px;
+                    min-width: 45px;
                 }
 
                 .date {
@@ -1046,10 +1210,6 @@ $font-size-text: 16px;
                     }
 
                     @media (max-width: 480px) {
-                        font-size: 25px;
-                    }
-
-                    @media (max-width: 360px) {
                         font-size: 20px;
                         letter-spacing: 1px;
                         padding-top: 5px;
@@ -1064,8 +1224,12 @@ $font-size-text: 16px;
                     font-weight: 700;
                     white-space: nowrap;
 
-                    @media (max-width: 360px) {
+                    @media (max-width: 480px) {
                         font-size: 11px;
+                    }
+
+                    @media (max-width: 360px) {
+                        font-size: 10px;
                     }
                 }
             }
@@ -1093,6 +1257,7 @@ $font-size-text: 16px;
 
                     @media (max-width: 480px) {
                         font-size: 16px;
+                        margin-bottom: 0px;
                     }
 
                     @media (max-width: 360px) {
@@ -1109,6 +1274,12 @@ $font-size-text: 16px;
                     overflow: hidden;
                     font-size: 15px;
                     line-height: 25px;
+
+
+                    @media (max-width: 480px) {
+                        font-size: 13px;
+                        line-height: normal;
+                    }
 
                     @media (max-width: 360px) {
                         font-size: 10px;
@@ -1133,6 +1304,8 @@ $font-size-text: 16px;
 
             @media (max-width: 480px) {
                 padding-left: 0;
+                line-height: normal;
+                font-size: 12px;
             }
 
             @media (max-width: 360px) {
@@ -1152,6 +1325,11 @@ $font-size-text: 16px;
                 height: 10px;
                 background-color: #666;
 
+                @media (max-width: 480px) {
+                    right: -10px;
+                    transform: translateY(-45%) scaleX(0.5);
+                }
+
                 @media (max-width: 360px) {
                     display: none;
                 }
@@ -1166,13 +1344,52 @@ $font-size-text: 16px;
             margin-right: 35px;
 
             @media (max-width: 480px) {
-                margin-right: 15px;
+                margin-right: 5px;
+                margin-left: 10px;
+                font-size: 12px;
             }
 
             @media (max-width: 360px) {
                 font-size: 15px;
                 margin-right: 10px;
             }
+        }
+
+        .svgBg {
+            @media (max-width: 480px) {
+                transform: scale(0.75);
+            }
+        }
+    }
+
+    .arrowBox {
+        position: absolute;
+        display: flex;
+        gap: 10px;
+
+        left: 200px;
+        bottom: 60px;
+
+        @media (max-width: 1536px) {
+            bottom: 80px;
+        }
+
+        @media (max-width: 1440px) {
+            bottom: 60px;
+        }
+
+        @media (max-width: 1366px) {
+            bottom: 5%;
+        }
+
+        @media (max-width: 1180px) {
+            position: static;
+            justify-content: center;
+        }
+
+        @media (max-width: 480px) {
+            transform: scale(0.8);
+            gap: 15px;
         }
     }
 }
@@ -1182,8 +1399,12 @@ $font-size-text: 16px;
 
     padding: 200px 0 160px;
 
-    @media (max-width: 1180px) {
+    @media (max-width: 1536px) {
         padding: 130px 0 260px;
+    }
+
+    @media (max-width: 1180px) {
+        padding: 130px 0 120px;
     }
 
     @media (max-width: 768px) {
@@ -1294,7 +1515,7 @@ $font-size-text: 16px;
         }
 
         @media (max-width: 480px) {
-            padding: 0 20px;
+            padding: 0 40px;
         }
     }
 
@@ -1325,7 +1546,9 @@ $font-size-text: 16px;
         }
 
         @media (max-width: 480px) {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            padding-top: 30px;
+            margin-top: 20px;
         }
 
         .Txt {
@@ -1336,7 +1559,7 @@ $font-size-text: 16px;
             }
 
             @media (max-width:480px) {
-                margin-bottom: 40px;
+                margin-bottom: 15px;
             }
         }
 
@@ -1345,29 +1568,51 @@ $font-size-text: 16px;
             .title {
                 white-space: nowrap;
 
-                @media (max-width:480px) {
-                    font-size: 36px;
-                    white-space: normal;
+                @media (max-width: 768px) {
+                    font-size: 45px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 30px;
                     line-height: normal;
+                    letter-spacing: 0.8px;
+                }
+
+                @media (max-width: 360px) {
+                    font-size: 28px;
                 }
             }
 
             .subtitle {
                 letter-spacing: 1.2px;
 
-                @media (max-width:480px) {
+
+                @media (max-width: 1536px) {
+                    margin-bottom: 40px;
+                }
+
+                @media (max-width: 1366px) {
+                    margin-bottom: 30px;
+                }
+
+                @media (max-width: 768px) {
                     font-size: 22px;
-                    margin-bottom: 25px;
+                    margin-bottom: 20px;
+                }
+
+                @media (max-width: 480px) {
+                    font-size: 18px;
+                    margin-bottom: 10px;
                 }
             }
 
             .text {
                 margin-bottom: 40px;
 
-                @media (max-width:480px) {
-                    font-size: 14px;
-                    margin-bottom: 25px;
-                    line-height: 24px;
+                @media (max-width: 480px) {
+                    font-size: 13px;
+                    line-height: 22px;
+                    margin-bottom: 10px;
                 }
 
                 // 分隔線
@@ -1383,6 +1628,12 @@ $font-size-text: 16px;
                         width: 90%;
                         margin: 0 auto 20px;
                     }
+
+                    @media (max-width: 480px) {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+
                 }
             }
         }
@@ -1438,7 +1689,7 @@ $font-size-text: 16px;
 
             .text {
                 @media (max-width: 480px) {
-                    font-size: 14px;
+                    font-size: 12px;
                     line-height: 5px;
                 }
 
@@ -1525,6 +1776,37 @@ $font-size-text: 16px;
                 @media (max-width: 1180px) {
                     margin: 10px auto 0;
                 }
+
+
+                @media (max-width: 480px) {
+                    width: 90px;
+                    margin-top: 0px;
+                }
+
+            }
+
+            .btnTxt {
+                @media (max-width: 1180px) {
+                    margin-left: 20px; //看起來更置中
+                }
+
+
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                    margin-right: 25px;
+                }
+
+                @media (max-width: 480px) {
+                    margin-right: 5px;
+                    margin-left: 10px;
+                    font-size: 12px;
+                }
+            }
+
+            .svgBg {
+                @media (max-width: 480px) {
+                    transform: scale(0.75);
+                }
             }
         }
     }
@@ -1553,7 +1835,7 @@ $font-size-text: 16px;
         }
 
         @media (max-width: 480px) {
-            width: 90%;
+            width: 95%;
         }
 
         .slick-list {
@@ -1613,6 +1895,9 @@ $font-size-text: 16px;
                     padding: 15px 25px;
                 }
 
+                @media (max-width: 480px) {
+                    padding: 15px 20px;
+                }
 
             }
 
@@ -1633,8 +1918,20 @@ $font-size-text: 16px;
                     align-items: flex-start;
                 }
 
+                .leftText {
+
+                    @media (max-width: 480px) {
+                        margin-bottom: 10px;
+                    }
+
+                }
+
                 .rightText {
-                    font-size: 12px;
+                    font-size: 16px;
+
+                    @media (max-width: 480px) {
+                        font-size: 11px;
+                    }
                 }
             }
 
@@ -1658,6 +1955,11 @@ $font-size-text: 16px;
                 @media (max-width: 480px) {
                     font-size: 20px;
                 }
+
+                @media (max-width: 390px) {
+                    font-size: 18px;
+                    line-height: 15px;
+                }
             }
 
             .subtitle {
@@ -1672,6 +1974,10 @@ $font-size-text: 16px;
                 @media (max-width: 480px) {
                     font-size: 12px;
                 }
+
+                @media (max-width: 390px) {
+                    font-size: 11px;
+                }
             }
 
             .btn {
@@ -1679,12 +1985,23 @@ $font-size-text: 16px;
                 font-family: $font-zh-serif;
                 font-weight: 700;
                 color: $text-muted;
+
+                .svgBg {
+                    @media (max-width: 390px) {
+                        transform: scale(0.8);
+                    }
+                }
             }
 
             .btnTxt {
                 margin-left: 0px;
                 margin-right: 10px;
                 font-size: 14px;
+
+                @media (max-width: 390px) {
+                    font-size: 13px;
+                    margin-right: 5px;
+                }
             }
 
             .textBox {
@@ -1704,6 +2021,16 @@ $font-size-text: 16px;
                 @media (max-width: 480px) {
                     font-size: 14px;
                 }
+
+                @media (max-width: 390px) {
+                    font-size: 13px;
+                }
+
+                .item {
+                    @media (max-width: 390px) {
+                        line-height: 20px;
+                    }
+                }
             }
 
             .text {
@@ -1714,6 +2041,11 @@ $font-size-text: 16px;
 
                 @media (max-width: 480px) {
                     font-size: 13px;
+                }
+
+                @media (max-width: 390px) {
+                    font-size: 12px;
+                    line-height: 15px;
                 }
             }
         }
@@ -1757,6 +2089,12 @@ $font-size-text: 16px;
             @media (max-width: 960px) {
                 top: 38%;
             }
+
+            @media (max-width: 480px) {
+                transform: scale(0.8);
+                top: 25%;
+                left: -10%;
+            }
         }
 
         .slickNext {
@@ -1774,6 +2112,12 @@ $font-size-text: 16px;
             @media (max-width: 960px) {
                 top: 38%;
             }
+
+            @media (max-width: 480px) {
+                right: -10%;
+                top: 25%;
+                transform: scale(0.8);
+            }
         }
     }
 }
@@ -1783,7 +2127,10 @@ $font-size-text: 16px;
     padding: 120px 0 150px;
     margin-top: 90px;
 
-    // 調整上下留白
+    @media (max-width: 1536px) {
+        margin-top: 20px;
+    }
+
     @media (max-width: 768px) {
         padding: 90px 0 80px;
     }
@@ -1844,8 +2191,43 @@ $font-size-text: 16px;
             text-align: center;
         }
 
+        .title {
+            @media (max-width: 768px) {
+                font-size: 45px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 30px;
+                line-height: normal;
+                letter-spacing: 0.8px;
+            }
+
+            @media (max-width: 360px) {
+                font-size: 28px;
+            }
+
+        }
+
         .subtitle {
             margin: 0;
+
+            @media (max-width: 1536px) {
+                margin-bottom: 40px;
+            }
+
+            @media (max-width: 1366px) {
+                margin-bottom: 30px;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -1853,11 +2235,17 @@ $font-size-text: 16px;
         position: relative; // 讓slick arrow可以定位
         padding-top: 35px;
 
-        @media (max-width: 600px) {
+        @media (max-width: 1536px) {
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
             padding-bottom: 30px; // 與箭頭保持距離
+            padding-top: 0px;
         }
 
         @media (max-width: 480px) {
+            padding-top: 15px;
             padding-bottom: 10px; // 與箭頭保持距離
         }
 
@@ -1950,6 +2338,8 @@ $font-size-text: 16px;
             -webkit-text-fill-color: initial;
 
             color: $text-sub;
+
+
         }
 
         .subtitle {
