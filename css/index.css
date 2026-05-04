@@ -605,8 +605,12 @@ figure {
     margin-bottom: 10px;
   }
 }
+.bannerArea .leftBox .btnBox {
+  margin-top: 10px;
+}
 @media (max-width: 1180px) {
   .bannerArea .leftBox .btnBox {
+    margin-top: 0;
     display: inline-block;
   }
 }
@@ -642,10 +646,10 @@ figure {
 .bannerArea .leftBox .btnBox::after {
   content: "";
   display: block;
-  width: 130px;
+  width: 160px;
   height: 1px;
   border-top: 1px solid rgba(0, 0, 0, 0.27);
-  margin-top: 10px;
+  margin-top: 15px;
 }
 @media (max-width: 1180px) {
   .bannerArea .leftBox .btnBox::after {
@@ -701,7 +705,7 @@ figure {
 .bannerArea .centerBox {
   position: absolute;
   left: 0%;
-  top: 45%;
+  top: 47%;
   z-index: 0;
   transform: translate(-50%, -50%);
   width: 46%;
@@ -773,7 +777,7 @@ figure {
   display: flex;
   position: absolute;
   left: 200px;
-  top: 590px;
+  top: 600px;
   gap: 8px;
 }
 @media (max-width: 1536px) {
@@ -807,7 +811,7 @@ figure {
 }
 .bannerArea .marqueeBox {
   font-family: "Cormorant Garamond";
-  font-size: 140px;
+  font-size: clamp(80px, 7.3vw, 140px);
   font-weight: 700;
   line-height: 90px;
   letter-spacing: 4.2px;
@@ -822,6 +826,11 @@ figure {
   color: #fff;
   clip-path: inset(0 0 0 58%);
 }
+@media (max-width: 1536px) {
+  .bannerArea .marqueeBox .marqueeWhite {
+    bottom: 60px;
+  }
+}
 .bannerArea .marqueeBox .marqueeGradient {
   position: absolute;
   bottom: 40px;
@@ -832,6 +841,11 @@ figure {
   -webkit-text-fill-color: transparent;
   opacity: 0.1;
   clip-path: inset(0 42% 0 0);
+}
+@media (max-width: 1536px) {
+  .bannerArea .marqueeBox .marqueeGradient {
+    bottom: 60px;
+  }
 }
 .bannerArea .deco {
   position: absolute;
@@ -995,12 +1009,7 @@ figure {
   }
 }
 .newsArea .leftBox .subtitle {
-  margin-bottom: 60px;
-}
-@media (max-width: 1536px) {
-  .newsArea .leftBox .subtitle {
-    margin-bottom: 40px;
-  }
+  margin-bottom: 40px;
 }
 @media (max-width: 1366px) {
   .newsArea .leftBox .subtitle {
@@ -1190,7 +1199,7 @@ figure {
   width: 100%;
 }
 .newsArea .rightBox .Txt {
-  padding-top: 25px;
+  padding-top: 40px;
 }
 @media (max-width: 480px) {
   .newsArea .rightBox .Txt {
@@ -1393,12 +1402,7 @@ figure {
   display: flex;
   gap: 10px;
   left: 200px;
-  bottom: 60px;
-}
-@media (max-width: 1536px) {
-  .newsArea .arrowGroup {
-    bottom: 80px;
-  }
+  bottom: 80px;
 }
 @media (max-width: 1440px) {
   .newsArea .arrowGroup {
@@ -1457,7 +1461,7 @@ figure {
 }
 .aboutArea .bgBox .imgLeftBottom {
   position: absolute;
-  bottom: 6%;
+  bottom: 5%;
   left: 3%;
 }
 @media (max-width: 1780px) {
@@ -1467,8 +1471,8 @@ figure {
 }
 .aboutArea .bgBox .imgRightTop {
   position: absolute;
-  top: 2%;
-  right: 3%;
+  top: 0;
+  right: 3.5%;
 }
 @media (max-width: 1780px) {
   .aboutArea .bgBox .imgRightTop {
@@ -1527,6 +1531,11 @@ figure {
     right: 5%;
   }
 }
+@media (max-width: 1180px) {
+  .aboutArea .bgBox .marquee {
+    display: none;
+  }
+}
 .aboutArea .wrap {
   max-width: 1300px;
 }
@@ -1575,7 +1584,7 @@ figure {
   }
 }
 .aboutArea .leftBox .Txt {
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 @media (max-width: 1180px) {
   .aboutArea .leftBox .Txt {
@@ -1776,7 +1785,7 @@ figure {
 .aboutArea .leftBox .btnBox::after {
   content: "";
   display: block;
-  width: 150px;
+  width: 160px;
   height: 1px;
   border-top: 1px solid rgba(0, 0, 0, 0.27);
   margin-top: 10px;
@@ -1818,7 +1827,7 @@ figure {
 .aboutArea .rightBox {
   position: relative;
   width: calc(100% - 720px);
-  margin-right: 55px;
+  margin-right: 60px;
 }
 @media (max-width: 1440px) {
   .aboutArea .rightBox {
@@ -1859,8 +1868,8 @@ figure {
 }
 .aboutArea .rightBox .item .Txt {
   position: absolute;
-  bottom: -14%;
-  right: -11%;
+  bottom: -16%;
+  right: -14%;
   z-index: 2;
   width: 100%;
   max-width: 485px;
@@ -1993,6 +2002,13 @@ figure {
   font-family: "Noto Serif TC", serif;
   font-weight: 700;
   color: #606060;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .btn .svgBg {
+    transform: scale(0.9);
+  }
 }
 @media (max-width: 390px) {
   .aboutArea .rightBox .item .btn .svgBg {
@@ -2000,9 +2016,15 @@ figure {
   }
 }
 .aboutArea .rightBox .item .btnTxt {
+  margin-right: 25px;
   margin-left: 0px;
-  margin-right: 10px;
-  font-size: 14px;
+  font-size: 16px;
+}
+@media (max-width: 480px) {
+  .aboutArea .rightBox .item .btnTxt {
+    margin-right: 10px;
+    font-size: 14px;
+  }
 }
 @media (max-width: 390px) {
   .aboutArea .rightBox .item .btnTxt {
@@ -2078,7 +2100,7 @@ figure {
 .aboutArea .rightBox .slickPrev {
   position: absolute;
   top: 48%;
-  left: -18%;
+  left: -20%;
   transform: translateY(-50%);
 }
 @media (max-width: 1536px) {
@@ -2103,7 +2125,7 @@ figure {
 .aboutArea .rightBox .slickNext {
   position: absolute;
   top: 48%;
-  right: -18%;
+  right: 19%;
   transform: translateY(-50%);
 }
 @media (max-width: 1536px) {
@@ -2433,8 +2455,19 @@ figure {
   height: 650px;
   overflow: hidden;
 }
+@media (max-width: 768px) {
+  .reviewArea {
+    height: auto;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 336px) {
+  .reviewArea {
+    padding-bottom: 30px;
+  }
+}
 .reviewArea .wrap {
-  max-width: 1540px;
+  max-width: 1535px;
   padding: 0 50px;
 }
 @media (max-width: 996px) {
@@ -2451,6 +2484,11 @@ figure {
 .reviewArea .reviewBox {
   padding-top: 120px;
   overflow: hidden;
+}
+@media (max-width: 360px) {
+  .reviewArea .reviewBox {
+    padding-top: 60px;
+  }
 }
 .reviewArea .reviewBox .title {
   color: #fff;
@@ -2510,10 +2548,10 @@ figure {
 .reviewArea .reviewBox .text::before {
   content: "";
   display: block;
-  width: calc(100% + 50px);
+  width: calc(100% + 100px);
   height: 1px;
   border-top: 1px dashed rgba(255, 255, 255, 0.59);
-  margin-bottom: 10px;
+  margin-bottom: 13px;
 }
 @media (max-width: 1180px) {
   .reviewArea .reviewBox .text::before {
@@ -2563,6 +2601,16 @@ figure {
     margin: 0 40px 40px;
   }
 }
+@media (max-width: 480px) {
+  .reviewArea .topBox {
+    gap: 15px;
+  }
+}
+@media (max-width: 390px) {
+  .reviewArea .topBox {
+    gap: 0;
+  }
+}
 .reviewArea .topBox .title {
   color: #fff;
 }
@@ -2580,6 +2628,11 @@ figure {
     width: 950px;
   }
 }
+@media (max-width: 1180px) {
+  .reviewArea .btnBox {
+    width: 100%;
+  }
+}
 .reviewArea .btnBox::after {
   content: "";
   display: block;
@@ -2587,7 +2640,7 @@ figure {
   height: 1px;
   border-top: 1px solid #fff;
   margin-top: 5px;
-  margin-left: 200px;
+  margin-left: 210px;
 }
 @media (max-width: 1180px) {
   .reviewArea .btnBox::after {
@@ -2598,11 +2651,24 @@ figure {
   .reviewArea .btnBox::after {
     width: 90px;
     margin-top: 0px;
+    margin-left: 180px;
+  }
+}
+@media (max-width: 360px) {
+  .reviewArea .btnBox::after {
+    width: 80px;
+    margin-left: 160px;
+  }
+}
+@media (max-width: 336px) {
+  .reviewArea .btnBox::after {
+    margin-left: 20px;
+    margin-top: 5px;
   }
 }
 .reviewArea .btnBox .btn {
   margin-right: 0;
-  margin-left: 60px;
+  margin-left: 70px;
 }
 @media (max-width: 768px) {
   .reviewArea .btnBox .btn {
@@ -2612,8 +2678,14 @@ figure {
 @media (max-width: 480px) {
   .reviewArea .btnBox .btn {
     margin-right: 5px;
-    margin-left: 50px;
+    margin-left: 30px;
     font-size: 12px;
+  }
+}
+@media (max-width: 360px) {
+  .reviewArea .btnBox .btn {
+    margin-top: 20px;
+    margin-left: 10px;
   }
 }
 @media (max-width: 480px) {
@@ -2627,7 +2699,7 @@ figure {
   }
 }
 .reviewArea .btnBox .slickArrow {
-  transform: translateY(15%);
+  transform: translate(20%, 15%);
 }
 @media (max-width: 480px) {
   .reviewArea .btnBox .slickArrow {
@@ -2669,7 +2741,8 @@ figure {
 }
 @media (max-width: 480px) {
   .reviewArea .item {
-    height: 170px;
+    height: 100px;
+    padding: 60px 0 15px;
   }
 }
 .reviewArea .item::before {
@@ -2701,7 +2774,14 @@ figure {
   background: linear-gradient(107deg, #88bcff 20.17%, #7691ff 66.99%);
   padding: 6px;
 }
+@media (max-width: 480px) {
+  .reviewArea .item .Img {
+    width: 85px;
+    height: 85px;
+  }
+}
 .reviewArea .item .Img img {
+  width: 100%;
   border-radius: 50%;
   display: block;
 }
