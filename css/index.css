@@ -2373,6 +2373,13 @@ figure {
     line-height: 15px;
   }
 }
+@media (max-width: 480px) {
+  .clinicArea .arrowBox {
+    display: flex;
+    justify-content: center;
+    gap: 0px;
+  }
+}
 .clinicArea .clinicImgPrev {
   position: absolute;
   left: -5%;
@@ -2393,7 +2400,7 @@ figure {
 @media (max-width: 480px) {
   .clinicArea .clinicImgPrev {
     transform: scale(0.8);
-    left: 33%;
+    position: static;
   }
 }
 .clinicArea .clinicImgNext {
@@ -2416,7 +2423,7 @@ figure {
 @media (max-width: 480px) {
   .clinicArea .clinicImgNext {
     transform: scale(0.8);
-    right: 33%;
+    position: static;
   }
 }
 
@@ -2923,4 +2930,4 @@ figure {
 .footer .copyright .link:hover {
   color: #2d2d2d;
   transition: all 0.2s ease-in-out;
-}/*# sourceMappingURL=index.css.map */
+}

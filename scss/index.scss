@@ -2487,6 +2487,14 @@ $font-size-text: 16px;
         }
     }
 
+    .arrowBox {
+        @media (max-width: 480px) {
+            display: flex;
+            justify-content: center;
+            gap:0px;
+        }
+    }
+
     .clinicImgPrev {
         position: absolute;
         left: -5%;
@@ -2505,7 +2513,7 @@ $font-size-text: 16px;
 
         @media (max-width: 480px) {
             transform: scale(0.8);
-            left: 33%;
+            position: static;
         }
     }
 
@@ -2528,8 +2536,7 @@ $font-size-text: 16px;
 
         @media (max-width: 480px) {
             transform: scale(0.8);
-            right: 33%;
-
+            position: static;
         }
     }
 
